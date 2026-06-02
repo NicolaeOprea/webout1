@@ -14,6 +14,12 @@ npm run dev
 
 Die Website ist dann unter `http://localhost:3000` erreichbar.
 
+Für Backend-Anbindung nutzt das Frontend:
+
+```env
+REACT_APP_API_URL=http://localhost:4000
+```
+
 ### 3. Production Build
 ```bash
 npm run build

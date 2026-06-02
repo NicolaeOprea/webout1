@@ -10,6 +10,34 @@ const rootDir = join(dirname(fileURLToPath(import.meta.url)), '..')
 const buildDir = join(rootDir, 'build')
 const tailwindCli = join(rootDir, 'node_modules', 'tailwindcss', 'lib', 'cli.js')
 
+async function loadEnv() {
+  const envFiles = [
+    process.env.NODE_ENV === 'production' ? '.env.production' : '.env',
+    '.env.local',
+  ]
+
+  for (const fileName of envFiles) {
+    try {
+      const envText = await readFile(join(rootDir, fileName), 'utf8')
+      for (const rawLine of envText.split(/\r?\n/u)) {
+        const line = rawLine.trim()
+        if (!line || line.startsWith('#')) continue
+        const separatorIndex = line.indexOf('=')
+        if (separatorIndex === -1) continue
+
+        const key = line.slice(0, separatorIndex).trim()
+        const value = line.slice(separatorIndex + 1).trim().replace(/^['"]|['"]$/g, '')
+
+        if (key && process.env[key] == null) {
+          process.env[key] = value
+        }
+      }
+    } catch {
+      // Env files are optional.
+    }
+  }
+}
+
 async function prepareBuild() {
   await rm(buildDir, { recursive: true, force: true })
   await mkdir(join(buildDir, 'assets'), { recursive: true })
@@ -56,6 +84,7 @@ async function buildJs({ watch = false } = {}) {
     },
     define: {
       'process.env.NODE_ENV': JSON.stringify(watch ? 'development' : 'production'),
+      'process.env.REACT_APP_API_URL': JSON.stringify(process.env.REACT_APP_API_URL || ''),
     },
   }
 
@@ -86,6 +115,7 @@ async function writeHtml() {
 }
 
 export async function buildApp({ watch = false } = {}) {
+  await loadEnv()
   await prepareBuild()
   await writeHtml()
 

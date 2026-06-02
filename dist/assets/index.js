@@ -35645,14 +35645,18 @@ var menuCategories = ["Pizza", "Pasta", "Salate", "Dessert", "Getr\xE4nke"];
 
 // src/services/reservationOrderApi.js
 async function submitReservationOrder(payload) {
-  return postWithFallback("/api/orders", payload, "submitReservationOrder payload");
+  return postToApi("/api/orders", payload, "submitReservationOrder payload");
 }
 async function submitSimpleReservation(payload) {
-  return postWithFallback("/api/reservations", payload, "submitSimpleReservation payload");
+  return postToApi("/api/reservations", payload, "submitSimpleReservation payload");
 }
-async function postWithFallback(endpoint, payload, logLabel) {
+function getApiUrl(endpoint) {
+  const baseUrl = process.env.REACT_APP_API_URL || "";
+  return `${baseUrl.replace(/\/$/u, "")}${endpoint}`;
+}
+async function postToApi(endpoint, payload, logLabel) {
   try {
-    const response = await fetch(endpoint, {
+    const response = await fetch(getApiUrl(endpoint), {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -35661,9 +35665,6 @@ async function postWithFallback(endpoint, payload, logLabel) {
     });
     if (response.ok) {
       return { success: true };
-    }
-    if (response.status !== 404) {
-      return { success: false };
     }
   } catch {
   }
