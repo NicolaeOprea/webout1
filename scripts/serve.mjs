@@ -8,6 +8,7 @@ const rootDir = join(dirname(fileURLToPath(import.meta.url)), '..')
 const buildDir = join(rootDir, 'build')
 
 const port = Number(process.env.PORT || 3000)
+const host = process.env.HOST || (process.env.NODE_ENV === 'production' ? '0.0.0.0' : '127.0.0.1')
 
 const contentTypes = {
   '.css': 'text/css; charset=utf-8',
@@ -50,7 +51,7 @@ export function serve() {
     }
   })
 
-  server.listen(port, '127.0.0.1', () => {
+  server.listen(port, host, () => {
     console.log(`React ESM app available at http://localhost:${port}/`)
   })
 

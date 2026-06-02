@@ -6,7 +6,7 @@ await buildApp({ watch: true })
 serve()
 console.log('Watching React and Tailwind sources. Reload the browser after changes.')
 
-if (process.env.BROWSER !== 'none') {
+if (process.env.NODE_ENV !== 'production' && process.env.BROWSER !== 'none') {
   const url = `http://localhost:${process.env.PORT || 3000}/`
   const command =
     process.platform === 'win32'
