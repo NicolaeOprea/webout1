@@ -29,7 +29,7 @@ function getDefaultDate() {
   return local.toISOString().slice(0, 10);
 }
 function ReservationOrderPage({
-  businessSlug = "italian-restaurant",
+  businessSlug = process.env.REACT_APP_BUSINESS_SLUG || "sapore-mediterraneo",
   businessName = "Sapore Mediterraneo",
   menuItems = mockMenu
 }) {
@@ -176,8 +176,8 @@ function ReservationOrderPage({
       } else {
         setSubmitError("Beim Senden ist ein Problem aufgetreten. Bitte erneut versuchen.");
       }
-    } catch {
-      setSubmitError("Beim Senden ist ein Problem aufgetreten. Bitte erneut versuchen.");
+    } catch (submitError2) {
+      setSubmitError(submitError2.message || "Beim Senden ist ein Problem aufgetreten. Bitte erneut versuchen.");
     } finally {
       setIsSubmitting(false);
     }

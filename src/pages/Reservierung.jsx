@@ -46,7 +46,7 @@ function Reservierung() {
       return;
     }
     const payload = {
-      businessSlug: "italian-restaurant",
+      businessSlug: process.env.REACT_APP_BUSINESS_SLUG || "sapore-mediterraneo",
       customerName: values.customerName.trim(),
       phone: values.phone.trim(),
       email: values.email.trim(),
@@ -71,8 +71,8 @@ function Reservierung() {
       } else {
         setError("Beim Senden ist ein Problem aufgetreten. Bitte erneut versuchen.");
       }
-    } catch {
-      setError("Beim Senden ist ein Problem aufgetreten. Bitte erneut versuchen.");
+    } catch (submitError) {
+      setError(submitError.message || "Beim Senden ist ein Problem aufgetreten. Bitte erneut versuchen.");
     } finally {
       setIsSubmitting(false);
     }

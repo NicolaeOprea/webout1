@@ -85,6 +85,8 @@ async function buildJs({ watch = false } = {}) {
     define: {
       'process.env.NODE_ENV': JSON.stringify(watch ? 'development' : 'production'),
       'process.env.REACT_APP_API_URL': JSON.stringify(process.env.REACT_APP_API_URL || ''),
+      'process.env.REACT_APP_BUSINESS_SLUG': JSON.stringify(process.env.REACT_APP_BUSINESS_SLUG || ''),
+      'process.env.REACT_APP_LOCATION_ID': JSON.stringify(process.env.REACT_APP_LOCATION_ID || ''),
     },
   }
 
