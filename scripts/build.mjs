@@ -7,13 +7,13 @@ import { promisify } from 'node:util'
 
 const execFileAsync = promisify(execFile)
 const rootDir = join(dirname(fileURLToPath(import.meta.url)), '..')
-const distDir = join(rootDir, 'dist')
+const buildDir = join(rootDir, 'build')
 const tailwindCli = join(rootDir, 'node_modules', 'tailwindcss', 'lib', 'cli.js')
 
-async function prepareDist() {
-  await rm(distDir, { recursive: true, force: true })
-  await mkdir(join(distDir, 'assets'), { recursive: true })
-  await cp(join(rootDir, 'public'), distDir, { recursive: true, force: true })
+async function prepareBuild() {
+  await rm(buildDir, { recursive: true, force: true })
+  await mkdir(join(buildDir, 'assets'), { recursive: true })
+  await cp(join(rootDir, 'public'), buildDir, { recursive: true, force: true })
 }
 
 async function buildCss({ watch = false } = {}) {
@@ -21,7 +21,7 @@ async function buildCss({ watch = false } = {}) {
     '-i',
     'src/index.css',
     '-o',
-    'dist/assets/index.css',
+    'build/assets/index.css',
     ...(watch ? ['--watch'] : ['--minify']),
   ]
 
@@ -39,7 +39,7 @@ async function buildCss({ watch = false } = {}) {
 async function buildJs({ watch = false } = {}) {
   const options = {
     entryPoints: [join(rootDir, 'src/main.jsx')],
-    outfile: join(distDir, 'assets/index.js'),
+    outfile: join(buildDir, 'assets/index.js'),
     bundle: true,
     format: 'esm',
     jsx: 'automatic',
@@ -82,11 +82,11 @@ async function writeHtml() {
       '    <script type="module" src="/assets/index.js"></script>\n  </body>',
     )
 
-  await writeFile(join(distDir, 'index.html'), html)
+  await writeFile(join(buildDir, 'index.html'), html)
 }
 
 export async function buildApp({ watch = false } = {}) {
-  await prepareDist()
+  await prepareBuild()
   await writeHtml()
 
   if (watch) {
@@ -113,5 +113,5 @@ export async function buildApp({ watch = false } = {}) {
 
 if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
   await buildApp()
-  console.log('React ESM build written to dist/')
+  console.log('React ESM build written to build/')
 }

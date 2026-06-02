@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url'
 import { dirname } from 'node:path'
 
 const rootDir = join(dirname(fileURLToPath(import.meta.url)), '..')
-const distDir = join(rootDir, 'dist')
+const buildDir = join(rootDir, 'build')
 
 const port = Number(process.env.PORT || 3000)
 
@@ -22,7 +22,7 @@ const contentTypes = {
 function resolvePath(url = '/') {
   const pathname = decodeURIComponent(url.split('?')[0] || '/')
   const normalized = normalize(pathname).replace(/^(\.\.[/\\])+/, '')
-  return join(distDir, normalized === '/' ? 'index.html' : normalized)
+  return join(buildDir, normalized === '/' ? 'index.html' : normalized)
 }
 
 export function serve() {
@@ -44,7 +44,7 @@ export function serve() {
         return
       }
 
-      const body = await readFile(join(distDir, 'index.html'))
+      const body = await readFile(join(buildDir, 'index.html'))
       response.writeHead(200, { 'Content-Type': contentTypes['.html'] })
       response.end(body)
     }

@@ -128,10 +128,10 @@ webout1/
 
 ### Hosting-Optionen
 - **Vercel** (Empfohlen für React): `npm run build` → Deploy
-- **Netlify**: `npm run build` → Drag & Drop `dist` folder
+- **Netlify**: `npm run build` → Drag & Drop `build` folder
 - **GitHub Pages**: Mit GitHub Actions
 - **AWS**: S3 + CloudFront
-- **Traditional Hosting**: Upload `dist` Folder via FTP
+- **Traditional Hosting**: Upload `build` Folder via FTP
 
 ### Vercel Deployment (Schnell)
 ```bash
