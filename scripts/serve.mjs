@@ -6,6 +6,7 @@ import { dirname } from 'node:path'
 
 const rootDir = join(dirname(fileURLToPath(import.meta.url)), '..')
 const distDir = join(rootDir, 'dist')
+
 const port = Number(process.env.PORT || 3000)
 
 const contentTypes = {
