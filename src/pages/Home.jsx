@@ -66,11 +66,11 @@ function Home() {
               Willkommen zu
             </div><h1 className="font-serif text-5xl md:text-7xl font-bold text-stone mb-4 leading-tight">
               Sapore<br />Mediterraneo
-            </h1><div className="italian-flag-accent mx-auto mb-6 flex h-8 w-40 overflow-hidden rounded shadow-md ring-1 ring-stone/10 md:h-10 md:w-56" aria-label="Italienische Flagge">
+            </h1><Link to="/login" className="italian-flag-accent mx-auto mb-6 flex h-8 w-40 overflow-hidden rounded shadow-md ring-1 ring-stone/10 md:h-10 md:w-56" aria-label="Italienische Flagge">
               <span className="flex-1 bg-[#008C45]" />
               <span className="flex-1 bg-white" />
               <span className="flex-1 bg-[#CD212A]" />
-            </div><p className="text-lg md:text-2xl text-stone-light mb-4">
+            </Link><p className="text-lg md:text-2xl text-stone-light mb-4">
               Authentische italienische Küche in Brunnthal
             </p><p className="text-sm md:text-base text-stone max-w-2xl mx-auto mb-8">
               Entdecken Sie die Geschmäcke Süditaliens mit Familie, Freunden und Liebe zum Detail
