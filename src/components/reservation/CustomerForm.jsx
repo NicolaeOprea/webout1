@@ -7,13 +7,18 @@ function FormField({
   return <label className="flex flex-col gap-2"><span className="text-sm font-medium text-stone">{label}{required ? " *" : ""}</span>{children}{error ? <span className="text-sm text-red-600">{error}</span> : null}</label>;
 }
 const inputClassName = "w-full rounded-2xl border border-stone/20 bg-white px-4 py-3 text-stone outline-none transition focus:border-terracotta focus:ring-2 focus:ring-terracotta/10";
+function normalizeNumericInput(value) {
+  if (value === "") return "";
+  const nextValue = Number.parseInt(value, 10);
+  return Number.isNaN(nextValue) ? "" : Math.max(1, nextValue);
+}
 function CustomerForm({
   formValues,
   errors,
   onChange
 }) {
   const handleInput = (field) => (event) => {
-    const value = field === "persons" ? Number(event.target.value || 0) : event.target.value;
+    const value = field === "persons" ? normalizeNumericInput(event.target.value) : event.target.value;
     onChange(field, value);
   };
   return <div className="rounded-[2rem] border border-stone/10 bg-white/90 p-6 shadow-xl shadow-stone/5 backdrop-blur"><div className="mb-6"><h2 className="font-serif text-3xl text-stone">Date client</h2><p className="mt-2 text-stone-light">

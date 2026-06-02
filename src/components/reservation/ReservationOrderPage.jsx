@@ -28,6 +28,11 @@ function getDefaultDate() {
   const local = new Date(now.getTime() - now.getTimezoneOffset() * 6e4);
   return local.toISOString().slice(0, 10);
 }
+function normalizePersons(value) {
+  if (value === "") return "";
+  const nextValue = Number.parseInt(value, 10);
+  return Number.isNaN(nextValue) ? "" : Math.max(1, nextValue);
+}
 function ReservationOrderPage({
   businessSlug = process.env.REACT_APP_BUSINESS_SLUG || "sapore-mediterraneo",
   businessName = "Sapore Mediterraneo",
@@ -130,7 +135,7 @@ function ReservationOrderPage({
       }
       if (!formValues.reservationDate) nextErrors.reservationDate = "Bitte ein Datum ausw\xE4hlen.";
       if (!formValues.reservationTime) nextErrors.reservationTime = "Bitte eine Uhrzeit ausw\xE4hlen.";
-      if (formValues.persons < 1) nextErrors.persons = "Die Personenzahl muss mindestens 1 sein.";
+      if (Number(formValues.persons) < 1) nextErrors.persons = "Die Personenzahl muss mindestens 1 sein.";
     }
     setErrors(nextErrors);
     setSubmitError(Object.keys(nextErrors).length ? "Bitte pr\xFCfen Sie die markierten Felder." : null);
@@ -143,7 +148,7 @@ function ReservationOrderPage({
     pickupTime: reservationType === "takeaway" ? formValues.pickupTime : null,
     reservationDate: reservationType === "reservation" ? formValues.reservationDate : null,
     reservationTime: reservationType === "reservation" ? formValues.reservationTime : null,
-    persons: reservationType === "reservation" ? formValues.persons : null,
+    persons: reservationType === "reservation" ? Number(formValues.persons) : null,
     customerName: formValues.name.trim(),
     phone: formValues.phone.trim(),
     email: formValues.email.trim(),
@@ -233,7 +238,7 @@ function ReservationOrderPage({
     type="number"
     min={1}
     value={formValues.persons}
-    onChange={(event) => updateFormValue("persons", Number(event.target.value || 0))}
+    onChange={(event) => updateFormValue("persons", normalizePersons(event.target.value))}
   />{errors.persons ? <span className="text-sm text-red-600">{errors.persons}</span> : null}</label></>}</div></section><CustomerForm
     formValues={formValues}
     errors={errors}

@@ -783,7 +783,7 @@ var require_react_development = __commonJS({
           }
           return children;
         }
-        function createContext9(defaultValue) {
+        function createContext10(defaultValue) {
           var context = {
             $$typeof: REACT_CONTEXT_TYPE,
             // As a workaround to support multiple concurrent renderers, we categorize
@@ -1069,7 +1069,7 @@ var require_react_development = __commonJS({
           }
           return dispatcher;
         }
-        function useContext10(Context) {
+        function useContext11(Context) {
           var dispatcher = resolveDispatcher();
           {
             if (Context._context !== void 0) {
@@ -1083,7 +1083,7 @@ var require_react_development = __commonJS({
           }
           return dispatcher.useContext(Context);
         }
-        function useState9(initialState) {
+        function useState20(initialState) {
           var dispatcher = resolveDispatcher();
           return dispatcher.useState(initialState);
         }
@@ -1095,7 +1095,7 @@ var require_react_development = __commonJS({
           var dispatcher = resolveDispatcher();
           return dispatcher.useRef(initialValue);
         }
-        function useEffect9(create, deps) {
+        function useEffect16(create, deps) {
           var dispatcher = resolveDispatcher();
           return dispatcher.useEffect(create, deps);
         }
@@ -1107,11 +1107,11 @@ var require_react_development = __commonJS({
           var dispatcher = resolveDispatcher();
           return dispatcher.useLayoutEffect(create, deps);
         }
-        function useCallback5(callback, deps) {
+        function useCallback6(callback, deps) {
           var dispatcher = resolveDispatcher();
           return dispatcher.useCallback(callback, deps);
         }
-        function useMemo9(create, deps) {
+        function useMemo16(create, deps) {
           var dispatcher = resolveDispatcher();
           return dispatcher.useMemo(create, deps);
         }
@@ -1864,7 +1864,7 @@ var require_react_development = __commonJS({
         exports.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = ReactSharedInternals;
         exports.act = act;
         exports.cloneElement = cloneElement$1;
-        exports.createContext = createContext9;
+        exports.createContext = createContext10;
         exports.createElement = createElement$1;
         exports.createFactory = createFactory;
         exports.createRef = createRef;
@@ -1874,19 +1874,19 @@ var require_react_development = __commonJS({
         exports.memo = memo3;
         exports.startTransition = startTransition;
         exports.unstable_act = act;
-        exports.useCallback = useCallback5;
-        exports.useContext = useContext10;
+        exports.useCallback = useCallback6;
+        exports.useContext = useContext11;
         exports.useDebugValue = useDebugValue;
         exports.useDeferredValue = useDeferredValue;
-        exports.useEffect = useEffect9;
+        exports.useEffect = useEffect16;
         exports.useId = useId4;
         exports.useImperativeHandle = useImperativeHandle;
         exports.useInsertionEffect = useInsertionEffect3;
         exports.useLayoutEffect = useLayoutEffect4;
-        exports.useMemo = useMemo9;
+        exports.useMemo = useMemo16;
         exports.useReducer = useReducer;
         exports.useRef = useRef8;
-        exports.useState = useState9;
+        exports.useState = useState20;
         exports.useSyncExternalStore = useSyncExternalStore;
         exports.useTransition = useTransition;
         exports.version = ReactVersion;
@@ -2433,7 +2433,7 @@ var require_react_dom_development = __commonJS({
         var HostPortal = 4;
         var HostComponent = 5;
         var HostText = 6;
-        var Fragment6 = 7;
+        var Fragment9 = 7;
         var Mode = 8;
         var ContextConsumer = 9;
         var ContextProvider = 10;
@@ -3589,7 +3589,7 @@ var require_react_dom_development = __commonJS({
               return "DehydratedFragment";
             case ForwardRef:
               return getWrappedName$1(type, type.render, "ForwardRef");
-            case Fragment6:
+            case Fragment9:
               return "Fragment";
             case HostComponent:
               return type;
@@ -11972,7 +11972,7 @@ var require_react_dom_development = __commonJS({
             }
           }
           function updateFragment2(returnFiber, current2, fragment, lanes, key) {
-            if (current2 === null || current2.tag !== Fragment6) {
+            if (current2 === null || current2.tag !== Fragment9) {
               var created = createFiberFromFragment(fragment, returnFiber.mode, lanes, key);
               created.return = returnFiber;
               return created;
@@ -12375,7 +12375,7 @@ var require_react_dom_development = __commonJS({
               if (child.key === key) {
                 var elementType = element.type;
                 if (elementType === REACT_FRAGMENT_TYPE) {
-                  if (child.tag === Fragment6) {
+                  if (child.tag === Fragment9) {
                     deleteRemainingChildren(returnFiber, child.sibling);
                     var existing = useFiber(child, element.props.children);
                     existing.return = returnFiber;
@@ -17850,7 +17850,7 @@ var require_react_dom_development = __commonJS({
               var _resolvedProps2 = workInProgress2.elementType === type ? _unresolvedProps2 : resolveDefaultProps(type, _unresolvedProps2);
               return updateForwardRef(current2, workInProgress2, type, _resolvedProps2, renderLanes2);
             }
-            case Fragment6:
+            case Fragment9:
               return updateFragment(current2, workInProgress2, renderLanes2);
             case Mode:
               return updateMode(current2, workInProgress2, renderLanes2);
@@ -18122,7 +18122,7 @@ var require_react_dom_development = __commonJS({
             case SimpleMemoComponent:
             case FunctionComponent:
             case ForwardRef:
-            case Fragment6:
+            case Fragment9:
             case Mode:
             case Profiler:
             case ContextConsumer:
@@ -22373,7 +22373,7 @@ var require_react_dom_development = __commonJS({
           return fiber;
         }
         function createFiberFromFragment(elements, mode, lanes, key) {
-          var fiber = createFiber(Fragment6, elements, key, mode);
+          var fiber = createFiber(Fragment9, elements, key, mode);
           fiber.lanes = lanes;
           return fiber;
         }
@@ -24374,11 +24374,11 @@ var require_react_jsx_runtime_development = __commonJS({
             return jsxWithValidation(type, props, key, false);
           }
         }
-        var jsx23 = jsxWithValidationDynamic;
-        var jsxs20 = jsxWithValidationStatic;
+        var jsx44 = jsxWithValidationDynamic;
+        var jsxs36 = jsxWithValidationStatic;
         exports.Fragment = REACT_FRAGMENT_TYPE;
-        exports.jsx = jsx23;
-        exports.jsxs = jsxs20;
+        exports.jsx = jsx44;
+        exports.jsxs = jsxs36;
       })();
     }
   }
@@ -25246,6 +25246,23 @@ function useNavigateUnstable() {
   }, [basename, navigator2, routePathnamesJson, locationPathname, dataRouterContext]);
   return navigate;
 }
+var OutletContext = /* @__PURE__ */ React.createContext(null);
+function useOutlet(context) {
+  let outlet = React.useContext(RouteContext).outlet;
+  if (outlet) {
+    return /* @__PURE__ */ React.createElement(OutletContext.Provider, {
+      value: context
+    }, outlet);
+  }
+  return outlet;
+}
+function useParams() {
+  let {
+    matches
+  } = React.useContext(RouteContext);
+  let routeMatch = matches[matches.length - 1];
+  return routeMatch ? routeMatch.params : {};
+}
 function useResolvedPath(to, _temp2) {
   let {
     relative
@@ -25672,6 +25689,43 @@ function logV6DeprecationWarnings(renderFuture, routerFuture) {
 }
 var START_TRANSITION = "startTransition";
 var startTransitionImpl = React[START_TRANSITION];
+function Navigate(_ref4) {
+  let {
+    to,
+    replace: replace2,
+    state,
+    relative
+  } = _ref4;
+  !useInRouterContext() ? true ? invariant(
+    false,
+    // TODO: This error is probably because they somehow have 2 versions of
+    // the router loaded. We can help them understand how to avoid that.
+    "<Navigate> may be used only in the context of a <Router> component."
+  ) : invariant(false) : void 0;
+  let {
+    future,
+    static: isStatic
+  } = React.useContext(NavigationContext);
+  true ? warning(!isStatic, "<Navigate> must not be used on the initial render in a <StaticRouter>. This is a no-op, but you should modify your code so the <Navigate> is only ever rendered in response to some user interaction or state change.") : void 0;
+  let {
+    matches
+  } = React.useContext(RouteContext);
+  let {
+    pathname: locationPathname
+  } = useLocation();
+  let navigate = useNavigate();
+  let path = resolveTo(to, getResolveToMatches(matches, future.v7_relativeSplatPath), locationPathname, relative === "path");
+  let jsonPath = JSON.stringify(path);
+  React.useEffect(() => navigate(JSON.parse(jsonPath), {
+    replace: replace2,
+    state,
+    relative
+  }), [navigate, jsonPath, relative, replace2, state]);
+  return null;
+}
+function Outlet(props) {
+  return useOutlet(props.context);
+}
 function Route(_props) {
   true ? invariant(false, "A <Route> is only ever to be used as the child of <Routes> element, never rendered directly. Please wrap your <Route> in a <Routes>.") : invariant(false);
 }
@@ -26446,8 +26500,192 @@ function useViewTransitionState(to, opts) {
   return matchPath(path.pathname, nextPath) != null || matchPath(path.pathname, currentPath) != null;
 }
 
+// src/context/AuthContext.jsx
+var import_react = __toESM(require_react(), 1);
+
+// src/utils/tokenStorage.js
+var TOKEN_KEY = "sapore_admin_token";
+var BUSINESS_SLUG_KEY = "sapore_admin_business_slug";
+var USER_KEY = "sapore_admin_user";
+var getStoredToken = () => localStorage.getItem(TOKEN_KEY) || "";
+var setStoredToken = (token) => localStorage.setItem(TOKEN_KEY, token);
+var clearStoredToken = () => localStorage.removeItem(TOKEN_KEY);
+var getStoredBusinessSlug = () => localStorage.getItem(BUSINESS_SLUG_KEY) || "";
+var setStoredBusinessSlug = (businessSlug) => localStorage.setItem(BUSINESS_SLUG_KEY, businessSlug);
+var clearStoredBusinessSlug = () => localStorage.removeItem(BUSINESS_SLUG_KEY);
+var getStoredUser = () => {
+  const value = localStorage.getItem(USER_KEY);
+  if (!value) return null;
+  try {
+    return JSON.parse(value);
+  } catch {
+    return null;
+  }
+};
+var setStoredUser = (user) => localStorage.setItem(USER_KEY, JSON.stringify(user));
+var clearStoredUser = () => localStorage.removeItem(USER_KEY);
+
+// src/api/client.js
+var unauthorizedHandler = null;
+var setUnauthorizedHandler = (handler) => {
+  unauthorizedHandler = handler;
+};
+function getApiUrl(endpoint) {
+  const baseUrl = process.env.REACT_APP_API_URL || "";
+  return `${baseUrl.replace(/\/$/u, "")}${endpoint}`;
+}
+async function readResponse(response) {
+  const text = await response.text();
+  let body = null;
+  try {
+    body = text ? JSON.parse(text) : null;
+  } catch {
+    body = { message: text };
+  }
+  if (!response.ok) {
+    if (response.status === 401) {
+      clearStoredToken();
+      clearStoredBusinessSlug();
+      clearStoredUser();
+      unauthorizedHandler?.();
+    }
+    throw new Error(body?.message || body?.error || `Request failed with status ${response.status}`);
+  }
+  return body;
+}
+async function apiRequest(endpoint, { method = "GET", body, auth = true, businessSlug, headers = {} } = {}) {
+  const token = getStoredToken();
+  const resolvedBusinessSlug = businessSlug || getStoredBusinessSlug() || process.env.REACT_APP_BUSINESS_SLUG || "sapore-mediterraneo";
+  const requestHeaders = {
+    "Content-Type": "application/json",
+    ...headers
+  };
+  if (auth && token) {
+    requestHeaders.Authorization = `Bearer ${token}`;
+  }
+  if (resolvedBusinessSlug) {
+    requestHeaders["x-business-slug"] = resolvedBusinessSlug;
+  }
+  const response = await fetch(getApiUrl(endpoint), {
+    method,
+    headers: requestHeaders,
+    body: body ? JSON.stringify(body) : void 0
+  });
+  return readResponse(response);
+}
+
+// src/api/authApi.js
+var loginRequest = (payload) => apiRequest("/api/auth/login", {
+  method: "POST",
+  body: payload,
+  auth: false,
+  businessSlug: payload.businessSlug
+});
+var getCurrentUserRequest = () => apiRequest("/api/auth/me");
+
+// src/utils/apiError.js
+function getApiErrorMessage(error) {
+  return error?.message || "Die Anfrage konnte nicht verarbeitet werden.";
+}
+
+// src/utils/businessScope.js
+function getBusinessSlug(user) {
+  return user?.business?.slug || user?.businessSlug || getStoredBusinessSlug() || process.env.REACT_APP_BUSINESS_SLUG || "sapore-mediterraneo";
+}
+
+// src/context/AuthContext.jsx
+var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+var AuthContext = (0, import_react.createContext)(null);
+function AuthProvider({ children }) {
+  const navigate = useNavigate();
+  const [currentUser, setCurrentUser] = (0, import_react.useState)(getStoredUser());
+  const [token, setToken] = (0, import_react.useState)(getStoredToken());
+  const [businessSlug, setBusinessSlug] = (0, import_react.useState)(getStoredBusinessSlug());
+  const [loading, setLoading] = (0, import_react.useState)(true);
+  const logout = (0, import_react.useCallback)((redirectPath = "/login") => {
+    clearStoredToken();
+    clearStoredBusinessSlug();
+    clearStoredUser();
+    setToken("");
+    setBusinessSlug("");
+    setCurrentUser(null);
+    navigate(redirectPath, { replace: true });
+  }, [navigate]);
+  const loadCurrentUser = (0, import_react.useCallback)(async () => {
+    if (!getStoredToken()) {
+      setLoading(false);
+      return;
+    }
+    try {
+      const body = await getCurrentUserRequest();
+      const user = body?.data || body?.user || body;
+      const nextBusinessSlug = getBusinessSlug(user);
+      setCurrentUser(user);
+      setStoredUser(user);
+      if (nextBusinessSlug) {
+        setBusinessSlug(nextBusinessSlug);
+        setStoredBusinessSlug(nextBusinessSlug);
+      }
+    } catch {
+      clearStoredToken();
+      clearStoredBusinessSlug();
+      clearStoredUser();
+      setToken("");
+      setBusinessSlug("");
+      setCurrentUser(null);
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+  (0, import_react.useEffect)(() => {
+    setUnauthorizedHandler(() => logout("/login"));
+    loadCurrentUser();
+  }, [loadCurrentUser, logout]);
+  const login = (0, import_react.useCallback)(async (credentials) => {
+    const loginBody = await loginRequest(credentials);
+    const payload = loginBody?.data || loginBody;
+    const nextToken = payload?.token || payload?.accessToken || payload?.jwt || "";
+    if (!nextToken) {
+      throw new Error("Kein Token vom Server erhalten.");
+    }
+    setStoredToken(nextToken);
+    setToken(nextToken);
+    if (credentials.businessSlug) {
+      setStoredBusinessSlug(credentials.businessSlug);
+      setBusinessSlug(credentials.businessSlug);
+    }
+    const userBody = await getCurrentUserRequest();
+    const user = userBody?.data || userBody?.user || userBody;
+    const nextBusinessSlug = getBusinessSlug(user) || credentials.businessSlug;
+    setCurrentUser(user);
+    setStoredUser(user);
+    if (nextBusinessSlug) {
+      setBusinessSlug(nextBusinessSlug);
+      setStoredBusinessSlug(nextBusinessSlug);
+    }
+    navigate(user?.role === "superadmin" ? "/superadmin" : "/admin", { replace: true });
+    return user;
+  }, [navigate]);
+  const value = (0, import_react.useMemo)(() => ({
+    currentUser,
+    token,
+    businessSlug,
+    loading,
+    isAuthenticated: Boolean(token && currentUser),
+    login,
+    logout,
+    getAuthError: getApiErrorMessage
+  }), [businessSlug, currentUser, loading, login, logout, token]);
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(AuthContext.Provider, { value, children });
+}
+function useAuth() {
+  const context = (0, import_react.useContext)(AuthContext);
+  if (!context) throw new Error("useAuth must be used inside AuthProvider");
+  return context;
+}
+
 // node_modules/lucide-react/dist/esm/createLucideIcon.js
-var import_react = __toESM(require_react());
+var import_react2 = __toESM(require_react());
 
 // node_modules/lucide-react/dist/esm/defaultAttributes.js
 var defaultAttributes = {
@@ -26465,8 +26703,8 @@ var defaultAttributes = {
 // node_modules/lucide-react/dist/esm/createLucideIcon.js
 var toKebabCase = (string) => string.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();
 var createLucideIcon = (iconName, iconNode) => {
-  const Component3 = (0, import_react.forwardRef)(
-    ({ color: color2 = "currentColor", size = 24, strokeWidth = 2, absoluteStrokeWidth, children, ...rest }, ref) => (0, import_react.createElement)(
+  const Component3 = (0, import_react2.forwardRef)(
+    ({ color: color2 = "currentColor", size = 24, strokeWidth = 2, absoluteStrokeWidth, children, ...rest }, ref) => (0, import_react2.createElement)(
       "svg",
       {
         ref,
@@ -26479,7 +26717,7 @@ var createLucideIcon = (iconName, iconNode) => {
         ...rest
       },
       [
-        ...iconNode.map(([tag, attrs]) => (0, import_react.createElement)(tag, attrs)),
+        ...iconNode.map(([tag, attrs]) => (0, import_react2.createElement)(tag, attrs)),
         ...(Array.isArray(children) ? children : [children]) || []
       ]
     )
@@ -26487,6 +26725,42 @@ var createLucideIcon = (iconName, iconNode) => {
   Component3.displayName = `${iconName}`;
   return Component3;
 };
+
+// node_modules/lucide-react/dist/esm/icons/building-2.js
+var Building2 = createLucideIcon("Building2", [
+  ["path", { d: "M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z", key: "1b4qmf" }],
+  ["path", { d: "M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2", key: "i71pzd" }],
+  ["path", { d: "M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2", key: "10jefs" }],
+  ["path", { d: "M10 6h4", key: "1itunk" }],
+  ["path", { d: "M10 10h4", key: "tcdvrf" }],
+  ["path", { d: "M10 14h4", key: "kelpxr" }],
+  ["path", { d: "M10 18h4", key: "1ulq68" }]
+]);
+
+// node_modules/lucide-react/dist/esm/icons/calendar-days.js
+var CalendarDays = createLucideIcon("CalendarDays", [
+  [
+    "rect",
+    {
+      width: "18",
+      height: "18",
+      x: "3",
+      y: "4",
+      rx: "2",
+      ry: "2",
+      key: "eu3xkr"
+    }
+  ],
+  ["line", { x1: "16", x2: "16", y1: "2", y2: "6", key: "m3sa8f" }],
+  ["line", { x1: "8", x2: "8", y1: "2", y2: "6", key: "18kwsl" }],
+  ["line", { x1: "3", x2: "21", y1: "10", y2: "10", key: "xt86sb" }],
+  ["path", { d: "M8 14h.01", key: "6423bh" }],
+  ["path", { d: "M12 14h.01", key: "1etili" }],
+  ["path", { d: "M16 14h.01", key: "1gbofw" }],
+  ["path", { d: "M8 18h.01", key: "lrp35t" }],
+  ["path", { d: "M12 18h.01", key: "mhygvu" }],
+  ["path", { d: "M16 18h.01", key: "kzsmim" }]
+]);
 
 // node_modules/lucide-react/dist/esm/icons/clock.js
 var Clock = createLucideIcon("Clock", [
@@ -26505,6 +26779,23 @@ var Heart = createLucideIcon("Heart", [
   ]
 ]);
 
+// node_modules/lucide-react/dist/esm/icons/layout-dashboard.js
+var LayoutDashboard = createLucideIcon("LayoutDashboard", [
+  ["rect", { width: "7", height: "9", x: "3", y: "3", rx: "1", key: "10lvy0" }],
+  [
+    "rect",
+    { width: "7", height: "5", x: "14", y: "3", rx: "1", key: "16une8" }
+  ],
+  [
+    "rect",
+    { width: "7", height: "9", x: "14", y: "12", rx: "1", key: "1hutg5" }
+  ],
+  [
+    "rect",
+    { width: "7", height: "5", x: "3", y: "16", rx: "1", key: "ldoo1y" }
+  ]
+]);
+
 // node_modules/lucide-react/dist/esm/icons/leaf.js
 var Leaf = createLucideIcon("Leaf", [
   [
@@ -26518,6 +26809,13 @@ var Leaf = createLucideIcon("Leaf", [
     "path",
     { d: "M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12", key: "mt58a7" }
   ]
+]);
+
+// node_modules/lucide-react/dist/esm/icons/log-out.js
+var LogOut = createLucideIcon("LogOut", [
+  ["path", { d: "M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4", key: "1uf3rs" }],
+  ["polyline", { points: "16 17 21 12 16 7", key: "1gabdz" }],
+  ["line", { x1: "21", x2: "9", y1: "12", y2: "12", key: "1uyos4" }]
 ]);
 
 // node_modules/lucide-react/dist/esm/icons/mail.js
@@ -26592,12 +26890,61 @@ var Star = createLucideIcon("Star", [
   ]
 ]);
 
+// node_modules/lucide-react/dist/esm/icons/store.js
+var Store = createLucideIcon("Store", [
+  [
+    "path",
+    {
+      d: "m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7",
+      key: "ztvudi"
+    }
+  ],
+  ["path", { d: "M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8", key: "1b2hhj" }],
+  ["path", { d: "M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4", key: "2ebpfo" }],
+  ["path", { d: "M2 7h20", key: "1fcdvo" }],
+  [
+    "path",
+    {
+      d: "M22 7v3a2 2 0 0 1-2 2v0a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 12v0a2 2 0 0 1-2-2V7",
+      key: "jon5kx"
+    }
+  ]
+]);
+
+// node_modules/lucide-react/dist/esm/icons/user-plus.js
+var UserPlus = createLucideIcon("UserPlus", [
+  ["path", { d: "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2", key: "1yyitq" }],
+  ["circle", { cx: "9", cy: "7", r: "4", key: "nufk8" }],
+  ["line", { x1: "19", x2: "19", y1: "8", y2: "14", key: "1bvyxn" }],
+  ["line", { x1: "22", x2: "16", y1: "11", y2: "11", key: "1shjgl" }]
+]);
+
 // node_modules/lucide-react/dist/esm/icons/users.js
 var Users = createLucideIcon("Users", [
   ["path", { d: "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2", key: "1yyitq" }],
   ["circle", { cx: "9", cy: "7", r: "4", key: "nufk8" }],
   ["path", { d: "M22 21v-2a4 4 0 0 0-3-3.87", key: "kshegd" }],
   ["path", { d: "M16 3.13a4 4 0 0 1 0 7.75", key: "1da9ce" }]
+]);
+
+// node_modules/lucide-react/dist/esm/icons/utensils-crossed.js
+var UtensilsCrossed = createLucideIcon("UtensilsCrossed", [
+  [
+    "path",
+    {
+      d: "m16 2-2.3 2.3a3 3 0 0 0 0 4.2l1.8 1.8a3 3 0 0 0 4.2 0L22 8",
+      key: "n7qcjb"
+    }
+  ],
+  [
+    "path",
+    {
+      d: "M15 15 3.3 3.3a4.2 4.2 0 0 0 0 6l7.3 7.3c.7.7 2 .7 2.8 0L15 15Zm0 0 7 7",
+      key: "d0u48b"
+    }
+  ],
+  ["path", { d: "m2.1 21.8 6.4-6.3", key: "yn04lh" }],
+  ["path", { d: "m19 5-7 7", key: "194lzd" }]
 ]);
 
 // node_modules/lucide-react/dist/esm/icons/wine.js
@@ -26621,13 +26968,13 @@ var X = createLucideIcon("X", [
 ]);
 
 // src/components/Navbar.jsx
-var import_react2 = __toESM(require_react(), 1);
-var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+var import_react3 = __toESM(require_react(), 1);
+var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
 function Navbar() {
-  const [isOpen, setIsOpen] = (0, import_react2.useState)(false);
-  const [scrolled, setScrolled] = (0, import_react2.useState)(false);
+  const [isOpen, setIsOpen] = (0, import_react3.useState)(false);
+  const [scrolled, setScrolled] = (0, import_react3.useState)(false);
   const location = useLocation();
-  (0, import_react2.useEffect)(() => {
+  (0, import_react3.useEffect)(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -26640,22 +26987,22 @@ function Navbar() {
     { href: "/uber-uns", label: "\xDCber uns" },
     { href: "/kontakt", label: "Kontakt" }
   ];
-  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("nav", { className: `sticky top-0 z-50 transition-all duration-300 ${scrolled ? "bg-cream shadow-md" : "bg-cream"}`, children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "container-max px-4 py-4 md:py-6", children: [
-    /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "flex justify-between items-center", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(
+  return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("nav", { className: `sticky top-0 z-50 transition-all duration-300 ${scrolled ? "bg-cream shadow-md" : "bg-cream"}`, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: "container-max px-4 py-4 md:py-6", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: "flex justify-between items-center", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(
         Link,
         {
           to: "/",
           className: "flex flex-col items-center",
           onClick: () => setIsOpen(false),
           children: [
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "font-serif text-2xl md:text-3xl font-bold text-terracotta", children: "Sapore" }),
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "font-serif text-sm md:text-base text-olive-dark", children: "Mediterraneo" })
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { className: "font-serif text-2xl md:text-3xl font-bold text-terracotta", children: "Sapore" }),
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { className: "font-serif text-sm md:text-base text-olive-dark", children: "Mediterraneo" })
           ]
         }
       ),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "hidden md:flex gap-8 items-center", children: [
-        navLinks.map((link) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: "hidden md:flex gap-8 items-center", children: [
+        navLinks.map((link) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
           Link,
           {
             to: link.href,
@@ -26664,7 +27011,7 @@ function Navbar() {
           },
           link.href
         )),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
           "a",
           {
             href: "tel:+498104889110",
@@ -26672,20 +27019,20 @@ function Navbar() {
             children: "Anrufen"
           }
         ),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, { to: "/bestellung", className: "btn-secondary px-4 py-2", children: "Essen vorbestellen" })
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Link, { to: "/bestellung", className: "btn-secondary px-4 py-2", children: "Essen vorbestellen" })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
         "button",
         {
           className: "md:hidden p-2",
           onClick: () => setIsOpen(!isOpen),
           "aria-label": "Toggle menu",
-          children: isOpen ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(X, { size: 24 }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Menu, { size: 24 })
+          children: isOpen ? /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(X, { size: 24 }) : /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Menu, { size: 24 })
         }
       )
     ] }),
-    isOpen && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "md:hidden mt-4 pb-4 border-t border-stone-light", children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "flex flex-col gap-3 mt-4", children: [
-      navLinks.map((link) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+    isOpen && /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { className: "md:hidden mt-4 pb-4 border-t border-stone-light", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: "flex flex-col gap-3 mt-4", children: [
+      navLinks.map((link) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
         Link,
         {
           to: link.href,
@@ -26695,7 +27042,7 @@ function Navbar() {
         },
         link.href
       )),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
         "a",
         {
           href: "tel:+498104889110",
@@ -26703,7 +27050,7 @@ function Navbar() {
           children: "Anrufen"
         }
       ),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
         Link,
         {
           to: "/bestellung",
@@ -26718,39 +27065,39 @@ function Navbar() {
 
 // node_modules/framer-motion/dist/es/motion/index.mjs
 var React3 = __toESM(require_react(), 1);
-var import_react13 = __toESM(require_react(), 1);
+var import_react14 = __toESM(require_react(), 1);
 
 // node_modules/framer-motion/dist/es/context/MotionConfigContext.mjs
-var import_react3 = __toESM(require_react(), 1);
-var MotionConfigContext = (0, import_react3.createContext)({
+var import_react4 = __toESM(require_react(), 1);
+var MotionConfigContext = (0, import_react4.createContext)({
   transformPagePoint: (p) => p,
   isStatic: false,
   reducedMotion: "never"
 });
 
 // node_modules/framer-motion/dist/es/context/MotionContext/index.mjs
-var import_react4 = __toESM(require_react(), 1);
-var MotionContext = (0, import_react4.createContext)({});
+var import_react5 = __toESM(require_react(), 1);
+var MotionContext = (0, import_react5.createContext)({});
 
 // node_modules/framer-motion/dist/es/motion/utils/use-visual-element.mjs
-var import_react8 = __toESM(require_react(), 1);
+var import_react9 = __toESM(require_react(), 1);
 
 // node_modules/framer-motion/dist/es/context/PresenceContext.mjs
-var import_react5 = __toESM(require_react(), 1);
-var PresenceContext = (0, import_react5.createContext)(null);
+var import_react6 = __toESM(require_react(), 1);
+var PresenceContext = (0, import_react6.createContext)(null);
 
 // node_modules/framer-motion/dist/es/utils/use-isomorphic-effect.mjs
-var import_react6 = __toESM(require_react(), 1);
+var import_react7 = __toESM(require_react(), 1);
 
 // node_modules/framer-motion/dist/es/utils/is-browser.mjs
 var isBrowser2 = typeof document !== "undefined";
 
 // node_modules/framer-motion/dist/es/utils/use-isomorphic-effect.mjs
-var useIsomorphicLayoutEffect2 = isBrowser2 ? import_react6.useLayoutEffect : import_react6.useEffect;
+var useIsomorphicLayoutEffect2 = isBrowser2 ? import_react7.useLayoutEffect : import_react7.useEffect;
 
 // node_modules/framer-motion/dist/es/context/LazyContext.mjs
-var import_react7 = __toESM(require_react(), 1);
-var LazyContext = (0, import_react7.createContext)({ strict: false });
+var import_react8 = __toESM(require_react(), 1);
+var LazyContext = (0, import_react8.createContext)({ strict: false });
 
 // node_modules/framer-motion/dist/es/render/dom/utils/camel-to-dash.mjs
 var camelToDash = (str) => str.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
@@ -26761,11 +27108,11 @@ var optimizedAppearDataAttribute = "data-" + camelToDash(optimizedAppearDataId);
 
 // node_modules/framer-motion/dist/es/motion/utils/use-visual-element.mjs
 function useVisualElement(Component3, visualState, props, createVisualElement) {
-  const { visualElement: parent } = (0, import_react8.useContext)(MotionContext);
-  const lazyContext = (0, import_react8.useContext)(LazyContext);
-  const presenceContext = (0, import_react8.useContext)(PresenceContext);
-  const reducedMotionConfig = (0, import_react8.useContext)(MotionConfigContext).reducedMotion;
-  const visualElementRef = (0, import_react8.useRef)();
+  const { visualElement: parent } = (0, import_react9.useContext)(MotionContext);
+  const lazyContext = (0, import_react9.useContext)(LazyContext);
+  const presenceContext = (0, import_react9.useContext)(PresenceContext);
+  const reducedMotionConfig = (0, import_react9.useContext)(MotionConfigContext).reducedMotion;
+  const visualElementRef = (0, import_react9.useRef)();
   createVisualElement = createVisualElement || lazyContext.renderer;
   if (!visualElementRef.current && createVisualElement) {
     visualElementRef.current = createVisualElement(Component3, {
@@ -26778,10 +27125,10 @@ function useVisualElement(Component3, visualState, props, createVisualElement) {
     });
   }
   const visualElement = visualElementRef.current;
-  (0, import_react8.useInsertionEffect)(() => {
+  (0, import_react9.useInsertionEffect)(() => {
     visualElement && visualElement.update(props, presenceContext);
   });
-  const wantsHandoff = (0, import_react8.useRef)(Boolean(props[optimizedAppearDataAttribute] && !window.HandoffComplete));
+  const wantsHandoff = (0, import_react9.useRef)(Boolean(props[optimizedAppearDataAttribute] && !window.HandoffComplete));
   useIsomorphicLayoutEffect2(() => {
     if (!visualElement)
       return;
@@ -26790,7 +27137,7 @@ function useVisualElement(Component3, visualState, props, createVisualElement) {
       visualElement.animationState.animateChanges();
     }
   });
-  (0, import_react8.useEffect)(() => {
+  (0, import_react9.useEffect)(() => {
     if (!visualElement)
       return;
     visualElement.updateFeatures();
@@ -26806,7 +27153,7 @@ function useVisualElement(Component3, visualState, props, createVisualElement) {
 }
 
 // node_modules/framer-motion/dist/es/motion/utils/use-motion-ref.mjs
-var import_react9 = __toESM(require_react(), 1);
+var import_react10 = __toESM(require_react(), 1);
 
 // node_modules/framer-motion/dist/es/utils/is-ref-object.mjs
 function isRefObject(ref) {
@@ -26815,7 +27162,7 @@ function isRefObject(ref) {
 
 // node_modules/framer-motion/dist/es/motion/utils/use-motion-ref.mjs
 function useMotionRef(visualState, visualElement, externalRef) {
-  return (0, import_react9.useCallback)(
+  return (0, import_react10.useCallback)(
     (instance) => {
       instance && visualState.mount && visualState.mount(instance);
       if (visualElement) {
@@ -26839,7 +27186,7 @@ function useMotionRef(visualState, visualElement, externalRef) {
 }
 
 // node_modules/framer-motion/dist/es/context/MotionContext/create.mjs
-var import_react10 = __toESM(require_react(), 1);
+var import_react11 = __toESM(require_react(), 1);
 
 // node_modules/framer-motion/dist/es/render/utils/is-variant-label.mjs
 function isVariantLabel(v) {
@@ -26885,8 +27232,8 @@ function getCurrentTreeVariants(props, context) {
 
 // node_modules/framer-motion/dist/es/context/MotionContext/create.mjs
 function useCreateMotionContext(props) {
-  const { initial, animate } = getCurrentTreeVariants(props, (0, import_react10.useContext)(MotionContext));
-  return (0, import_react10.useMemo)(() => ({ initial, animate }), [variantLabelsAsDependency(initial), variantLabelsAsDependency(animate)]);
+  const { initial, animate } = getCurrentTreeVariants(props, (0, import_react11.useContext)(MotionContext));
+  return (0, import_react11.useMemo)(() => ({ initial, animate }), [variantLabelsAsDependency(initial), variantLabelsAsDependency(animate)]);
 }
 function variantLabelsAsDependency(prop) {
   return Array.isArray(prop) ? prop.join(" ") : prop;
@@ -26931,12 +27278,12 @@ function loadFeatures(features) {
 }
 
 // node_modules/framer-motion/dist/es/context/LayoutGroupContext.mjs
-var import_react11 = __toESM(require_react(), 1);
-var LayoutGroupContext = (0, import_react11.createContext)({});
+var import_react12 = __toESM(require_react(), 1);
+var LayoutGroupContext = (0, import_react12.createContext)({});
 
 // node_modules/framer-motion/dist/es/context/SwitchLayoutGroupContext.mjs
-var import_react12 = __toESM(require_react(), 1);
-var SwitchLayoutGroupContext = (0, import_react12.createContext)({});
+var import_react13 = __toESM(require_react(), 1);
+var SwitchLayoutGroupContext = (0, import_react13.createContext)({});
 
 // node_modules/framer-motion/dist/es/motion/utils/symbol.mjs
 var motionComponentSymbol = Symbol.for("motionComponentSymbol");
@@ -26947,7 +27294,7 @@ function createMotionComponent({ preloadedFeatures: preloadedFeatures2, createVi
   function MotionComponent(props, externalRef) {
     let MeasureLayout2;
     const configAndProps = {
-      ...(0, import_react13.useContext)(MotionConfigContext),
+      ...(0, import_react14.useContext)(MotionConfigContext),
       ...props,
       layoutId: useLayoutId(props)
     };
@@ -26956,8 +27303,8 @@ function createMotionComponent({ preloadedFeatures: preloadedFeatures2, createVi
     const visualState = useVisualState(props, isStatic);
     if (!isStatic && isBrowser2) {
       context.visualElement = useVisualElement(Component3, visualState, configAndProps, createVisualElement);
-      const initialLayoutGroupConfig = (0, import_react13.useContext)(SwitchLayoutGroupContext);
-      const isStrict = (0, import_react13.useContext)(LazyContext).strict;
+      const initialLayoutGroupConfig = (0, import_react14.useContext)(SwitchLayoutGroupContext);
+      const isStrict = (0, import_react14.useContext)(LazyContext).strict;
       if (context.visualElement) {
         MeasureLayout2 = context.visualElement.loadFeatures(
           // Note: Pass the full new combined props to correctly re-render dynamic feature components.
@@ -26975,12 +27322,12 @@ function createMotionComponent({ preloadedFeatures: preloadedFeatures2, createVi
       useRender(Component3, props, useMotionRef(visualState, context.visualElement, externalRef), visualState, isStatic, context.visualElement)
     );
   }
-  const ForwardRefComponent = (0, import_react13.forwardRef)(MotionComponent);
+  const ForwardRefComponent = (0, import_react14.forwardRef)(MotionComponent);
   ForwardRefComponent[motionComponentSymbol] = Component3;
   return ForwardRefComponent;
 }
 function useLayoutId({ layoutId }) {
-  const layoutGroupId = (0, import_react13.useContext)(LayoutGroupContext).id;
+  const layoutGroupId = (0, import_react14.useContext)(LayoutGroupContext).id;
   return layoutGroupId && layoutId !== void 0 ? layoutGroupId + "-" + layoutId : layoutId;
 }
 
@@ -27065,10 +27412,10 @@ function isSVGComponent(Component3) {
 }
 
 // node_modules/framer-motion/dist/es/render/dom/use-render.mjs
-var import_react16 = __toESM(require_react(), 1);
+var import_react17 = __toESM(require_react(), 1);
 
 // node_modules/framer-motion/dist/es/render/html/use-props.mjs
-var import_react14 = __toESM(require_react(), 1);
+var import_react15 = __toESM(require_react(), 1);
 
 // node_modules/framer-motion/dist/es/projection/styles/scale-correction.mjs
 var scaleCorrectors = {};
@@ -27322,7 +27669,7 @@ function copyRawValuesOnly(target, source, props) {
   }
 }
 function useInitialMotionValues({ transformTemplate }, visualState, isStatic) {
-  return (0, import_react14.useMemo)(() => {
+  return (0, import_react15.useMemo)(() => {
     const state = createHtmlRenderState();
     buildHTMLStyles(state, visualState, { enableHardwareAcceleration: !isStatic }, transformTemplate);
     return Object.assign({}, state.vars, state.style);
@@ -27413,7 +27760,7 @@ function filterProps(props, isDom, forwardMotionProps) {
 }
 
 // node_modules/framer-motion/dist/es/render/svg/use-props.mjs
-var import_react15 = __toESM(require_react(), 1);
+var import_react16 = __toESM(require_react(), 1);
 
 // node_modules/framer-motion/dist/es/render/svg/utils/transform-origin.mjs
 function calcOrigin(origin, offset, size) {
@@ -27496,7 +27843,7 @@ var isSVGTag = (tag) => typeof tag === "string" && tag.toLowerCase() === "svg";
 
 // node_modules/framer-motion/dist/es/render/svg/use-props.mjs
 function useSVGProps(props, visualState, _isStatic, Component3) {
-  const visualProps = (0, import_react15.useMemo)(() => {
+  const visualProps = (0, import_react16.useMemo)(() => {
     const state = createSvgRenderState();
     buildSVGAttrs(state, visualState, { enableHardwareAcceleration: false }, isSVGTag(Component3), props.transformTemplate);
     return {
@@ -27524,8 +27871,8 @@ function createUseRender(forwardMotionProps = false) {
       ref
     };
     const { children } = props;
-    const renderedChildren = (0, import_react16.useMemo)(() => isMotionValue(children) ? children.get() : children, [children]);
-    return (0, import_react16.createElement)(Component3, {
+    const renderedChildren = (0, import_react17.useMemo)(() => isMotionValue(children) ? children.get() : children, [children]);
+    return (0, import_react17.createElement)(Component3, {
       ...elementProps,
       children: renderedChildren
     });
@@ -27601,7 +27948,7 @@ function scrapeMotionValuesFromProps2(props, prevProps) {
 }
 
 // node_modules/framer-motion/dist/es/motion/utils/use-visual-state.mjs
-var import_react18 = __toESM(require_react(), 1);
+var import_react19 = __toESM(require_react(), 1);
 
 // node_modules/framer-motion/dist/es/render/utils/resolve-variants.mjs
 function resolveVariantFromProps(props, definition, custom, currentValues = {}, currentVelocity = {}) {
@@ -27618,9 +27965,9 @@ function resolveVariantFromProps(props, definition, custom, currentValues = {}, 
 }
 
 // node_modules/framer-motion/dist/es/utils/use-constant.mjs
-var import_react17 = __toESM(require_react(), 1);
+var import_react18 = __toESM(require_react(), 1);
 function useConstant(init) {
-  const ref = (0, import_react17.useRef)(null);
+  const ref = (0, import_react18.useRef)(null);
   if (ref.current === null) {
     ref.current = init();
   }
@@ -27658,8 +28005,8 @@ function makeState({ scrapeMotionValuesFromProps: scrapeMotionValuesFromProps3, 
   return state;
 }
 var makeUseVisualState = (config) => (props, isStatic) => {
-  const context = (0, import_react18.useContext)(MotionContext);
-  const presenceContext = (0, import_react18.useContext)(PresenceContext);
+  const context = (0, import_react19.useContext)(MotionContext);
+  const presenceContext = (0, import_react19.useContext)(PresenceContext);
   const make = () => makeState(config, props, context, presenceContext);
   return isStatic ? make() : useConstant(make);
 };
@@ -31321,17 +31668,17 @@ var PanGesture = class extends Feature {
 };
 
 // node_modules/framer-motion/dist/es/motion/features/layout/MeasureLayout.mjs
-var import_react20 = __toESM(require_react(), 1);
+var import_react21 = __toESM(require_react(), 1);
 
 // node_modules/framer-motion/dist/es/components/AnimatePresence/use-presence.mjs
-var import_react19 = __toESM(require_react(), 1);
+var import_react20 = __toESM(require_react(), 1);
 function usePresence() {
-  const context = (0, import_react19.useContext)(PresenceContext);
+  const context = (0, import_react20.useContext)(PresenceContext);
   if (context === null)
     return [true, null];
   const { isPresent, onExitComplete, register } = context;
-  const id3 = (0, import_react19.useId)();
-  (0, import_react19.useEffect)(() => register(id3), []);
+  const id3 = (0, import_react20.useId)();
+  (0, import_react20.useEffect)(() => register(id3), []);
   const safeToRemove = () => onExitComplete && onExitComplete(id3);
   return !isPresent && onExitComplete ? [false, safeToRemove] : [true];
 }
@@ -31396,7 +31743,7 @@ var correctBoxShadow = {
 };
 
 // node_modules/framer-motion/dist/es/motion/features/layout/MeasureLayout.mjs
-var MeasureLayoutWithContext = class extends import_react20.default.Component {
+var MeasureLayoutWithContext = class extends import_react21.default.Component {
   /**
    * This only mounts projection nodes for components that
    * need measuring, we might want to do it for all components
@@ -31480,8 +31827,8 @@ var MeasureLayoutWithContext = class extends import_react20.default.Component {
 };
 function MeasureLayout(props) {
   const [isPresent, safeToRemove] = usePresence();
-  const layoutGroup = (0, import_react20.useContext)(LayoutGroupContext);
-  return import_react20.default.createElement(MeasureLayoutWithContext, { ...props, layoutGroup, switchLayoutGroup: (0, import_react20.useContext)(SwitchLayoutGroupContext), isPresent, safeToRemove });
+  const layoutGroup = (0, import_react21.useContext)(LayoutGroupContext);
+  return import_react21.default.createElement(MeasureLayoutWithContext, { ...props, layoutGroup, switchLayoutGroup: (0, import_react21.useContext)(SwitchLayoutGroupContext), isPresent, safeToRemove });
 }
 var defaultScaleCorrectors = {
   borderRadius: {
@@ -33638,15 +33985,15 @@ var motion = /* @__PURE__ */ createMotionProxy((Component3, config) => createDom
 
 // node_modules/framer-motion/dist/es/components/AnimatePresence/index.mjs
 var React6 = __toESM(require_react(), 1);
-var import_react26 = __toESM(require_react(), 1);
+var import_react27 = __toESM(require_react(), 1);
 
 // node_modules/framer-motion/dist/es/utils/use-force-update.mjs
-var import_react22 = __toESM(require_react(), 1);
+var import_react23 = __toESM(require_react(), 1);
 
 // node_modules/framer-motion/dist/es/utils/use-is-mounted.mjs
-var import_react21 = __toESM(require_react(), 1);
+var import_react22 = __toESM(require_react(), 1);
 function useIsMounted() {
-  const isMounted = (0, import_react21.useRef)(false);
+  const isMounted = (0, import_react22.useRef)(false);
   useIsomorphicLayoutEffect2(() => {
     isMounted.current = true;
     return () => {
@@ -33659,21 +34006,21 @@ function useIsMounted() {
 // node_modules/framer-motion/dist/es/utils/use-force-update.mjs
 function useForceUpdate() {
   const isMounted = useIsMounted();
-  const [forcedRenderCount, setForcedRenderCount] = (0, import_react22.useState)(0);
-  const forceRender = (0, import_react22.useCallback)(() => {
+  const [forcedRenderCount, setForcedRenderCount] = (0, import_react23.useState)(0);
+  const forceRender = (0, import_react23.useCallback)(() => {
     isMounted.current && setForcedRenderCount(forcedRenderCount + 1);
   }, [forcedRenderCount]);
-  const deferredForceRender = (0, import_react22.useCallback)(() => frame.postRender(forceRender), [forceRender]);
+  const deferredForceRender = (0, import_react23.useCallback)(() => frame.postRender(forceRender), [forceRender]);
   return [deferredForceRender, forcedRenderCount];
 }
 
 // node_modules/framer-motion/dist/es/components/AnimatePresence/PresenceChild.mjs
 var React5 = __toESM(require_react(), 1);
-var import_react24 = __toESM(require_react(), 1);
+var import_react25 = __toESM(require_react(), 1);
 
 // node_modules/framer-motion/dist/es/components/AnimatePresence/PopChild.mjs
 var React4 = __toESM(require_react(), 1);
-var import_react23 = __toESM(require_react(), 1);
+var import_react24 = __toESM(require_react(), 1);
 var PopChildMeasure = class extends React4.Component {
   getSnapshotBeforeUpdate(prevProps) {
     const element = this.props.childRef.current;
@@ -33696,15 +34043,15 @@ var PopChildMeasure = class extends React4.Component {
   }
 };
 function PopChild({ children, isPresent }) {
-  const id3 = (0, import_react23.useId)();
-  const ref = (0, import_react23.useRef)(null);
-  const size = (0, import_react23.useRef)({
+  const id3 = (0, import_react24.useId)();
+  const ref = (0, import_react24.useRef)(null);
+  const size = (0, import_react24.useRef)({
     width: 0,
     height: 0,
     top: 0,
     left: 0
   });
-  (0, import_react23.useInsertionEffect)(() => {
+  (0, import_react24.useInsertionEffect)(() => {
     const { width, height, top, left } = size.current;
     if (isPresent || !ref.current || !width || !height)
       return;
@@ -33732,8 +34079,8 @@ function PopChild({ children, isPresent }) {
 // node_modules/framer-motion/dist/es/components/AnimatePresence/PresenceChild.mjs
 var PresenceChild = ({ children, initial, isPresent, onExitComplete, custom, presenceAffectsLayout, mode }) => {
   const presenceChildren = useConstant(newChildrenMap);
-  const id3 = (0, import_react24.useId)();
-  const context = (0, import_react24.useMemo)(
+  const id3 = (0, import_react25.useId)();
+  const context = (0, import_react25.useMemo)(
     () => ({
       id: id3,
       initial,
@@ -33759,7 +34106,7 @@ var PresenceChild = ({ children, initial, isPresent, onExitComplete, custom, pre
      */
     presenceAffectsLayout ? void 0 : [isPresent]
   );
-  (0, import_react24.useMemo)(() => {
+  (0, import_react25.useMemo)(() => {
     presenceChildren.forEach((_, key) => presenceChildren.set(key, false));
   }, [isPresent]);
   React5.useEffect(() => {
@@ -33775,9 +34122,9 @@ function newChildrenMap() {
 }
 
 // node_modules/framer-motion/dist/es/utils/use-unmount-effect.mjs
-var import_react25 = __toESM(require_react(), 1);
+var import_react26 = __toESM(require_react(), 1);
 function useUnmountEffect(callback) {
-  return (0, import_react25.useEffect)(() => () => callback(), []);
+  return (0, import_react26.useEffect)(() => () => callback(), []);
 }
 
 // node_modules/framer-motion/dist/es/components/AnimatePresence/index.mjs
@@ -33790,22 +34137,22 @@ function updateChildLookup(children, allChildren) {
 }
 function onlyElements(children) {
   const filtered = [];
-  import_react26.Children.forEach(children, (child) => {
-    if ((0, import_react26.isValidElement)(child))
+  import_react27.Children.forEach(children, (child) => {
+    if ((0, import_react27.isValidElement)(child))
       filtered.push(child);
   });
   return filtered;
 }
 var AnimatePresence = ({ children, custom, initial = true, onExitComplete, exitBeforeEnter, presenceAffectsLayout = true, mode = "sync" }) => {
   invariant2(!exitBeforeEnter, "Replace exitBeforeEnter with mode='wait'");
-  const forceRender = (0, import_react26.useContext)(LayoutGroupContext).forceRender || useForceUpdate()[0];
+  const forceRender = (0, import_react27.useContext)(LayoutGroupContext).forceRender || useForceUpdate()[0];
   const isMounted = useIsMounted();
   const filteredChildren = onlyElements(children);
   let childrenToRender = filteredChildren;
-  const exitingChildren = (0, import_react26.useRef)(/* @__PURE__ */ new Map()).current;
-  const presentChildren = (0, import_react26.useRef)(childrenToRender);
-  const allChildren = (0, import_react26.useRef)(/* @__PURE__ */ new Map()).current;
-  const isInitialRender = (0, import_react26.useRef)(true);
+  const exitingChildren = (0, import_react27.useRef)(/* @__PURE__ */ new Map()).current;
+  const presentChildren = (0, import_react27.useRef)(childrenToRender);
+  const allChildren = (0, import_react27.useRef)(/* @__PURE__ */ new Map()).current;
+  const isInitialRender = (0, import_react27.useRef)(true);
   useIsomorphicLayoutEffect2(() => {
     isInitialRender.current = false;
     updateChildLookup(filteredChildren, allChildren);
@@ -33872,16 +34219,16 @@ var AnimatePresence = ({ children, custom, initial = true, onExitComplete, exitB
   if (mode === "wait" && childrenToRender.length > 1) {
     console.warn(`You're attempting to animate multiple children within AnimatePresence, but its mode is set to "wait". This will lead to odd visual behaviour.`);
   }
-  return React6.createElement(React6.Fragment, null, exitingChildren.size ? childrenToRender : childrenToRender.map((child) => (0, import_react26.cloneElement)(child)));
+  return React6.createElement(React6.Fragment, null, exitingChildren.size ? childrenToRender : childrenToRender.map((child) => (0, import_react27.cloneElement)(child)));
 };
 
 // src/components/Footer.jsx
-var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
+var import_jsx_runtime3 = __toESM(require_jsx_runtime(), 1);
 function Footer() {
   const currentYear = (/* @__PURE__ */ new Date()).getFullYear();
-  return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("footer", { className: "bg-stone text-cream", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: "container-max section-padding", children: [
-    /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: "grid grid-cols-1 md:grid-cols-4 gap-8 mb-8", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(
+  return /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("footer", { className: "bg-stone text-cream", children: /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "container-max section-padding", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "grid grid-cols-1 md:grid-cols-4 gap-8 mb-8", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(
         motion.div,
         {
           initial: { opacity: 0, y: 20 },
@@ -33889,12 +34236,12 @@ function Footer() {
           transition: { duration: 0.6 },
           viewport: { once: true },
           children: [
-            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("h3", { className: "font-serif text-xl font-bold mb-4 text-terracotta-light", children: "Sapore Mediterraneo" }),
-            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("p", { className: "text-sm leading-relaxed text-gray-300", children: "Authentische italienische K\xFCche mit Liebe zum Detail. Entdecken Sie die Geschm\xE4cke S\xFCditaliens in Brunnthal." })
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("h3", { className: "font-serif text-xl font-bold mb-4 text-terracotta-light", children: "Sapore Mediterraneo" }),
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("p", { className: "text-sm leading-relaxed text-gray-300", children: "Authentische italienische K\xFCche mit Liebe zum Detail. Entdecken Sie die Geschm\xE4cke S\xFCditaliens in Brunnthal." })
           ]
         }
       ),
-      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(
         motion.div,
         {
           initial: { opacity: 0, y: 20 },
@@ -33902,29 +34249,29 @@ function Footer() {
           transition: { duration: 0.6, delay: 0.1 },
           viewport: { once: true },
           children: [
-            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("h3", { className: "font-serif text-xl font-bold mb-4 text-terracotta-light", children: "Kontakt" }),
-            /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: "space-y-3 text-sm", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: "flex gap-3 items-start", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(MapPin, { size: 16, className: "mt-1 flex-shrink-0" }),
-                /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("p", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("h3", { className: "font-serif text-xl font-bold mb-4 text-terracotta-light", children: "Kontakt" }),
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "space-y-3 text-sm", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "flex gap-3 items-start", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(MapPin, { size: 16, className: "mt-1 flex-shrink-0" }),
+                /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("p", { children: [
                   "Fichtenstra\xDFe 33",
-                  /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("br", {}),
+                  /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("br", {}),
                   "85649 Brunnthal, Germany"
                 ] })
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: "flex gap-3 items-center", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Phone, { size: 16 }),
-                /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("a", { href: "tel:+498104889110", className: "hover:text-terracotta-light transition", children: "+49 8104 8891110" })
+              /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "flex gap-3 items-center", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Phone, { size: 16 }),
+                /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("a", { href: "tel:+498104889110", className: "hover:text-terracotta-light transition", children: "+49 8104 8891110" })
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: "flex gap-3 items-center", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Mail, { size: 16 }),
-                /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("a", { href: "mailto:info@sapore-mediterraneo.de", className: "hover:text-terracotta-light transition", children: "info@sapore-med.de" })
+              /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "flex gap-3 items-center", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Mail, { size: 16 }),
+                /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("a", { href: "mailto:info@sapore-mediterraneo.de", className: "hover:text-terracotta-light transition", children: "info@sapore-med.de" })
               ] })
             ] })
           ]
         }
       ),
-      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(
         motion.div,
         {
           initial: { opacity: 0, y: 20 },
@@ -33932,25 +34279,25 @@ function Footer() {
           transition: { duration: 0.6, delay: 0.2 },
           viewport: { once: true },
           children: [
-            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("h3", { className: "font-serif text-xl font-bold mb-4 text-terracotta-light", children: "\xD6ffnungszeiten" }),
-            /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: "space-y-2 text-sm", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: "flex gap-2", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("span", { className: "w-20", children: "Mo - Do:" }),
-                /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("span", { children: "11:30 - 22:00" })
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("h3", { className: "font-serif text-xl font-bold mb-4 text-terracotta-light", children: "\xD6ffnungszeiten" }),
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "space-y-2 text-sm", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "flex gap-2", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "w-20", children: "Mo - Do:" }),
+                /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { children: "11:30 - 22:00" })
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: "flex gap-2", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("span", { className: "w-20", children: "Fr - Sa:" }),
-                /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("span", { children: "11:30 - 23:00" })
+              /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "flex gap-2", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "w-20", children: "Fr - Sa:" }),
+                /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { children: "11:30 - 23:00" })
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: "flex gap-2", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("span", { className: "w-20", children: "Sonntag:" }),
-                /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("span", { children: "11:30 - 22:00" })
+              /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "flex gap-2", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "w-20", children: "Sonntag:" }),
+                /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { children: "11:30 - 22:00" })
               ] })
             ] })
           ]
         }
       ),
-      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(
         motion.div,
         {
           initial: { opacity: 0, y: 20 },
@@ -33958,9 +34305,9 @@ function Footer() {
           transition: { duration: 0.6, delay: 0.3 },
           viewport: { once: true },
           children: [
-            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("h3", { className: "font-serif text-xl font-bold mb-4 text-terracotta-light", children: "Information" }),
-            /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: "space-y-2 text-sm", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("h3", { className: "font-serif text-xl font-bold mb-4 text-terracotta-light", children: "Information" }),
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "space-y-2 text-sm", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
                 Link,
                 {
                   to: "/impressum",
@@ -33968,7 +34315,7 @@ function Footer() {
                   children: "Impressum"
                 }
               ),
-              /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+              /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
                 Link,
                 {
                   to: "/datenschutz",
@@ -33976,7 +34323,7 @@ function Footer() {
                   children: "Datenschutz"
                 }
               ),
-              /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+              /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
                 "a",
                 {
                   href: "#",
@@ -33989,7 +34336,7 @@ function Footer() {
         }
       )
     ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { className: "border-t border-gray-600 pt-6 text-center text-sm text-gray-400", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("p", { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: "border-t border-gray-600 pt-6 text-center text-sm text-gray-400", children: /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("p", { children: [
       "\xA9 ",
       currentYear,
       " Sapore Mediterraneo. Alle Rechte vorbehalten."
@@ -33998,12 +34345,12 @@ function Footer() {
 }
 
 // src/components/FloatingButton.jsx
-var import_react27 = __toESM(require_react(), 1);
-var import_jsx_runtime3 = __toESM(require_jsx_runtime(), 1);
+var import_react28 = __toESM(require_react(), 1);
+var import_jsx_runtime4 = __toESM(require_jsx_runtime(), 1);
 function FloatingButton() {
-  const [isOpen, setIsOpen] = (0, import_react27.useState)(false);
-  return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(import_jsx_runtime3.Fragment, { children: [
-    /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(AnimatePresence, { children: isOpen && /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(
+  const [isOpen, setIsOpen] = (0, import_react28.useState)(false);
+  return /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(import_jsx_runtime4.Fragment, { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(AnimatePresence, { children: isOpen && /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(
       motion.div,
       {
         initial: { opacity: 0, scale: 0.8 },
@@ -34011,7 +34358,7 @@ function FloatingButton() {
         exit: { opacity: 0, scale: 0.8 },
         className: "fixed bottom-24 right-6 md:right-8 flex flex-col gap-3 z-40",
         children: [
-          /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(
             motion.a,
             {
               href: "https://wa.me/498104889110?text=Hallo%20Sapore%20Mediterraneo",
@@ -34021,12 +34368,12 @@ function FloatingButton() {
               whileTap: { scale: 0.95 },
               className: "flex items-center gap-3 bg-green-500 text-white px-4 py-3 rounded-full shadow-lg hover:shadow-xl transition-shadow",
               children: [
-                /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(MessageCircle, { size: 20 }),
-                /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "text-sm font-medium", children: "WhatsApp" })
+                /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(MessageCircle, { size: 20 }),
+                /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("span", { className: "text-sm font-medium", children: "WhatsApp" })
               ]
             }
           ),
-          /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(
             motion.a,
             {
               href: "tel:+498104889110",
@@ -34034,15 +34381,15 @@ function FloatingButton() {
               whileTap: { scale: 0.95 },
               className: "flex items-center gap-3 bg-terracotta text-cream px-4 py-3 rounded-full shadow-lg hover:shadow-xl transition-shadow",
               children: [
-                /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Phone, { size: 20 }),
-                /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "text-sm font-medium", children: "Anrufen" })
+                /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Phone, { size: 20 }),
+                /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("span", { className: "text-sm font-medium", children: "Anrufen" })
               ]
             }
           )
         ]
       }
     ) }),
-    /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+    /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
       motion.button,
       {
         onClick: () => setIsOpen(!isOpen),
@@ -34050,21 +34397,204 @@ function FloatingButton() {
         whileTap: { scale: 0.95 },
         className: "fixed bottom-6 right-6 md:right-8 w-14 h-14 bg-terracotta text-cream rounded-full shadow-xl hover:shadow-2xl flex items-center justify-center z-40 transition-shadow",
         "aria-label": "Contact options",
-        children: isOpen ? /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(X, { size: 24 }) : /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(MessageCircle, { size: 24 })
+        children: isOpen ? /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(X, { size: 24 }) : /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(MessageCircle, { size: 24 })
       }
     )
   ] });
 }
 
+// src/layouts/PublicLayout.jsx
+var import_jsx_runtime5 = __toESM(require_jsx_runtime(), 1);
+function PublicLayout() {
+  return /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "flex min-h-screen flex-col", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Navbar, {}),
+    /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("main", { className: "flex-grow", children: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Outlet, {}) }),
+    /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Footer, {}),
+    /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(FloatingButton, {})
+  ] });
+}
+var PublicLayout_default = PublicLayout;
+
+// src/layouts/AuthLayout.jsx
+var import_jsx_runtime6 = __toESM(require_jsx_runtime(), 1);
+function AuthLayout() {
+  return /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "min-h-screen bg-cream", children: /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "grid min-h-screen lg:grid-cols-[1.05fr_0.95fr]", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("section", { className: "relative hidden overflow-hidden bg-stone p-10 text-cream lg:flex lg:flex-col lg:justify-between", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(Link, { to: "/", className: "font-serif text-3xl text-cream", children: "Sapore Mediterraneo" }),
+        /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { className: "mt-4 max-w-lg text-cream/70", children: "Admin- und Superadmin-Zugang f\xFCr Businesses im Center." })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "rounded-[2rem] border border-white/10 bg-white/10 p-6", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "text-sm uppercase tracking-[0.24em] text-terracotta-light", children: "Restaurant Center" }),
+        /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("h1", { className: "mt-3 font-serif text-5xl leading-tight", children: "Verwalten, best\xE4tigen, vorbereiten." })
+      ] })
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("section", { className: "flex items-center justify-center px-4 py-10", children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(Outlet, {}) })
+  ] }) });
+}
+var AuthLayout_default = AuthLayout;
+
+// src/layouts/AdminLayout.jsx
+var import_react29 = __toESM(require_react(), 1);
+var import_jsx_runtime7 = __toESM(require_jsx_runtime(), 1);
+var adminNavigation = [
+  { to: "/admin", label: "Dashboard", caption: "\xDCberblick", icon: LayoutDashboard, end: true },
+  { to: "/admin/bestellungen", label: "Bestellungen", caption: "Anfragen & Status", icon: CalendarDays },
+  { to: "/admin/speisekarte", label: "Speisekarte", caption: "Produkte & Preise", icon: UtensilsCrossed },
+  { to: "/admin/restaurant", label: "Restaurant", caption: "Profil", icon: Store }
+];
+function AdminLayout() {
+  const [isSidebarOpen, setIsSidebarOpen] = (0, import_react29.useState)(false);
+  const { currentUser, logout } = useAuth();
+  const initials = (0, import_react29.useMemo)(() => {
+    const name = currentUser?.name || currentUser?.email || "SM";
+    return name.split(" ").map((part) => part.charAt(0)).join("").slice(0, 2).toUpperCase();
+  }, [currentUser]);
+  return /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "min-h-screen bg-cream text-stone lg:grid lg:grid-cols-[290px_1fr]", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("aside", { className: `fixed inset-y-0 left-0 z-40 w-[290px] border-r border-stone/10 bg-stone p-5 text-cream transition-transform duration-300 lg:static lg:translate-x-0 ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}`, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "flex items-center justify-between", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(Link, { to: "/", className: "font-serif text-2xl text-cream", children: [
+          "Sapore",
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { className: "text-terracotta-light", children: " Admin" })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("button", { type: "button", className: "rounded-full p-2 hover:bg-white/10 lg:hidden", onClick: () => setIsSidebarOpen(false), "aria-label": "Menu schlie\xDFen", children: /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(X, { size: 20 }) })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "mt-8 flex items-center gap-3 rounded-2xl bg-white/10 p-4", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { className: "flex h-11 w-11 items-center justify-center rounded-full bg-terracotta font-semibold", children: initials }),
+        /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "min-w-0", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "truncate font-semibold", children: currentUser?.name || "Restaurant Admin" }),
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "truncate text-sm text-cream/65", children: currentUser?.email })
+        ] })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("nav", { className: "mt-8 space-y-2", children: adminNavigation.map((item) => {
+        const Icon = item.icon;
+        return /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(NavLink, { to: item.to, end: item.end, onClick: () => setIsSidebarOpen(false), className: ({ isActive }) => `flex items-center gap-3 rounded-2xl px-4 py-3 transition ${isActive ? "bg-cream text-stone" : "text-cream/75 hover:bg-white/10 hover:text-cream"}`, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(Icon, { size: 19 }),
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("span", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { className: "block font-medium", children: item.label }),
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("small", { className: "block text-xs opacity-70", children: item.caption })
+          ] })
+        ] }, item.to);
+      }) })
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "min-w-0", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("header", { className: "sticky top-0 z-30 border-b border-stone/10 bg-cream/90 px-4 py-4 backdrop-blur md:px-8", children: /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "flex items-center justify-between gap-4", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "flex items-center gap-3", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("button", { type: "button", className: "rounded-full border border-stone/10 bg-white p-2 lg:hidden", onClick: () => setIsSidebarOpen(true), "aria-label": "Menu \xF6ffnen", children: /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(Menu, { size: 20 }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { className: "text-xs font-semibold uppercase tracking-[0.24em] text-terracotta", children: "Restaurant Verwaltung" }),
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("h1", { className: "font-serif text-2xl text-stone", children: "Sapore Mediterraneo" })
+          ] })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("button", { type: "button", className: "inline-flex items-center gap-2 rounded-full border border-stone/10 bg-white px-4 py-2 text-sm font-semibold text-stone transition hover:border-terracotta hover:text-terracotta", onClick: () => logout(), children: [
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(LogOut, { size: 16 }),
+          "Logout"
+        ] })
+      ] }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("main", { className: "px-4 py-8 md:px-8", children: /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(Outlet, {}) })
+    ] })
+  ] });
+}
+var AdminLayout_default = AdminLayout;
+
+// src/layouts/SuperAdminLayout.jsx
+var import_react30 = __toESM(require_react(), 1);
+var import_jsx_runtime8 = __toESM(require_jsx_runtime(), 1);
+var superAdminNavigation = [
+  { to: "/superadmin", label: "Dashboard", caption: "Platform overview", icon: LayoutDashboard, end: true },
+  { to: "/superadmin/businesses", label: "Businesses", caption: "Tenants verwalten", icon: Building2 },
+  { to: "/superadmin/businesses/create", label: "Create business", caption: "Onboarding", icon: UserPlus },
+  { to: "/superadmin/users", label: "Users", caption: "Admin Accounts", icon: Users }
+];
+function SuperAdminLayout() {
+  const [isSidebarOpen, setIsSidebarOpen] = (0, import_react30.useState)(false);
+  const { currentUser, logout } = useAuth();
+  const initials = (0, import_react30.useMemo)(() => {
+    const name = currentUser?.name || currentUser?.email || "SA";
+    return name.split(" ").map((part) => part.charAt(0)).join("").slice(0, 2).toUpperCase();
+  }, [currentUser]);
+  return /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: "min-h-screen bg-cream text-stone lg:grid lg:grid-cols-[290px_1fr]", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("aside", { className: `fixed inset-y-0 left-0 z-40 w-[290px] border-r border-stone/10 bg-stone p-5 text-cream transition-transform duration-300 lg:static lg:translate-x-0 ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}`, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: "flex items-center justify-between", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)(Link, { to: "/", className: "font-serif text-2xl text-cream", children: [
+          "Sapore",
+          /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("span", { className: "text-terracotta-light", children: " Center" })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("button", { type: "button", className: "rounded-full p-2 hover:bg-white/10 lg:hidden", onClick: () => setIsSidebarOpen(false), "aria-label": "Menu schlie\xDFen", children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(X, { size: 20 }) })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: "mt-8 flex items-center gap-3 rounded-2xl bg-white/10 p-4", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("span", { className: "flex h-11 w-11 items-center justify-center rounded-full bg-terracotta font-semibold", children: initials }),
+        /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: "min-w-0", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { className: "truncate font-semibold", children: currentUser?.name || "Superadmin" }),
+          /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { className: "truncate text-sm text-cream/65", children: currentUser?.email })
+        ] })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("nav", { className: "mt-8 space-y-2", children: superAdminNavigation.map((item) => {
+        const Icon = item.icon;
+        return /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)(NavLink, { to: item.to, end: item.end, onClick: () => setIsSidebarOpen(false), className: ({ isActive }) => `flex items-center gap-3 rounded-2xl px-4 py-3 transition ${isActive ? "bg-cream text-stone" : "text-cream/75 hover:bg-white/10 hover:text-cream"}`, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(Icon, { size: 19 }),
+          /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("span", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("span", { className: "block font-medium", children: item.label }),
+            /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("small", { className: "block text-xs opacity-70", children: item.caption })
+          ] })
+        ] }, item.to);
+      }) })
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: "min-w-0", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("header", { className: "sticky top-0 z-30 border-b border-stone/10 bg-cream/90 px-4 py-4 backdrop-blur md:px-8", children: /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: "flex items-center justify-between gap-4", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: "flex items-center gap-3", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("button", { type: "button", className: "rounded-full border border-stone/10 bg-white p-2 lg:hidden", onClick: () => setIsSidebarOpen(true), "aria-label": "Menu \xF6ffnen", children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(Menu, { size: 20 }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("span", { className: "text-xs font-semibold uppercase tracking-[0.24em] text-terracotta", children: "Platform Verwaltung" }),
+            /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("h1", { className: "font-serif text-2xl text-stone", children: "Superadmin" })
+          ] })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("button", { type: "button", className: "inline-flex items-center gap-2 rounded-full border border-stone/10 bg-white px-4 py-2 text-sm font-semibold text-stone transition hover:border-terracotta hover:text-terracotta", onClick: () => logout(), children: [
+          /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(LogOut, { size: 16 }),
+          "Logout"
+        ] })
+      ] }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("main", { className: "px-4 py-8 md:px-8", children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(Outlet, {}) })
+    ] })
+  ] });
+}
+var SuperAdminLayout_default = SuperAdminLayout;
+
+// src/routes/ProtectedRoute.jsx
+var import_jsx_runtime9 = __toESM(require_jsx_runtime(), 1);
+function ProtectedRoute() {
+  const { isAuthenticated, loading } = useAuth();
+  const location = useLocation();
+  if (loading) {
+    return /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { className: "min-h-screen bg-cream px-6 py-12 text-stone", children: "Session wird gepr\xFCft..." });
+  }
+  if (!isAuthenticated) {
+    return /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(Navigate, { to: "/login", replace: true, state: { from: location } });
+  }
+  return /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(Outlet, {});
+}
+var ProtectedRoute_default = ProtectedRoute;
+
+// src/routes/RoleRoute.jsx
+var import_jsx_runtime10 = __toESM(require_jsx_runtime(), 1);
+function RoleRoute({ allowedRoles }) {
+  const { currentUser } = useAuth();
+  if (allowedRoles?.length && !allowedRoles.includes(currentUser?.role)) {
+    return /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(Navigate, { to: currentUser?.role === "superadmin" ? "/superadmin" : "/admin", replace: true });
+  }
+  return /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(Outlet, {});
+}
+var RoleRoute_default = RoleRoute;
+
 // src/components/SpecialtyCard.jsx
-var import_jsx_runtime4 = __toESM(require_jsx_runtime(), 1);
+var import_jsx_runtime11 = __toESM(require_jsx_runtime(), 1);
 function SpecialtyCard({
   title,
   description,
   icon,
   delay: delay2 = 0
 }) {
-  return /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(
+  return /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)(
     motion.div,
     {
       initial: { opacity: 0, y: 30 },
@@ -34073,23 +34603,23 @@ function SpecialtyCard({
       viewport: { once: true },
       className: "card-hover bg-white rounded-lg p-6 md:p-8 border-b-4 border-terracotta",
       children: [
-        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("div", { className: "flex justify-center mb-4", children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("div", { className: "text-terracotta", children: icon }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("h3", { className: "font-serif text-xl font-bold text-stone text-center mb-3", children: title }),
-        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("p", { className: "text-center text-stone-light text-sm leading-relaxed", children: description })
+        /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("div", { className: "flex justify-center mb-4", children: /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("div", { className: "text-terracotta", children: icon }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("h3", { className: "font-serif text-xl font-bold text-stone text-center mb-3", children: title }),
+        /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("p", { className: "text-center text-stone-light text-sm leading-relaxed", children: description })
       ]
     }
   );
 }
 
 // src/components/ReviewCard.jsx
-var import_jsx_runtime5 = __toESM(require_jsx_runtime(), 1);
+var import_jsx_runtime12 = __toESM(require_jsx_runtime(), 1);
 function ReviewCard({
   name,
   text,
   rating,
   delay: delay2 = 0
 }) {
-  return /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(
+  return /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)(
     motion.div,
     {
       initial: { opacity: 0, scale: 0.95 },
@@ -34098,7 +34628,7 @@ function ReviewCard({
       viewport: { once: true },
       className: "bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-300",
       children: [
-        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "flex gap-1 mb-3", children: Array.from({ length: rating }).map((_, i) => /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+        /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("div", { className: "flex gap-1 mb-3", children: Array.from({ length: rating }).map((_, i) => /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(
           Star,
           {
             size: 16,
@@ -34106,40 +34636,40 @@ function ReviewCard({
           },
           i
         )) }),
-        /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("p", { className: "text-stone text-sm mb-4 leading-relaxed italic", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("p", { className: "text-stone text-sm mb-4 leading-relaxed italic", children: [
           "\u201C",
           text,
           "\u201D"
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { className: "font-medium text-stone", children: name })
+        /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("p", { className: "font-medium text-stone", children: name })
       ]
     }
   );
 }
 
 // src/pages/Home.jsx
-var import_jsx_runtime6 = __toESM(require_jsx_runtime(), 1);
+var import_jsx_runtime13 = __toESM(require_jsx_runtime(), 1);
 function Home() {
   const specialties = [
     {
       title: "Steinofen Pizza",
       description: "Knusprig, authentisch und mit sorgsam ausgew\xE4hlten Zutaten. Unsere Pizzen werden t\xE4glich frisch zubereitet.",
-      icon: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(Pizza, { size: 40 })
+      icon: /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(Pizza, { size: 40 })
     },
     {
       title: "Handgemachte Pasta",
       description: "Traditionelle italienische Rezepte mit Liebe zubereitet. Jeder Bissen schmeckt nach Authentizit\xE4t.",
-      icon: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(Users, { size: 40 })
+      icon: /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(Users, { size: 40 })
     },
     {
       title: "Frische Salate",
       description: "Saisonale Zutaten, mediterrane Aromen. Perfekt als Vorspeise oder leichte Hauptmahlzeit.",
-      icon: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(Leaf, { size: 40 })
+      icon: /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(Leaf, { size: 40 })
     },
     {
       title: "Regionale Weine",
       description: "Sorgf\xE4ltig ausgew\xE4hlte italienische und deutsche Weine zu jedem Gericht.",
-      icon: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(Wine, { size: 40 })
+      icon: /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(Wine, { size: 40 })
     }
   ];
   const reviews = [
@@ -34164,10 +34694,10 @@ function Home() {
       rating: 5
     }
   ];
-  return /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { children: [
-    /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("section", { className: "relative -mt-[68px] flex h-screen items-center justify-center overflow-hidden md:-mt-[100px]", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "absolute inset-0 bg-gradient-to-b from-terracotta-light to-cream opacity-60" }),
-      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+  return /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("div", { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("section", { className: "relative -mt-[68px] flex h-screen items-center justify-center overflow-hidden md:-mt-[100px]", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("div", { className: "absolute inset-0 bg-gradient-to-b from-terracotta-light to-cream opacity-60" }),
+      /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(
         "div",
         {
           className: "absolute inset-0",
@@ -34176,8 +34706,8 @@ function Home() {
           }
         }
       ),
-      /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "relative z-10 container-max px-4 text-center", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)(
+      /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("div", { className: "relative z-10 container-max px-4 text-center", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)(
           motion.div,
           {
             initial: { opacity: 0, y: -30 },
@@ -34185,23 +34715,23 @@ function Home() {
             transition: { duration: 0.8 },
             className: "mb-6",
             children: [
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "text-sm md:text-base font-medium text-terracotta tracking-widest uppercase mb-4", children: "Willkommen zu" }),
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("h1", { className: "font-serif text-5xl md:text-7xl font-bold text-stone mb-4 leading-tight", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("div", { className: "text-sm md:text-base font-medium text-terracotta tracking-widest uppercase mb-4", children: "Willkommen zu" }),
+              /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("h1", { className: "font-serif text-5xl md:text-7xl font-bold text-stone mb-4 leading-tight", children: [
                 "Sapore",
-                /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("br", {}),
+                /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("br", {}),
                 "Mediterraneo"
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "italian-flag-accent mx-auto mb-6 flex h-8 w-40 overflow-hidden rounded shadow-md ring-1 ring-stone/10 md:h-10 md:w-56", "aria-label": "Italienische Flagge", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "flex-1 bg-[#008C45]" }),
-                /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "flex-1 bg-white" }),
-                /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "flex-1 bg-[#CD212A]" })
+              /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("div", { className: "italian-flag-accent mx-auto mb-6 flex h-8 w-40 overflow-hidden rounded shadow-md ring-1 ring-stone/10 md:h-10 md:w-56", "aria-label": "Italienische Flagge", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("span", { className: "flex-1 bg-[#008C45]" }),
+                /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("span", { className: "flex-1 bg-white" }),
+                /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("span", { className: "flex-1 bg-[#CD212A]" })
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { className: "text-lg md:text-2xl text-stone-light mb-4", children: "Authentische italienische K\xFCche in Brunnthal" }),
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { className: "text-sm md:text-base text-stone max-w-2xl mx-auto mb-8", children: "Entdecken Sie die Geschm\xE4cke S\xFCditaliens mit Familie, Freunden und Liebe zum Detail" })
+              /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("p", { className: "text-lg md:text-2xl text-stone-light mb-4", children: "Authentische italienische K\xFCche in Brunnthal" }),
+              /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("p", { className: "text-sm md:text-base text-stone max-w-2xl mx-auto mb-8", children: "Entdecken Sie die Geschm\xE4cke S\xFCditaliens mit Familie, Freunden und Liebe zum Detail" })
             ]
           }
         ),
-        /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)(
+        /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)(
           motion.div,
           {
             initial: { opacity: 0, y: 30 },
@@ -34209,16 +34739,16 @@ function Home() {
             transition: { duration: 0.8, delay: 0.2 },
             className: "flex flex-col md:flex-row gap-4 justify-center items-center",
             children: [
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(Link, { to: "/speisekarte", className: "btn-primary", children: "Speisekarte anschauen" }),
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(Link, { to: "/reservierung", className: "btn-secondary", children: "Tisch reservieren" }),
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(Link, { to: "/bestellung", className: "btn-secondary", children: "Essen vorbestellen" }),
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("a", { href: "tel:+498104889110", className: "btn-secondary", children: "Jetzt anrufen" })
+              /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(Link, { to: "/speisekarte", className: "btn-primary", children: "Speisekarte anschauen" }),
+              /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(Link, { to: "/reservierung", className: "btn-secondary", children: "Tisch reservieren" }),
+              /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(Link, { to: "/bestellung", className: "btn-secondary", children: "Essen vorbestellen" }),
+              /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("a", { href: "tel:+498104889110", className: "btn-secondary", children: "Jetzt anrufen" })
             ]
           }
         )
       ] })
     ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("section", { className: "section-padding", children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "container-max", children: /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)(
+    /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("section", { className: "section-padding", children: /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("div", { className: "container-max", children: /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)(
       motion.div,
       {
         initial: { opacity: 0, y: 30 },
@@ -34227,18 +34757,18 @@ function Home() {
         viewport: { once: true },
         className: "max-w-3xl mx-auto text-center",
         children: [
-          /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("h2", { className: "font-serif text-4xl md:text-5xl font-bold text-stone mb-6", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("h2", { className: "font-serif text-4xl md:text-5xl font-bold text-stone mb-6", children: [
             "Italienische Authentizit\xE4t",
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("br", {}),
+            /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("br", {}),
             "trifft auf Gastfreundschaft"
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { className: "text-lg text-stone-light leading-relaxed mb-6", children: "Bei Sapore Mediterraneo bringen wir die Essenz der italienischen K\xFCche direkt auf Ihren Tisch. Mit Rezepten, die \xFCber Generationen weitergegeben wurden, und Zutaten von h\xF6chster Qualit\xE4t, schaffen wir ein kulinarisches Erlebnis, das Sie in die W\xE4rme S\xFCditaliens versetzt." }),
-          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { className: "text-base text-stone", children: "Mehr als ein Restaurant \u2013 ein Ort f\xFCr Familie, Freunde und wunderbare Momente." })
+          /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("p", { className: "text-lg text-stone-light leading-relaxed mb-6", children: "Bei Sapore Mediterraneo bringen wir die Essenz der italienischen K\xFCche direkt auf Ihren Tisch. Mit Rezepten, die \xFCber Generationen weitergegeben wurden, und Zutaten von h\xF6chster Qualit\xE4t, schaffen wir ein kulinarisches Erlebnis, das Sie in die W\xE4rme S\xFCditaliens versetzt." }),
+          /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("p", { className: "text-base text-stone", children: "Mehr als ein Restaurant \u2013 ein Ort f\xFCr Familie, Freunde und wunderbare Momente." })
         ]
       }
     ) }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("section", { className: "section-padding bg-gray-50", children: /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "container-max", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+    /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("section", { className: "section-padding bg-gray-50", children: /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("div", { className: "container-max", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(
         motion.h2,
         {
           initial: { opacity: 0 },
@@ -34249,7 +34779,7 @@ function Home() {
           children: "Unsere Spezialit\xE4ten"
         }
       ),
-      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6", children: specialties.map((specialty, index) => /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6", children: specialties.map((specialty, index) => /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(
         SpecialtyCard,
         {
           ...specialty,
@@ -34258,8 +34788,8 @@ function Home() {
         index
       )) })
     ] }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("section", { className: "section-padding", children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "container-max", children: /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-12 items-center", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)(
+    /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("section", { className: "section-padding", children: /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("div", { className: "container-max", children: /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-12 items-center", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)(
         motion.div,
         {
           initial: { opacity: 0, x: -30 },
@@ -34267,17 +34797,17 @@ function Home() {
           transition: { duration: 0.7 },
           viewport: { once: true },
           children: [
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("h2", { className: "font-serif text-4xl md:text-4xl font-bold text-stone mb-6", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("h2", { className: "font-serif text-4xl md:text-4xl font-bold text-stone mb-6", children: [
               "Warum Sapore",
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("br", {}),
+              /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("br", {}),
               "Mediterraneo?"
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "space-y-6", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("div", { className: "space-y-6", children: [
               { title: "Authentische Rezepte", desc: "Traditionelle Methoden, die seit Generationen erprobt sind" },
               { title: "Hochwertige Zutaten", desc: "Sorgf\xE4ltig ausgew\xE4hlte Produkte f\xFCr unvergleichlichen Geschmack" },
               { title: "Familienatmosph\xE4re", desc: "Willkommen wie bei Familie \u2013 das ist unser Anspruch" },
               { title: "Leidenschaft in jedem Essen", desc: "Jedes Gericht wird mit Sorgfalt und Liebe zubereitet" }
-            ].map((item, index) => /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)(
+            ].map((item, index) => /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)(
               motion.div,
               {
                 initial: { opacity: 0, x: -20 },
@@ -34285,8 +34815,8 @@ function Home() {
                 transition: { duration: 0.5, delay: index * 0.1 },
                 viewport: { once: true },
                 children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("h3", { className: "font-serif text-xl font-bold text-terracotta mb-2", children: item.title }),
-                  /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { className: "text-stone-light", children: item.desc })
+                  /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("h3", { className: "font-serif text-xl font-bold text-terracotta mb-2", children: item.title }),
+                  /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("p", { className: "text-stone-light", children: item.desc })
                 ]
               },
               index
@@ -34294,7 +34824,7 @@ function Home() {
           ]
         }
       ),
-      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(
         motion.div,
         {
           initial: { opacity: 0, x: 30 },
@@ -34302,19 +34832,19 @@ function Home() {
           transition: { duration: 0.7 },
           viewport: { once: true },
           className: "bg-gradient-to-br from-terracotta-light to-olive-light rounded-lg p-8 h-96 flex items-center justify-center",
-          children: /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "text-center text-cream", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(Pizza, { size: 64, className: "mx-auto mb-4 opacity-80" }),
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("p", { className: "text-lg font-serif", children: [
+          children: /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("div", { className: "text-center text-cream", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(Pizza, { size: 64, className: "mx-auto mb-4 opacity-80" }),
+            /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("p", { className: "text-lg font-serif", children: [
               "Leidenschaft f\xFCr",
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("br", {}),
+              /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("br", {}),
               "italienische Kulinarik"
             ] })
           ] })
         }
       )
     ] }) }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("section", { className: "section-padding bg-gray-50", children: /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "container-max", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+    /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("section", { className: "section-padding bg-gray-50", children: /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("div", { className: "container-max", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(
         motion.h2,
         {
           initial: { opacity: 0 },
@@ -34325,7 +34855,7 @@ function Home() {
           children: "Das sagen unsere G\xE4ste"
         }
       ),
-      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6", children: reviews.map((review, index) => /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6", children: reviews.map((review, index) => /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(
         ReviewCard,
         {
           ...review,
@@ -34334,8 +34864,8 @@ function Home() {
         index
       )) })
     ] }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("section", { className: "section-padding", children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "container-max", children: /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-12 items-center", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)(
+    /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("section", { className: "section-padding", children: /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("div", { className: "container-max", children: /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-12 items-center", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)(
         motion.div,
         {
           initial: { opacity: 0, y: 30 },
@@ -34343,19 +34873,19 @@ function Home() {
           transition: { duration: 0.6 },
           viewport: { once: true },
           children: [
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("h2", { className: "font-serif text-4xl font-bold text-stone mb-6", children: "Besuchen Sie uns" }),
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "space-y-6", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { children: [
-                /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("h3", { className: "font-serif text-lg font-bold text-terracotta mb-2", children: "Adresse" }),
-                /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("p", { className: "text-stone-light", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("h2", { className: "font-serif text-4xl font-bold text-stone mb-6", children: "Besuchen Sie uns" }),
+            /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("div", { className: "space-y-6", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("div", { children: [
+                /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("h3", { className: "font-serif text-lg font-bold text-terracotta mb-2", children: "Adresse" }),
+                /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("p", { className: "text-stone-light", children: [
                   "Fichtenstra\xDFe 33",
-                  /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("br", {}),
+                  /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("br", {}),
                   "85649 Brunnthal, Germany"
                 ] })
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { children: [
-                /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("h3", { className: "font-serif text-lg font-bold text-terracotta mb-2", children: "Telefon" }),
-                /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+              /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("div", { children: [
+                /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("h3", { className: "font-serif text-lg font-bold text-terracotta mb-2", children: "Telefon" }),
+                /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(
                   "a",
                   {
                     href: "tel:+498104889110",
@@ -34364,29 +34894,29 @@ function Home() {
                   }
                 )
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { children: [
-                /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("h3", { className: "font-serif text-lg font-bold text-terracotta mb-2", children: "\xD6ffnungszeiten" }),
-                /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "text-stone-light space-y-1 text-sm", children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("p", { children: [
-                    /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "font-medium text-stone", children: "Mo - Do:" }),
+              /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("div", { children: [
+                /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("h3", { className: "font-serif text-lg font-bold text-terracotta mb-2", children: "\xD6ffnungszeiten" }),
+                /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("div", { className: "text-stone-light space-y-1 text-sm", children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("p", { children: [
+                    /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("span", { className: "font-medium text-stone", children: "Mo - Do:" }),
                     " 11:30 - 22:00"
                   ] }),
-                  /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("p", { children: [
-                    /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "font-medium text-stone", children: "Fr - Sa:" }),
+                  /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("p", { children: [
+                    /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("span", { className: "font-medium text-stone", children: "Fr - Sa:" }),
                     " 11:30 - 23:00"
                   ] }),
-                  /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("p", { children: [
-                    /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "font-medium text-stone", children: "Sonntag:" }),
+                  /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("p", { children: [
+                    /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("span", { className: "font-medium text-stone", children: "Sonntag:" }),
                     " 11:30 - 22:00"
                   ] })
                 ] })
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(Link, { to: "/kontakt", className: "btn-primary inline-block", children: "Nachricht senden" })
+              /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(Link, { to: "/kontakt", className: "btn-primary inline-block", children: "Nachricht senden" })
             ] })
           ]
         }
       ),
-      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(
         motion.div,
         {
           initial: { opacity: 0, scale: 0.95 },
@@ -34394,7 +34924,7 @@ function Home() {
           transition: { duration: 0.6 },
           viewport: { once: true },
           className: "rounded-lg overflow-hidden shadow-lg h-96",
-          children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+          children: /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(
             "iframe",
             {
               src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2607.8929746391157!2d11.583300!3d48.003000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479dd1e8e8e8e8e9%3A0x0!2sSapore%20Mediterraneo!5e0!3m2!1sde!2sde!4v1234567890",
@@ -34409,7 +34939,7 @@ function Home() {
         }
       )
     ] }) }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("section", { className: "section-padding bg-gradient-to-r from-terracotta to-terracotta-light", children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "container-max text-center", children: /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)(
+    /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("section", { className: "section-padding bg-gradient-to-r from-terracotta to-terracotta-light", children: /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("div", { className: "container-max text-center", children: /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)(
       motion.div,
       {
         initial: { opacity: 0, y: 20 },
@@ -34417,12 +34947,12 @@ function Home() {
         transition: { duration: 0.6 },
         viewport: { once: true },
         children: [
-          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("h2", { className: "font-serif text-4xl md:text-5xl font-bold text-cream mb-6", children: "Erleben Sie italienische Genusskultur" }),
-          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { className: "text-lg text-cream-light mb-8 max-w-2xl mx-auto opacity-90", children: "Machen Sie jetzt einen Tisch- reservierung oder besuchen Sie uns spontan. Wir freuen uns auf Ihren Besuch!" }),
-          /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "flex flex-col md:flex-row gap-4 justify-center", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(Link, { to: "/reservierung", className: "btn-secondary bg-cream text-terracotta border-cream hover:bg-opacity-90", children: "Tisch reservieren" }),
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(Link, { to: "/bestellung", className: "btn-secondary border-cream text-cream hover:bg-cream hover:text-terracotta", children: "Essen vorbestellen" }),
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(Link, { to: "/speisekarte", className: "btn-secondary border-cream text-cream hover:bg-cream hover:text-terracotta", children: "Speisekarte ansehen" })
+          /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("h2", { className: "font-serif text-4xl md:text-5xl font-bold text-cream mb-6", children: "Erleben Sie italienische Genusskultur" }),
+          /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("p", { className: "text-lg text-cream-light mb-8 max-w-2xl mx-auto opacity-90", children: "Machen Sie jetzt einen Tisch- reservierung oder besuchen Sie uns spontan. Wir freuen uns auf Ihren Besuch!" }),
+          /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("div", { className: "flex flex-col md:flex-row gap-4 justify-center", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(Link, { to: "/reservierung", className: "btn-secondary bg-cream text-terracotta border-cream hover:bg-opacity-90", children: "Tisch reservieren" }),
+            /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(Link, { to: "/bestellung", className: "btn-secondary border-cream text-cream hover:bg-cream hover:text-terracotta", children: "Essen vorbestellen" }),
+            /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(Link, { to: "/speisekarte", className: "btn-secondary border-cream text-cream hover:bg-cream hover:text-terracotta", children: "Speisekarte ansehen" })
           ] })
         ]
       }
@@ -34431,7 +34961,7 @@ function Home() {
 }
 
 // src/pages/Speisekarte.jsx
-var import_jsx_runtime7 = __toESM(require_jsx_runtime(), 1);
+var import_jsx_runtime14 = __toESM(require_jsx_runtime(), 1);
 function Speisekarte() {
   const menuSections = [
     {
@@ -34501,8 +35031,8 @@ function Speisekarte() {
       ]
     }
   ];
-  return /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { children: [
-    /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("section", { className: "bg-gradient-to-b from-terracotta-light to-cream py-12 md:py-20", children: /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "container-max px-4", children: /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(
+  return /* @__PURE__ */ (0, import_jsx_runtime14.jsxs)("div", { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime14.jsx)("section", { className: "bg-gradient-to-b from-terracotta-light to-cream py-12 md:py-20", children: /* @__PURE__ */ (0, import_jsx_runtime14.jsx)("div", { className: "container-max px-4", children: /* @__PURE__ */ (0, import_jsx_runtime14.jsxs)(
       motion.div,
       {
         initial: { opacity: 0, y: -20 },
@@ -34510,13 +35040,13 @@ function Speisekarte() {
         transition: { duration: 0.6 },
         className: "text-center",
         children: [
-          /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("h1", { className: "font-serif text-5xl md:text-6xl font-bold text-stone mb-4", children: "Speisekarte" }),
-          /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("p", { className: "text-lg text-stone-light", children: "Entdecken Sie unsere autentischen italienischen Spezialit\xE4ten" })
+          /* @__PURE__ */ (0, import_jsx_runtime14.jsx)("h1", { className: "font-serif text-5xl md:text-6xl font-bold text-stone mb-4", children: "Speisekarte" }),
+          /* @__PURE__ */ (0, import_jsx_runtime14.jsx)("p", { className: "text-lg text-stone-light", children: "Entdecken Sie unsere autentischen italienischen Spezialit\xE4ten" })
         ]
       }
     ) }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("section", { className: "section-padding", children: /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "container-max max-w-4xl mx-auto", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "space-y-12", children: menuSections.map((section, sectionIdx) => /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(
+    /* @__PURE__ */ (0, import_jsx_runtime14.jsx)("section", { className: "section-padding", children: /* @__PURE__ */ (0, import_jsx_runtime14.jsxs)("div", { className: "container-max max-w-4xl mx-auto", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime14.jsx)("div", { className: "space-y-12", children: menuSections.map((section, sectionIdx) => /* @__PURE__ */ (0, import_jsx_runtime14.jsxs)(
         motion.div,
         {
           initial: { opacity: 0, y: 20 },
@@ -34524,8 +35054,8 @@ function Speisekarte() {
           transition: { duration: 0.6, delay: sectionIdx * 0.05 },
           viewport: { once: true },
           children: [
-            /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("h2", { className: "font-serif text-3xl font-bold text-terracotta mb-6 pb-3 border-b-2 border-olive-light", children: section.title }),
-            /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "space-y-5", children: section.items.map((item, itemIdx) => /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(
+            /* @__PURE__ */ (0, import_jsx_runtime14.jsx)("h2", { className: "font-serif text-3xl font-bold text-terracotta mb-6 pb-3 border-b-2 border-olive-light", children: section.title }),
+            /* @__PURE__ */ (0, import_jsx_runtime14.jsx)("div", { className: "space-y-5", children: section.items.map((item, itemIdx) => /* @__PURE__ */ (0, import_jsx_runtime14.jsxs)(
               motion.div,
               {
                 initial: { opacity: 0, x: -10 },
@@ -34534,11 +35064,11 @@ function Speisekarte() {
                 viewport: { once: true },
                 className: "flex justify-between items-start gap-4 pb-3 border-b border-gray-200",
                 children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "flex-1", children: [
-                    /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("h3", { className: "font-serif text-lg font-bold text-stone", children: item.name }),
-                    item.desc && /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("p", { className: "text-sm text-stone-light", children: item.desc })
+                  /* @__PURE__ */ (0, import_jsx_runtime14.jsxs)("div", { className: "flex-1", children: [
+                    /* @__PURE__ */ (0, import_jsx_runtime14.jsx)("h3", { className: "font-serif text-lg font-bold text-stone", children: item.name }),
+                    item.desc && /* @__PURE__ */ (0, import_jsx_runtime14.jsx)("p", { className: "text-sm text-stone-light", children: item.desc })
                   ] }),
-                  /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "font-serif font-bold text-terracotta text-lg whitespace-nowrap", children: item.price })
+                  /* @__PURE__ */ (0, import_jsx_runtime14.jsx)("div", { className: "font-serif font-bold text-terracotta text-lg whitespace-nowrap", children: item.price })
                 ]
               },
               itemIdx
@@ -34547,7 +35077,7 @@ function Speisekarte() {
         },
         sectionIdx
       )) }),
-      /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(
         motion.div,
         {
           initial: { opacity: 0 },
@@ -34555,14 +35085,14 @@ function Speisekarte() {
           transition: { duration: 0.6, delay: 0.3 },
           viewport: { once: true },
           className: "mt-12 p-6 bg-gray-50 rounded-lg border-l-4 border-olive",
-          children: /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("p", { className: "text-sm text-stone-light", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("strong", { children: "Hinweis:" }),
+          children: /* @__PURE__ */ (0, import_jsx_runtime14.jsxs)("p", { className: "text-sm text-stone-light", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime14.jsx)("strong", { children: "Hinweis:" }),
             " Alle Preise inklusive Mehrwertsteuer. Allergene und Zusatzstoffe fragen Sie bitte beim Personal. Saisonale \xC4nderungen vorbehalten."
           ] })
         }
       )
     ] }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("section", { className: "section-padding bg-gray-50", children: /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "container-max text-center", children: /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(
+    /* @__PURE__ */ (0, import_jsx_runtime14.jsx)("section", { className: "section-padding bg-gray-50", children: /* @__PURE__ */ (0, import_jsx_runtime14.jsx)("div", { className: "container-max text-center", children: /* @__PURE__ */ (0, import_jsx_runtime14.jsxs)(
       motion.div,
       {
         initial: { opacity: 0, y: 20 },
@@ -34570,9 +35100,9 @@ function Speisekarte() {
         transition: { duration: 0.6 },
         viewport: { once: true },
         children: [
-          /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("h2", { className: "font-serif text-3xl font-bold text-stone mb-6", children: "Guten Appetit!" }),
-          /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("p", { className: "text-lg text-stone-light mb-8 max-w-2xl mx-auto", children: "Bei Fragen zu Zutaten oder Allergien kontaktieren Sie uns gerne. F\xFCr Reservierungen rufen Sie uns an." }),
-          /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("a", { href: "tel:+498104889110", className: "btn-primary", children: "+49 8104 8891110" })
+          /* @__PURE__ */ (0, import_jsx_runtime14.jsx)("h2", { className: "font-serif text-3xl font-bold text-stone mb-6", children: "Guten Appetit!" }),
+          /* @__PURE__ */ (0, import_jsx_runtime14.jsx)("p", { className: "text-lg text-stone-light mb-8 max-w-2xl mx-auto", children: "Bei Fragen zu Zutaten oder Allergien kontaktieren Sie uns gerne. F\xFCr Reservierungen rufen Sie uns an." }),
+          /* @__PURE__ */ (0, import_jsx_runtime14.jsx)("a", { href: "tel:+498104889110", className: "btn-primary", children: "+49 8104 8891110" })
         ]
       }
     ) }) })
@@ -34580,10 +35110,10 @@ function Speisekarte() {
 }
 
 // src/pages/UberUns.jsx
-var import_jsx_runtime8 = __toESM(require_jsx_runtime(), 1);
+var import_jsx_runtime15 = __toESM(require_jsx_runtime(), 1);
 function UberUns() {
-  return /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { children: [
-    /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("section", { className: "bg-gradient-to-b from-olive-light to-cream py-12 md:py-20", children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { className: "container-max px-4", children: /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)(
+  return /* @__PURE__ */ (0, import_jsx_runtime15.jsxs)("div", { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("section", { className: "bg-gradient-to-b from-olive-light to-cream py-12 md:py-20", children: /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("div", { className: "container-max px-4", children: /* @__PURE__ */ (0, import_jsx_runtime15.jsxs)(
       motion.div,
       {
         initial: { opacity: 0, y: -20 },
@@ -34591,12 +35121,12 @@ function UberUns() {
         transition: { duration: 0.6 },
         className: "text-center",
         children: [
-          /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("h1", { className: "font-serif text-5xl md:text-6xl font-bold text-stone mb-4", children: "\xDCber uns" }),
-          /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("p", { className: "text-lg text-stone-light", children: "Unsere Geschichte und unsere Leidenschaft f\xFCr italienische K\xFCche" })
+          /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("h1", { className: "font-serif text-5xl md:text-6xl font-bold text-stone mb-4", children: "\xDCber uns" }),
+          /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("p", { className: "text-lg text-stone-light", children: "Unsere Geschichte und unsere Leidenschaft f\xFCr italienische K\xFCche" })
         ]
       }
     ) }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("section", { className: "section-padding", children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { className: "container-max max-w-3xl mx-auto", children: /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)(
+    /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("section", { className: "section-padding", children: /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("div", { className: "container-max max-w-3xl mx-auto", children: /* @__PURE__ */ (0, import_jsx_runtime15.jsxs)(
       motion.div,
       {
         initial: { opacity: 0, y: 20 },
@@ -34604,17 +35134,17 @@ function UberUns() {
         transition: { duration: 0.6 },
         viewport: { once: true },
         children: [
-          /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("h2", { className: "font-serif text-4xl font-bold text-stone mb-6", children: "Willkommen bei Sapore Mediterraneo" }),
-          /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: "space-y-6 text-stone-light leading-relaxed", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("p", { children: "Sapore Mediterraneo steht f\xFCr Authentizit\xE4t, Leidenschaft und die wahre Essenz der italienischen Kulinarik. In unserem Restaurant in Brunnthal erleben Sie nicht nur Essen \u2013 Sie erleben eine Geschichte." }),
-            /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("p", { children: "Unsere K\xFCche verbindet Tradition mit modernem Flair. Jedes Gericht wird nach \xFCberlieferten Rezepten zubereitet, mit Zutaten von h\xF6chster Qualit\xE4t und mit der Sorgfalt, die Sie verdienen." }),
-            /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("p", { children: "Wir glauben daran, dass gutes Essen Menschen zusammenbringt. Ob Familie, Freunde oder gesch\xE4ftliche Treffen \u2013 bei uns schaffen Sie Momente, die bleiben." })
+          /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("h2", { className: "font-serif text-4xl font-bold text-stone mb-6", children: "Willkommen bei Sapore Mediterraneo" }),
+          /* @__PURE__ */ (0, import_jsx_runtime15.jsxs)("div", { className: "space-y-6 text-stone-light leading-relaxed", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("p", { children: "Sapore Mediterraneo steht f\xFCr Authentizit\xE4t, Leidenschaft und die wahre Essenz der italienischen Kulinarik. In unserem Restaurant in Brunnthal erleben Sie nicht nur Essen \u2013 Sie erleben eine Geschichte." }),
+            /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("p", { children: "Unsere K\xFCche verbindet Tradition mit modernem Flair. Jedes Gericht wird nach \xFCberlieferten Rezepten zubereitet, mit Zutaten von h\xF6chster Qualit\xE4t und mit der Sorgfalt, die Sie verdienen." }),
+            /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("p", { children: "Wir glauben daran, dass gutes Essen Menschen zusammenbringt. Ob Familie, Freunde oder gesch\xE4ftliche Treffen \u2013 bei uns schaffen Sie Momente, die bleiben." })
           ] })
         ]
       }
     ) }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("section", { className: "section-padding bg-gray-50", children: /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: "container-max", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(
+    /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("section", { className: "section-padding bg-gray-50", children: /* @__PURE__ */ (0, import_jsx_runtime15.jsxs)("div", { className: "container-max", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
         motion.h2,
         {
           initial: { opacity: 0 },
@@ -34625,23 +35155,23 @@ function UberUns() {
           children: "Das macht uns aus"
         }
       ),
-      /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { className: "grid grid-cols-1 md:grid-cols-3 gap-8", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("div", { className: "grid grid-cols-1 md:grid-cols-3 gap-8", children: [
         {
-          icon: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(Heart, { size: 40 }),
+          icon: /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(Heart, { size: 40 }),
           title: "Leidenschaft",
           desc: "Wir lieben, was wir tun. In jedem Gericht steckt unsere Hingabe zur italienischen Kulinarik."
         },
         {
-          icon: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(Users, { size: 40 }),
+          icon: /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(Users, { size: 40 }),
           title: "Gemeinschaft",
           desc: "Familie und Freunde sind das Herz unseres Restaurants. Hier werden G\xE4ste zu Freunden."
         },
         {
-          icon: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(Clock, { size: 40 }),
+          icon: /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(Clock, { size: 40 }),
           title: "Tradition",
           desc: "Rezepte, die Generationen \xFCberdauert haben. Qualit\xE4t \xFCber Zeit bew\xE4hrt und verfeinert."
         }
-      ].map((pillar, idx) => /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)(
+      ].map((pillar, idx) => /* @__PURE__ */ (0, import_jsx_runtime15.jsxs)(
         motion.div,
         {
           initial: { opacity: 0, y: 20 },
@@ -34650,15 +35180,15 @@ function UberUns() {
           viewport: { once: true },
           className: "bg-white rounded-lg p-8 text-center shadow-md hover:shadow-lg transition-shadow",
           children: [
-            /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { className: "text-terracotta mb-4 flex justify-center", children: pillar.icon }),
-            /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("h3", { className: "font-serif text-2xl font-bold text-stone mb-3", children: pillar.title }),
-            /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("p", { className: "text-stone-light", children: pillar.desc })
+            /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("div", { className: "text-terracotta mb-4 flex justify-center", children: pillar.icon }),
+            /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("h3", { className: "font-serif text-2xl font-bold text-stone mb-3", children: pillar.title }),
+            /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("p", { className: "text-stone-light", children: pillar.desc })
           ]
         },
         idx
       )) })
     ] }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("section", { className: "section-padding", children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { className: "container-max max-w-3xl mx-auto", children: /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)(
+    /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("section", { className: "section-padding", children: /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("div", { className: "container-max max-w-3xl mx-auto", children: /* @__PURE__ */ (0, import_jsx_runtime15.jsxs)(
       motion.div,
       {
         initial: { opacity: 0, y: 20 },
@@ -34666,13 +35196,13 @@ function UberUns() {
         transition: { duration: 0.6 },
         viewport: { once: true },
         children: [
-          /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("h2", { className: "font-serif text-4xl font-bold text-stone mb-6", children: "Unser Team" }),
-          /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("p", { className: "text-lg text-stone-light leading-relaxed mb-6", children: "Sapore Mediterraneo wird von einem engagierten Team geleitet, das eine gemeinsame Leidenschaft teilt: authentische italienische Kulinarik mit Liebe zum Detail." }),
-          /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("p", { className: "text-lg text-stone-light leading-relaxed", children: "Von der K\xFCche bis zum Service \u2013 jeder arbeitet daran, dass Sie ein unvergessliches Erlebnis haben. Ihre Zufriedenheit ist unsere Erfolgsmesure." })
+          /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("h2", { className: "font-serif text-4xl font-bold text-stone mb-6", children: "Unser Team" }),
+          /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("p", { className: "text-lg text-stone-light leading-relaxed mb-6", children: "Sapore Mediterraneo wird von einem engagierten Team geleitet, das eine gemeinsame Leidenschaft teilt: authentische italienische Kulinarik mit Liebe zum Detail." }),
+          /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("p", { className: "text-lg text-stone-light leading-relaxed", children: "Von der K\xFCche bis zum Service \u2013 jeder arbeitet daran, dass Sie ein unvergessliches Erlebnis haben. Ihre Zufriedenheit ist unsere Erfolgsmesure." })
         ]
       }
     ) }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("section", { className: "section-padding bg-gradient-to-r from-terracotta-light to-olive-light", children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { className: "container-max max-w-3xl mx-auto", children: /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)(
+    /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("section", { className: "section-padding bg-gradient-to-r from-terracotta-light to-olive-light", children: /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("div", { className: "container-max max-w-3xl mx-auto", children: /* @__PURE__ */ (0, import_jsx_runtime15.jsxs)(
       motion.div,
       {
         initial: { opacity: 0, y: 20 },
@@ -34681,14 +35211,14 @@ function UberUns() {
         viewport: { once: true },
         className: "bg-white rounded-lg p-8 shadow-lg",
         children: [
-          /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("h2", { className: "font-serif text-3xl font-bold text-stone mb-6", children: "Unser Qualit\xE4tsversprechen" }),
-          /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("ul", { className: "space-y-4", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("h2", { className: "font-serif text-3xl font-bold text-stone mb-6", children: "Unser Qualit\xE4tsversprechen" }),
+          /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("ul", { className: "space-y-4", children: [
             "Frische Zutaten von ausgew\xE4hlten Lieferanten",
             "Traditionelle Rezepte, handwerklich zubereitet",
             "Kundenfreundlichkeit an erster Stelle",
             "Sauberes und einladendes Restaurant",
             "Respekt vor alten Traditionen und modernen Standards"
-          ].map((item, idx) => /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)(
+          ].map((item, idx) => /* @__PURE__ */ (0, import_jsx_runtime15.jsxs)(
             motion.li,
             {
               initial: { opacity: 0, x: -10 },
@@ -34697,8 +35227,8 @@ function UberUns() {
               viewport: { once: true },
               className: "flex gap-3 items-start",
               children: [
-                /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("span", { className: "text-terracotta font-bold mt-1", children: "\u2713" }),
-                /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("span", { className: "text-stone", children: item })
+                /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("span", { className: "text-terracotta font-bold mt-1", children: "\u2713" }),
+                /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("span", { className: "text-stone", children: item })
               ]
             },
             idx
@@ -34706,7 +35236,7 @@ function UberUns() {
         ]
       }
     ) }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("section", { className: "section-padding", children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { className: "container-max text-center", children: /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)(
+    /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("section", { className: "section-padding", children: /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("div", { className: "container-max text-center", children: /* @__PURE__ */ (0, import_jsx_runtime15.jsxs)(
       motion.div,
       {
         initial: { opacity: 0, y: 20 },
@@ -34714,9 +35244,9 @@ function UberUns() {
         transition: { duration: 0.6 },
         viewport: { once: true },
         children: [
-          /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("h2", { className: "font-serif text-3xl font-bold text-stone mb-6", children: "Erleben Sie es selbst" }),
-          /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("p", { className: "text-lg text-stone-light mb-8 max-w-2xl mx-auto", children: "Besuchen Sie uns und erleben Sie die Leidenschaft, die in jedem Gericht steckt." }),
-          /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("a", { href: "tel:+498104889110", className: "btn-primary", children: "Tisch reservieren" })
+          /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("h2", { className: "font-serif text-3xl font-bold text-stone mb-6", children: "Erleben Sie es selbst" }),
+          /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("p", { className: "text-lg text-stone-light mb-8 max-w-2xl mx-auto", children: "Besuchen Sie uns und erleben Sie die Leidenschaft, die in jedem Gericht steckt." }),
+          /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("a", { href: "tel:+498104889110", className: "btn-primary", children: "Tisch reservieren" })
         ]
       }
     ) }) })
@@ -34724,17 +35254,17 @@ function UberUns() {
 }
 
 // src/pages/Kontakt.jsx
-var import_react28 = __toESM(require_react(), 1);
-var import_jsx_runtime9 = __toESM(require_jsx_runtime(), 1);
+var import_react31 = __toESM(require_react(), 1);
+var import_jsx_runtime16 = __toESM(require_jsx_runtime(), 1);
 function Kontakt() {
-  const [formData, setFormData] = (0, import_react28.useState)({
+  const [formData, setFormData] = (0, import_react31.useState)({
     name: "",
     email: "",
     phone: "",
     subject: "",
     message: ""
   });
-  const [submitted, setSubmitted] = (0, import_react28.useState)(false);
+  const [submitted, setSubmitted] = (0, import_react31.useState)(false);
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -34748,8 +35278,8 @@ function Kontakt() {
     setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
     setTimeout(() => setSubmitted(false), 3e3);
   };
-  return /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { children: [
-    /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("section", { className: "bg-gradient-to-b from-terracotta-light to-cream py-12 md:py-20", children: /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { className: "container-max px-4", children: /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)(
+  return /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("section", { className: "bg-gradient-to-b from-terracotta-light to-cream py-12 md:py-20", children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("div", { className: "container-max px-4", children: /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)(
       motion.div,
       {
         initial: { opacity: 0, y: -20 },
@@ -34757,35 +35287,35 @@ function Kontakt() {
         transition: { duration: 0.6 },
         className: "text-center",
         children: [
-          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("h1", { className: "font-serif text-5xl md:text-6xl font-bold text-stone mb-4", children: "Kontakt" }),
-          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("p", { className: "text-lg text-stone-light", children: "Wir freuen uns, von Ihnen zu h\xF6ren" })
+          /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("h1", { className: "font-serif text-5xl md:text-6xl font-bold text-stone mb-4", children: "Kontakt" }),
+          /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("p", { className: "text-lg text-stone-light", children: "Wir freuen uns, von Ihnen zu h\xF6ren" })
         ]
       }
     ) }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("section", { className: "section-padding", children: /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { className: "container-max", children: /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { className: "grid grid-cols-1 md:grid-cols-4 gap-6 mb-12", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("section", { className: "section-padding", children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("div", { className: "container-max", children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("div", { className: "grid grid-cols-1 md:grid-cols-4 gap-6 mb-12", children: [
       {
-        icon: /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(MapPin, { size: 32 }),
+        icon: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(MapPin, { size: 32 }),
         title: "Adresse",
         info: "Fichtenstra\xDFe 33\n85649 Brunnthal\nGermany"
       },
       {
-        icon: /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(Phone, { size: 32 }),
+        icon: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Phone, { size: 32 }),
         title: "Telefon",
         info: "+49 8104 8891110",
         link: "tel:+498104889110"
       },
       {
-        icon: /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(Mail, { size: 32 }),
+        icon: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Mail, { size: 32 }),
         title: "E-Mail",
         info: "info@sapore-med.de",
         link: "mailto:info@sapore-med.de"
       },
       {
-        icon: /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(Clock, { size: 32 }),
+        icon: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Clock, { size: 32 }),
         title: "\xD6ffnungszeiten",
         info: "Mo - Do: 11:30 - 22:00\nFr - Sa: 11:30 - 23:00\nSo: 11:30 - 22:00"
       }
-    ].map((item, idx) => /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)(
+    ].map((item, idx) => /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)(
       motion.div,
       {
         initial: { opacity: 0, y: 20 },
@@ -34794,15 +35324,15 @@ function Kontakt() {
         viewport: { once: true },
         className: "bg-gray-50 rounded-lg p-6 text-center hover:shadow-md transition-shadow",
         children: [
-          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { className: "text-terracotta mb-4 flex justify-center", children: item.icon }),
-          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("h3", { className: "font-serif text-xl font-bold text-stone mb-3", children: item.title }),
-          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("p", { className: "text-stone-light text-sm whitespace-pre-line", children: item.link ? /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("a", { href: item.link, className: "hover:text-terracotta transition", children: item.info }) : item.info })
+          /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("div", { className: "text-terracotta mb-4 flex justify-center", children: item.icon }),
+          /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("h3", { className: "font-serif text-xl font-bold text-stone mb-3", children: item.title }),
+          /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("p", { className: "text-stone-light text-sm whitespace-pre-line", children: item.link ? /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("a", { href: item.link, className: "hover:text-terracotta transition", children: item.info }) : item.info })
         ]
       },
       idx
     )) }) }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("section", { className: "section-padding bg-gray-50", children: /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { className: "container-max", children: /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-8", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)(
+    /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("section", { className: "section-padding bg-gray-50", children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("div", { className: "container-max", children: /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-8", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)(
         motion.div,
         {
           initial: { opacity: 0, x: -30 },
@@ -34810,8 +35340,8 @@ function Kontakt() {
           transition: { duration: 0.6 },
           viewport: { once: true },
           children: [
-            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("h2", { className: "font-serif text-3xl font-bold text-stone mb-6", children: "Nachricht senden" }),
-            submitted && /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("h2", { className: "font-serif text-3xl font-bold text-stone mb-6", children: "Nachricht senden" }),
+            submitted && /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
               motion.div,
               {
                 initial: { opacity: 0, y: -10 },
@@ -34820,10 +35350,10 @@ function Kontakt() {
                 children: "\u2713 Vielen Dank! Wir werden Sie bald kontaktieren."
               }
             ),
-            /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("form", { onSubmit: handleSubmit, className: "space-y-4", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { children: [
-                /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("label", { className: "block text-sm font-medium text-stone mb-2", children: "Name *" }),
-                /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("form", { onSubmit: handleSubmit, className: "space-y-4", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { children: [
+                /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("label", { className: "block text-sm font-medium text-stone mb-2", children: "Name *" }),
+                /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
                   "input",
                   {
                     type: "text",
@@ -34836,9 +35366,9 @@ function Kontakt() {
                   }
                 )
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { children: [
-                /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("label", { className: "block text-sm font-medium text-stone mb-2", children: "E-Mail *" }),
-                /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
+              /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { children: [
+                /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("label", { className: "block text-sm font-medium text-stone mb-2", children: "E-Mail *" }),
+                /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
                   "input",
                   {
                     type: "email",
@@ -34851,9 +35381,9 @@ function Kontakt() {
                   }
                 )
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { children: [
-                /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("label", { className: "block text-sm font-medium text-stone mb-2", children: "Telefon" }),
-                /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
+              /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { children: [
+                /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("label", { className: "block text-sm font-medium text-stone mb-2", children: "Telefon" }),
+                /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
                   "input",
                   {
                     type: "tel",
@@ -34865,9 +35395,9 @@ function Kontakt() {
                   }
                 )
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { children: [
-                /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("label", { className: "block text-sm font-medium text-stone mb-2", children: "Betreff *" }),
-                /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
+              /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { children: [
+                /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("label", { className: "block text-sm font-medium text-stone mb-2", children: "Betreff *" }),
+                /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
                   "input",
                   {
                     type: "text",
@@ -34880,9 +35410,9 @@ function Kontakt() {
                   }
                 )
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { children: [
-                /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("label", { className: "block text-sm font-medium text-stone mb-2", children: "Nachricht *" }),
-                /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
+              /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { children: [
+                /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("label", { className: "block text-sm font-medium text-stone mb-2", children: "Nachricht *" }),
+                /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
                   "textarea",
                   {
                     name: "message",
@@ -34895,12 +35425,12 @@ function Kontakt() {
                   }
                 )
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("button", { type: "submit", className: "btn-primary w-full", children: "Senden" })
+              /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("button", { type: "submit", className: "btn-primary w-full", children: "Senden" })
             ] })
           ]
         }
       ),
-      /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
         motion.div,
         {
           initial: { opacity: 0, x: 30 },
@@ -34908,7 +35438,7 @@ function Kontakt() {
           transition: { duration: 0.6 },
           viewport: { once: true },
           className: "rounded-lg overflow-hidden shadow-lg h-96 md:h-auto",
-          children: /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
+          children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
             "iframe",
             {
               src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2607.8929746391157!2d11.583300!3d48.003000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479dd1e8e8e8e8e9%3A0x0!2sSapore%20Mediterraneo!5e0!3m2!1sde!2sde!4v1234567890",
@@ -34923,7 +35453,7 @@ function Kontakt() {
         }
       )
     ] }) }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("section", { className: "section-padding", children: /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { className: "container-max", children: /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)(
+    /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("section", { className: "section-padding", children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("div", { className: "container-max", children: /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)(
       motion.div,
       {
         initial: { opacity: 0, y: 20 },
@@ -34932,11 +35462,11 @@ function Kontakt() {
         viewport: { once: true },
         className: "text-center",
         children: [
-          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("h2", { className: "font-serif text-3xl font-bold text-stone mb-8", children: "Schneller Kontakt" }),
-          /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { className: "flex flex-col md:flex-row gap-4 justify-center", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("a", { href: "tel:+498104889110", className: "btn-primary", children: "Anrufen" }),
-            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("a", { href: "https://wa.me/498104889110?text=Hallo%20Sapore%20Mediterraneo", className: "btn-secondary", target: "_blank", rel: "noopener noreferrer", children: "WhatsApp" }),
-            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("a", { href: "mailto:info@sapore-med.de", className: "btn-outline", children: "E-Mail schreiben" })
+          /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("h2", { className: "font-serif text-3xl font-bold text-stone mb-8", children: "Schneller Kontakt" }),
+          /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "flex flex-col md:flex-row gap-4 justify-center", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("a", { href: "tel:+498104889110", className: "btn-primary", children: "Anrufen" }),
+            /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("a", { href: "https://wa.me/498104889110?text=Hallo%20Sapore%20Mediterraneo", className: "btn-secondary", target: "_blank", rel: "noopener noreferrer", children: "WhatsApp" }),
+            /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("a", { href: "mailto:info@sapore-med.de", className: "btn-outline", children: "E-Mail schreiben" })
           ] })
         ]
       }
@@ -34945,20 +35475,20 @@ function Kontakt() {
 }
 
 // src/pages/Impressum.jsx
-var import_jsx_runtime10 = __toESM(require_jsx_runtime(), 1);
+var import_jsx_runtime17 = __toESM(require_jsx_runtime(), 1);
 function Impressum() {
-  return /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { children: [
-    /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("section", { className: "bg-gradient-to-b from-olive-light to-cream py-12 md:py-20", children: /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("div", { className: "container-max px-4", children: /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
+  return /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("section", { className: "bg-gradient-to-b from-olive-light to-cream py-12 md:py-20", children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("div", { className: "container-max px-4", children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
       motion.div,
       {
         initial: { opacity: 0, y: -20 },
         animate: { opacity: 1, y: 0 },
         transition: { duration: 0.6 },
         className: "text-center",
-        children: /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("h1", { className: "font-serif text-5xl md:text-6xl font-bold text-stone mb-4", children: "Impressum" })
+        children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("h1", { className: "font-serif text-5xl md:text-6xl font-bold text-stone mb-4", children: "Impressum" })
       }
     ) }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("section", { className: "section-padding", children: /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("div", { className: "container-max max-w-3xl mx-auto", children: /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)(
+    /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("section", { className: "section-padding", children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("div", { className: "container-max max-w-3xl mx-auto", children: /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)(
       motion.div,
       {
         initial: { opacity: 0, y: 20 },
@@ -34966,54 +35496,54 @@ function Impressum() {
         transition: { duration: 0.6 },
         className: "prose prose-sm max-w-none text-stone-light space-y-8",
         children: [
-          /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("h2", { className: "font-serif text-3xl font-bold text-stone mb-4", children: "Anbieter" }),
-            /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("p", { className: "space-y-2", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("div", { className: "font-medium text-stone", children: "Sapore Mediterraneo" }),
-              /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("div", { children: "Fichtenstra\xDFe 33" }),
-              /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("div", { children: "85649 Brunnthal" }),
-              /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("div", { children: "Deutschland" })
+          /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("h2", { className: "font-serif text-3xl font-bold text-stone mb-4", children: "Anbieter" }),
+            /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("p", { className: "space-y-2", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("div", { className: "font-medium text-stone", children: "Sapore Mediterraneo" }),
+              /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("div", { children: "Fichtenstra\xDFe 33" }),
+              /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("div", { children: "85649 Brunnthal" }),
+              /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("div", { children: "Deutschland" })
             ] })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("h2", { className: "font-serif text-3xl font-bold text-stone mb-4", children: "Kontaktinformationen" }),
-            /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("p", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("strong", { children: "Telefon:" }),
+          /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("h2", { className: "font-serif text-3xl font-bold text-stone mb-4", children: "Kontaktinformationen" }),
+            /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("p", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("strong", { children: "Telefon:" }),
               " ",
-              /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("a", { href: "tel:+498104889110", className: "text-terracotta hover:text-terracotta-light", children: "+49 8104 8891110" }),
-              /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("br", {}),
-              /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("strong", { children: "E-Mail:" }),
+              /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("a", { href: "tel:+498104889110", className: "text-terracotta hover:text-terracotta-light", children: "+49 8104 8891110" }),
+              /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("br", {}),
+              /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("strong", { children: "E-Mail:" }),
               " ",
-              /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("a", { href: "mailto:info@sapore-med.de", className: "text-terracotta hover:text-terracotta-light", children: "info@sapore-med.de" })
+              /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("a", { href: "mailto:info@sapore-med.de", className: "text-terracotta hover:text-terracotta-light", children: "info@sapore-med.de" })
             ] })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("h2", { className: "font-serif text-3xl font-bold text-stone mb-4", children: "Betriebskommentar" }),
-            /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("p", { children: "Diese Website wird von Sapore Mediterraneo, einem Restaurant in Brunnthal, Deutschland, betrieben. Alle Informationen auf dieser Website sind auf Englisch und Deutsch verf\xFCgbar." })
+          /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("h2", { className: "font-serif text-3xl font-bold text-stone mb-4", children: "Betriebskommentar" }),
+            /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("p", { children: "Diese Website wird von Sapore Mediterraneo, einem Restaurant in Brunnthal, Deutschland, betrieben. Alle Informationen auf dieser Website sind auf Englisch und Deutsch verf\xFCgbar." })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("h2", { className: "font-serif text-3xl font-bold text-stone mb-4", children: "Haftungsausschluss" }),
-            /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("p", { children: "Der Autor \xFCbernimmt keine Gew\xE4hr f\xFCr die Aktualit\xE4t, Korrektheit, Vollst\xE4ndigkeit oder Qualit\xE4t der bereitgestellten Informationen. Haftungsanspr\xFCche gegen den Autor, die sich auf Sch\xE4den materieller oder ideeller Art beziehen, welche durch die Nutzung oder Nichtnutzung der dargebotenen Informationen bzw. durch die Nutzung fehlerhafter und unvollst\xE4ndiger Informationen verursacht wurden, sind grunds\xE4tzlich ausgeschlossen, sofern seitens des Autors kein nachweislich vors\xE4tzliches oder grob fahrl\xE4ssiges Verschulden vorliegt." })
+          /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("h2", { className: "font-serif text-3xl font-bold text-stone mb-4", children: "Haftungsausschluss" }),
+            /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("p", { children: "Der Autor \xFCbernimmt keine Gew\xE4hr f\xFCr die Aktualit\xE4t, Korrektheit, Vollst\xE4ndigkeit oder Qualit\xE4t der bereitgestellten Informationen. Haftungsanspr\xFCche gegen den Autor, die sich auf Sch\xE4den materieller oder ideeller Art beziehen, welche durch die Nutzung oder Nichtnutzung der dargebotenen Informationen bzw. durch die Nutzung fehlerhafter und unvollst\xE4ndiger Informationen verursacht wurden, sind grunds\xE4tzlich ausgeschlossen, sofern seitens des Autors kein nachweislich vors\xE4tzliches oder grob fahrl\xE4ssiges Verschulden vorliegt." })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("h2", { className: "font-serif text-3xl font-bold text-stone mb-4", children: "Urheberrecht" }),
-            /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("p", { children: "Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielf\xE4ltigung, Bearbeitung, Verbreitung und jede Art der Verwertung au\xDFerhalb der Grenzen des Urheberrechtes bed\xFCrfen der schriftlichen Zustimmung des Autors bzw. Sch\xF6pfers. Downloads und Kopien dieser Seite sind nur f\xFCr den privaten, nicht kommerziellen Gebrauch gestattet. Solange die Inhalte auf dieser Seite nicht von Sapore Mediterraneo schwarz als urheberrechtsverletzend gekennzeichnet worden sind, gelten die Inhalte als nicht von Urheberrechten Dritter verletzt." })
+          /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("h2", { className: "font-serif text-3xl font-bold text-stone mb-4", children: "Urheberrecht" }),
+            /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("p", { children: "Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielf\xE4ltigung, Bearbeitung, Verbreitung und jede Art der Verwertung au\xDFerhalb der Grenzen des Urheberrechtes bed\xFCrfen der schriftlichen Zustimmung des Autors bzw. Sch\xF6pfers. Downloads und Kopien dieser Seite sind nur f\xFCr den privaten, nicht kommerziellen Gebrauch gestattet. Solange die Inhalte auf dieser Seite nicht von Sapore Mediterraneo schwarz als urheberrechtsverletzend gekennzeichnet worden sind, gelten die Inhalte als nicht von Urheberrechten Dritter verletzt." })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("h2", { className: "font-serif text-3xl font-bold text-stone mb-4", children: "Datenschutz" }),
-            /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("p", { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("h2", { className: "font-serif text-3xl font-bold text-stone mb-4", children: "Datenschutz" }),
+            /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("p", { children: [
               "F\xFCr weitere Informationen zum Datenschutz siehe unsere ",
-              /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("a", { href: "/datenschutz", className: "text-terracotta hover:text-terracotta-light", children: "Datenschutzerkl\xE4rung" }),
+              /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("a", { href: "/datenschutz", className: "text-terracotta hover:text-terracotta-light", children: "Datenschutzerkl\xE4rung" }),
               "."
             ] })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("h2", { className: "font-serif text-3xl font-bold text-stone mb-4", children: "Haftung f\xFCr Links" }),
-            /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("p", { children: "Unser Angebot enth\xE4lt Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb k\xF6nnen wir f\xFCr diese fremden Inhalte auch keine Gew\xE4hr \xFCbernehmen. F\xFCr die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf m\xF6gliche Rechtsverst\xF6\xDFe \xFCberpr\xFCft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar." })
+          /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("h2", { className: "font-serif text-3xl font-bold text-stone mb-4", children: "Haftung f\xFCr Links" }),
+            /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("p", { children: "Unser Angebot enth\xE4lt Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb k\xF6nnen wir f\xFCr diese fremden Inhalte auch keine Gew\xE4hr \xFCbernehmen. F\xFCr die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf m\xF6gliche Rechtsverst\xF6\xDFe \xFCberpr\xFCft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar." })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("h2", { className: "font-serif text-3xl font-bold text-stone mb-4", children: "Besitztitel und Namensrechte" }),
-            /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("p", { children: "Sapore Mediterraneo\xAE ist eine eingetragene Marke. Alle anderen Namen oder Marken k\xF6nnen Marken eines Anderen sein." })
+          /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("h2", { className: "font-serif text-3xl font-bold text-stone mb-4", children: "Besitztitel und Namensrechte" }),
+            /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("p", { children: "Sapore Mediterraneo\xAE ist eine eingetragene Marke. Alle anderen Namen oder Marken k\xF6nnen Marken eines Anderen sein." })
           ] })
         ]
       }
@@ -35022,10 +35552,10 @@ function Impressum() {
 }
 
 // src/pages/Datenschutz.jsx
-var import_jsx_runtime11 = __toESM(require_jsx_runtime(), 1);
+var import_jsx_runtime18 = __toESM(require_jsx_runtime(), 1);
 function Datenschutz() {
-  return /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("div", { children: [
-    /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("section", { className: "bg-gradient-to-b from-terracotta-light to-cream py-12 md:py-20", children: /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("div", { className: "container-max px-4", children: /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)(
+  return /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("section", { className: "bg-gradient-to-b from-terracotta-light to-cream py-12 md:py-20", children: /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("div", { className: "container-max px-4", children: /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)(
       motion.div,
       {
         initial: { opacity: 0, y: -20 },
@@ -35033,12 +35563,12 @@ function Datenschutz() {
         transition: { duration: 0.6 },
         className: "text-center",
         children: [
-          /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("h1", { className: "font-serif text-5xl md:text-6xl font-bold text-stone mb-4", children: "Datenschutz" }),
-          /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("p", { className: "text-lg text-stone-light", children: "Datenschutzerkl\xE4rung (DSGVO)" })
+          /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("h1", { className: "font-serif text-5xl md:text-6xl font-bold text-stone mb-4", children: "Datenschutz" }),
+          /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("p", { className: "text-lg text-stone-light", children: "Datenschutzerkl\xE4rung (DSGVO)" })
         ]
       }
     ) }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("section", { className: "section-padding", children: /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("div", { className: "container-max max-w-3xl mx-auto", children: /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)(
+    /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("section", { className: "section-padding", children: /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("div", { className: "container-max max-w-3xl mx-auto", children: /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)(
       motion.div,
       {
         initial: { opacity: 0, y: 20 },
@@ -35046,90 +35576,90 @@ function Datenschutz() {
         transition: { duration: 0.6 },
         className: "prose prose-sm max-w-none text-stone-light space-y-8",
         children: [
-          /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("h2", { className: "font-serif text-3xl font-bold text-stone mb-4", children: "1. Verantwortlicher" }),
-            /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("p", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("strong", { children: "Sapore Mediterraneo" }),
-              /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("br", {}),
+          /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("h2", { className: "font-serif text-3xl font-bold text-stone mb-4", children: "1. Verantwortlicher" }),
+            /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("p", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("strong", { children: "Sapore Mediterraneo" }),
+              /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("br", {}),
               "Fichtenstra\xDFe 33",
-              /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("br", {}),
+              /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("br", {}),
               "85649 Brunnthal",
-              /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("br", {}),
+              /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("br", {}),
               "Deutschland",
-              /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("br", {}),
-              /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("strong", { children: "Telefon:" }),
+              /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("br", {}),
+              /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("strong", { children: "Telefon:" }),
               " ",
-              /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("a", { href: "tel:+498104889110", className: "text-terracotta hover:text-terracotta-light", children: "+49 8104 8891110" }),
-              /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("br", {}),
-              /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("strong", { children: "E-Mail:" }),
+              /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("a", { href: "tel:+498104889110", className: "text-terracotta hover:text-terracotta-light", children: "+49 8104 8891110" }),
+              /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("br", {}),
+              /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("strong", { children: "E-Mail:" }),
               " ",
-              /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("a", { href: "mailto:info@sapore-med.de", className: "text-terracotta hover:text-terracotta-light", children: "info@sapore-med.de" })
+              /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("a", { href: "mailto:info@sapore-med.de", className: "text-terracotta hover:text-terracotta-light", children: "info@sapore-med.de" })
             ] })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("h2", { className: "font-serif text-3xl font-bold text-stone mb-4", children: "2. Zweck der Datenverarbeitung" }),
-            /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("p", { children: "Die Erhebung und Verarbeitung Ihrer personenbezogenen Daten erfolgt zum Zwecke der:" }),
-            /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("ul", { className: "space-y-2 ml-4", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("li", { children: "\u2022 Erbringung unserer Dienstleistungen (Restaurantbetrieb, Reservierungen)" }),
-              /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("li", { children: "\u2022 Beantwortung von Kundenanfragen" }),
-              /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("li", { children: "\u2022 Erf\xFCllung gesetzlicher Verpflichtungen" }),
-              /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("li", { children: "\u2022 Verbesserung unseres Services" })
+          /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("h2", { className: "font-serif text-3xl font-bold text-stone mb-4", children: "2. Zweck der Datenverarbeitung" }),
+            /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("p", { children: "Die Erhebung und Verarbeitung Ihrer personenbezogenen Daten erfolgt zum Zwecke der:" }),
+            /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("ul", { className: "space-y-2 ml-4", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("li", { children: "\u2022 Erbringung unserer Dienstleistungen (Restaurantbetrieb, Reservierungen)" }),
+              /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("li", { children: "\u2022 Beantwortung von Kundenanfragen" }),
+              /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("li", { children: "\u2022 Erf\xFCllung gesetzlicher Verpflichtungen" }),
+              /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("li", { children: "\u2022 Verbesserung unseres Services" })
             ] })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("h2", { className: "font-serif text-3xl font-bold text-stone mb-4", children: "3. Welche Daten werden erfasst?" }),
-            /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("p", { children: "Bei Nutzung unserer Website k\xF6nnen folgende Daten erfasst werden:" }),
-            /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("ul", { className: "space-y-2 ml-4", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("li", { children: "\u2022 Kontaktformulare: Name, E-Mail, Telefon, Nachricht" }),
-              /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("li", { children: "\u2022 Server-Logs: IP-Adresse, Zugriffsdatum und -uhrzeit, Browser-Informationen" }),
-              /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("li", { children: "\u2022 Reservierungen: Name, E-Mail, Telefon, Anzahl Personen, Zeitpunkt" })
+          /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("h2", { className: "font-serif text-3xl font-bold text-stone mb-4", children: "3. Welche Daten werden erfasst?" }),
+            /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("p", { children: "Bei Nutzung unserer Website k\xF6nnen folgende Daten erfasst werden:" }),
+            /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("ul", { className: "space-y-2 ml-4", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("li", { children: "\u2022 Kontaktformulare: Name, E-Mail, Telefon, Nachricht" }),
+              /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("li", { children: "\u2022 Server-Logs: IP-Adresse, Zugriffsdatum und -uhrzeit, Browser-Informationen" }),
+              /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("li", { children: "\u2022 Reservierungen: Name, E-Mail, Telefon, Anzahl Personen, Zeitpunkt" })
             ] })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("h2", { className: "font-serif text-3xl font-bold text-stone mb-4", children: "4. Rechtsgrundlage" }),
-            /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("p", { children: "Die Verarbeitung erfolgt gem\xE4\xDF Art. 6 Abs. 1 DSGVO auf Grundlage:" }),
-            /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("ul", { className: "space-y-2 ml-4", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("li", { children: "\u2022 Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO)" }),
-              /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("li", { children: "\u2022 Erf\xFCllung eines Vertrags (Art. 6 Abs. 1 lit. b DSGVO)" }),
-              /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("li", { children: "\u2022 Erf\xFCllung von Rechtsverpflichtungen (Art. 6 Abs. 1 lit. c DSGVO)" }),
-              /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("li", { children: "\u2022 Berechtigte Interessen (Art. 6 Abs. 1 lit. f DSGVO)" })
+          /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("h2", { className: "font-serif text-3xl font-bold text-stone mb-4", children: "4. Rechtsgrundlage" }),
+            /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("p", { children: "Die Verarbeitung erfolgt gem\xE4\xDF Art. 6 Abs. 1 DSGVO auf Grundlage:" }),
+            /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("ul", { className: "space-y-2 ml-4", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("li", { children: "\u2022 Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO)" }),
+              /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("li", { children: "\u2022 Erf\xFCllung eines Vertrags (Art. 6 Abs. 1 lit. b DSGVO)" }),
+              /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("li", { children: "\u2022 Erf\xFCllung von Rechtsverpflichtungen (Art. 6 Abs. 1 lit. c DSGVO)" }),
+              /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("li", { children: "\u2022 Berechtigte Interessen (Art. 6 Abs. 1 lit. f DSGVO)" })
             ] })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("h2", { className: "font-serif text-3xl font-bold text-stone mb-4", children: "5. Speicherdauer" }),
-            /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("p", { children: "Ihre Daten werden nur so lange gespeichert, wie dies erforderlich ist. Nach Abschluss des jeweiligen Zwecks werden Ihre Daten gel\xF6scht, sofern es keine gesetzlichen Aufbewahrungspflichten gibt." })
+          /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("h2", { className: "font-serif text-3xl font-bold text-stone mb-4", children: "5. Speicherdauer" }),
+            /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("p", { children: "Ihre Daten werden nur so lange gespeichert, wie dies erforderlich ist. Nach Abschluss des jeweiligen Zwecks werden Ihre Daten gel\xF6scht, sofern es keine gesetzlichen Aufbewahrungspflichten gibt." })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("h2", { className: "font-serif text-3xl font-bold text-stone mb-4", children: "6. Ihre Rechte" }),
-            /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("p", { children: "Sie haben gegen\xFCber uns folgende Rechte:" }),
-            /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("ul", { className: "space-y-2 ml-4", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("li", { children: "\u2022 Auskunft: Art. 15 DSGVO" }),
-              /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("li", { children: "\u2022 Berichtigung: Art. 16 DSGVO" }),
-              /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("li", { children: "\u2022 L\xF6schung: Art. 17 DSGVO" }),
-              /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("li", { children: "\u2022 Einschr\xE4nkung: Art. 18 DSGVO" }),
-              /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("li", { children: "\u2022 Datenportabilit\xE4t: Art. 20 DSGVO" }),
-              /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("li", { children: "\u2022 Widerspruch: Art. 21 DSGVO" })
+          /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("h2", { className: "font-serif text-3xl font-bold text-stone mb-4", children: "6. Ihre Rechte" }),
+            /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("p", { children: "Sie haben gegen\xFCber uns folgende Rechte:" }),
+            /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("ul", { className: "space-y-2 ml-4", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("li", { children: "\u2022 Auskunft: Art. 15 DSGVO" }),
+              /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("li", { children: "\u2022 Berichtigung: Art. 16 DSGVO" }),
+              /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("li", { children: "\u2022 L\xF6schung: Art. 17 DSGVO" }),
+              /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("li", { children: "\u2022 Einschr\xE4nkung: Art. 18 DSGVO" }),
+              /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("li", { children: "\u2022 Datenportabilit\xE4t: Art. 20 DSGVO" }),
+              /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("li", { children: "\u2022 Widerspruch: Art. 21 DSGVO" })
             ] })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("h2", { className: "font-serif text-3xl font-bold text-stone mb-4", children: "7. Kontaktieren Sie uns" }),
-            /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("p", { children: "Wenn Sie Fragen zum Datenschutz haben oder eines Ihrer Rechte geltend machen m\xF6chten, kontaktieren Sie uns bitte unter:" }),
-            /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("p", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("strong", { children: "E-Mail:" }),
+          /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("h2", { className: "font-serif text-3xl font-bold text-stone mb-4", children: "7. Kontaktieren Sie uns" }),
+            /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("p", { children: "Wenn Sie Fragen zum Datenschutz haben oder eines Ihrer Rechte geltend machen m\xF6chten, kontaktieren Sie uns bitte unter:" }),
+            /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("p", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("strong", { children: "E-Mail:" }),
               " ",
-              /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("a", { href: "mailto:info@sapore-med.de", className: "text-terracotta hover:text-terracotta-light", children: "info@sapore-med.de" }),
-              /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("br", {}),
-              /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("strong", { children: "Telefon:" }),
+              /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("a", { href: "mailto:info@sapore-med.de", className: "text-terracotta hover:text-terracotta-light", children: "info@sapore-med.de" }),
+              /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("br", {}),
+              /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("strong", { children: "Telefon:" }),
               " ",
-              /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("a", { href: "tel:+498104889110", className: "text-terracotta hover:text-terracotta-light", children: "+49 8104 8891110" })
+              /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("a", { href: "tel:+498104889110", className: "text-terracotta hover:text-terracotta-light", children: "+49 8104 8891110" })
             ] })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("h2", { className: "font-serif text-3xl font-bold text-stone mb-4", children: "8. Beschwerderecht" }),
-            /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("p", { children: "Sie haben das Recht, sich bei einer Datenschutzbeh\xF6rde zu beschweren, wenn Sie der Meinung sind, dass die Verarbeitung Ihrer Daten gegen geltendes Recht verst\xF6\xDFt." })
+          /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("h2", { className: "font-serif text-3xl font-bold text-stone mb-4", children: "8. Beschwerderecht" }),
+            /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("p", { children: "Sie haben das Recht, sich bei einer Datenschutzbeh\xF6rde zu beschweren, wenn Sie der Meinung sind, dass die Verarbeitung Ihrer Daten gegen geltendes Recht verst\xF6\xDFt." })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("div", { className: "bg-gray-50 p-6 rounded-lg border-l-4 border-olive", children: /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("p", { className: "text-sm text-stone", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("strong", { children: "Hinweis:" }),
+          /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("div", { className: "bg-gray-50 p-6 rounded-lg border-l-4 border-olive", children: /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("p", { className: "text-sm text-stone", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("strong", { children: "Hinweis:" }),
             " Diese Datenschutzerkl\xE4rung kann jederzeit ge\xE4ndert werden. Wir empfehlen Ihnen, diese Seite regelm\xE4\xDFig zu \xFCberpr\xFCfen, um \xFCber eventuelle \xC4nderungen informiert zu sein."
           ] }) })
         ]
@@ -35139,42 +35669,47 @@ function Datenschutz() {
 }
 
 // src/components/reservation/ReservationOrderPage.jsx
-var import_react29 = __toESM(require_react(), 1);
+var import_react32 = __toESM(require_react(), 1);
 
 // src/components/reservation/CustomerForm.jsx
-var import_jsx_runtime12 = __toESM(require_jsx_runtime(), 1);
+var import_jsx_runtime19 = __toESM(require_jsx_runtime(), 1);
 function FormField({
   label,
   required,
   error,
   children
 }) {
-  return /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("label", { className: "flex flex-col gap-2", children: [
-    /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("span", { className: "text-sm font-medium text-stone", children: [
+  return /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("label", { className: "flex flex-col gap-2", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("span", { className: "text-sm font-medium text-stone", children: [
       label,
       required ? " *" : ""
     ] }),
     children,
-    error ? /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("span", { className: "text-sm text-red-600", children: error }) : null
+    error ? /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("span", { className: "text-sm text-red-600", children: error }) : null
   ] });
 }
 var inputClassName = "w-full rounded-2xl border border-stone/20 bg-white px-4 py-3 text-stone outline-none transition focus:border-terracotta focus:ring-2 focus:ring-terracotta/10";
+function normalizeNumericInput(value) {
+  if (value === "") return "";
+  const nextValue = Number.parseInt(value, 10);
+  return Number.isNaN(nextValue) ? "" : Math.max(1, nextValue);
+}
 function CustomerForm({
   formValues,
   errors,
   onChange
 }) {
   const handleInput = (field) => (event) => {
-    const value = field === "persons" ? Number(event.target.value || 0) : event.target.value;
+    const value = field === "persons" ? normalizeNumericInput(event.target.value) : event.target.value;
     onChange(field, value);
   };
-  return /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", { className: "rounded-[2rem] border border-stone/10 bg-white/90 p-6 shadow-xl shadow-stone/5 backdrop-blur", children: [
-    /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", { className: "mb-6", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("h2", { className: "font-serif text-3xl text-stone", children: "Date client" }),
-      /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("p", { className: "mt-2 text-stone-light", children: "Kontaktdaten und Hinweise fur das Restaurant eintragen." })
+  return /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("div", { className: "rounded-[2rem] border border-stone/10 bg-white/90 p-6 shadow-xl shadow-stone/5 backdrop-blur", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("div", { className: "mb-6", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("h2", { className: "font-serif text-3xl text-stone", children: "Date client" }),
+      /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("p", { className: "mt-2 text-stone-light", children: "Kontaktdaten und Hinweise fur das Restaurant eintragen." })
     ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", { className: "grid gap-5 md:grid-cols-2", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(FormField, { label: "Name", required: true, error: errors.name, children: /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(
+    /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("div", { className: "grid gap-5 md:grid-cols-2", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(FormField, { label: "Name", required: true, error: errors.name, children: /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(
         "input",
         {
           className: inputClassName,
@@ -35183,7 +35718,7 @@ function CustomerForm({
           placeholder: "Z. B. Max Mustermann"
         }
       ) }),
-      /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(FormField, { label: "Telefon", required: true, error: errors.phone, children: /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(FormField, { label: "Telefon", required: true, error: errors.phone, children: /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(
         "input",
         {
           className: inputClassName,
@@ -35192,7 +35727,7 @@ function CustomerForm({
           placeholder: "Z. B. +49 1xx xxx xxxx"
         }
       ) }),
-      /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(FormField, { label: "Email", error: errors.email, children: /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(FormField, { label: "Email", error: errors.email, children: /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(
         "input",
         {
           className: inputClassName,
@@ -35202,7 +35737,7 @@ function CustomerForm({
           placeholder: "Z. B. gast@email.de"
         }
       ) }),
-      /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("div", { className: "md:col-span-2", children: /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(FormField, { label: "Notizen / Hinweise", children: /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("div", { className: "md:col-span-2", children: /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(FormField, { label: "Notizen / Hinweise", children: /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(
         "textarea",
         {
           className: `${inputClassName} min-h-[120px] resize-y`,
@@ -35212,25 +35747,25 @@ function CustomerForm({
         }
       ) }) })
     ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("p", { className: "mt-5 text-sm leading-6 text-stone-light", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("p", { className: "mt-5 text-sm leading-6 text-stone-light", children: [
       "Mit dem Absenden dieses Formulars stimmen Sie zu, dass Ihre Angaben zur Bearbeitung Ihrer Anfrage verarbeitet werden. Weitere Informationen finden Sie in unserer",
       " ",
-      /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("a", { href: "/datenschutz", className: "font-medium text-terracotta hover:text-terracotta-light", children: "Datenschutzerkl\xE4rung" }),
+      /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("a", { href: "/datenschutz", className: "font-medium text-terracotta hover:text-terracotta-light", children: "Datenschutzerkl\xE4rung" }),
       "."
     ] })
   ] });
 }
 
 // src/components/reservation/MenuCategoryTabs.jsx
-var import_jsx_runtime13 = __toESM(require_jsx_runtime(), 1);
+var import_jsx_runtime20 = __toESM(require_jsx_runtime(), 1);
 function MenuCategoryTabs({
-  categories,
+  categories: categories2,
   activeCategory,
   onSelectCategory
 }) {
-  return /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("div", { className: "flex gap-3 overflow-x-auto pb-2", children: categories.map((category) => {
+  return /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("div", { className: "flex gap-3 overflow-x-auto pb-2", children: categories2.map((category) => {
     const isActive = category === activeCategory;
-    return /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(
       "button",
       {
         type: "button",
@@ -35244,7 +35779,7 @@ function MenuCategoryTabs({
 }
 
 // src/components/reservation/MenuItemCard.jsx
-var import_jsx_runtime14 = __toESM(require_jsx_runtime(), 1);
+var import_jsx_runtime21 = __toESM(require_jsx_runtime(), 1);
 function formatPrice(price) {
   return new Intl.NumberFormat("ro-RO", {
     style: "currency",
@@ -35257,23 +35792,23 @@ function MenuItemCard({
   onDecrease,
   onIncrease
 }) {
-  return /* @__PURE__ */ (0, import_jsx_runtime14.jsxs)("article", { className: "group overflow-hidden rounded-[1.75rem] border border-stone/10 bg-white shadow-lg shadow-stone/5 transition hover:-translate-y-1 hover:shadow-xl", children: [
-    /* @__PURE__ */ (0, import_jsx_runtime14.jsx)("div", { className: "h-40 bg-gradient-to-br from-terracotta-light via-cream to-olive-light p-5", children: /* @__PURE__ */ (0, import_jsx_runtime14.jsxs)("div", { className: "flex h-full flex-col justify-between rounded-[1.25rem] border border-white/50 bg-white/20 p-4 backdrop-blur-sm", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime14.jsx)("span", { className: "inline-flex w-fit rounded-full bg-white/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-stone", children: item.category }),
-      !item.available ? /* @__PURE__ */ (0, import_jsx_runtime14.jsx)("span", { className: "inline-flex w-fit rounded-full bg-stone px-3 py-1 text-xs font-medium text-cream", children: "Nicht verf\xFCgbar" }) : null
+  return /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("article", { className: "group overflow-hidden rounded-[1.75rem] border border-stone/10 bg-white shadow-lg shadow-stone/5 transition hover:-translate-y-1 hover:shadow-xl", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("div", { className: "h-40 bg-gradient-to-br from-terracotta-light via-cream to-olive-light p-5", children: /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("div", { className: "flex h-full flex-col justify-between rounded-[1.25rem] border border-white/50 bg-white/20 p-4 backdrop-blur-sm", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("span", { className: "inline-flex w-fit rounded-full bg-white/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-stone", children: item.category }),
+      !item.available ? /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("span", { className: "inline-flex w-fit rounded-full bg-stone px-3 py-1 text-xs font-medium text-cream", children: "Nicht verf\xFCgbar" }) : null
     ] }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime14.jsxs)("div", { className: "space-y-4 p-5", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime14.jsxs)("div", { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime14.jsxs)("div", { className: "mb-2 flex items-start justify-between gap-4", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime14.jsx)("h3", { className: "font-serif text-2xl text-stone", children: item.name }),
-          /* @__PURE__ */ (0, import_jsx_runtime14.jsx)("span", { className: "text-lg font-semibold text-terracotta", children: formatPrice(item.price) })
+    /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("div", { className: "space-y-4 p-5", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("div", { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("div", { className: "mb-2 flex items-start justify-between gap-4", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("h3", { className: "font-serif text-2xl text-stone", children: item.name }),
+          /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("span", { className: "text-lg font-semibold text-terracotta", children: formatPrice(item.price) })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime14.jsx)("p", { className: "text-sm leading-6 text-stone-light", children: item.description })
+        /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("p", { className: "text-sm leading-6 text-stone-light", children: item.description })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime14.jsxs)("div", { className: "flex items-center justify-between", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime14.jsx)("div", { className: "text-sm text-stone-light", children: quantity > 0 ? `${quantity} ausgew\xE4hlt` : "In den Warenkorb" }),
-        /* @__PURE__ */ (0, import_jsx_runtime14.jsxs)("div", { className: "flex items-center gap-3", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("div", { className: "flex items-center justify-between", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("div", { className: "text-sm text-stone-light", children: quantity > 0 ? `${quantity} ausgew\xE4hlt` : "In den Warenkorb" }),
+        /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("div", { className: "flex items-center gap-3", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(
             "button",
             {
               type: "button",
@@ -35281,11 +35816,11 @@ function MenuItemCard({
               onClick: () => onDecrease(item.id),
               disabled: quantity === 0,
               "aria-label": `Menge fur ${item.name} verringern`,
-              children: /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(Minus, { size: 18 })
+              children: /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(Minus, { size: 18 })
             }
           ),
-          /* @__PURE__ */ (0, import_jsx_runtime14.jsx)("span", { className: "w-6 text-center font-semibold text-stone", children: quantity }),
-          /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(
+          /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("span", { className: "w-6 text-center font-semibold text-stone", children: quantity }),
+          /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(
             "button",
             {
               type: "button",
@@ -35293,7 +35828,7 @@ function MenuItemCard({
               onClick: () => onIncrease(item.id),
               disabled: !item.available,
               "aria-label": `Menge fur ${item.name} erhohen`,
-              children: /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(Plus, { size: 18 })
+              children: /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(Plus, { size: 18 })
             }
           )
         ] })
@@ -35303,9 +35838,9 @@ function MenuItemCard({
 }
 
 // src/components/reservation/MenuSection.jsx
-var import_jsx_runtime15 = __toESM(require_jsx_runtime(), 1);
+var import_jsx_runtime22 = __toESM(require_jsx_runtime(), 1);
 function MenuSection({
-  categories,
+  categories: categories2,
   activeCategory,
   menuItems,
   quantities,
@@ -35313,23 +35848,23 @@ function MenuSection({
   onDecreaseItem,
   onIncreaseItem
 }) {
-  return /* @__PURE__ */ (0, import_jsx_runtime15.jsxs)("section", { className: "rounded-[2rem] bg-gradient-to-br from-stone/5 via-white to-cream p-6 shadow-xl shadow-stone/5", children: [
-    /* @__PURE__ */ (0, import_jsx_runtime15.jsxs)("div", { className: "mb-6 flex flex-col gap-4 md:flex-row md:items-end md:justify-between", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime15.jsxs)("div", { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("h2", { className: "font-serif text-3xl text-stone", children: "Meniu produse" }),
-        /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("p", { className: "mt-2 max-w-2xl text-stone-light", children: "W\xE4hlen Sie Ihre Gerichte nach Kategorien aus und legen Sie sie in den Warenkorb." })
+  return /* @__PURE__ */ (0, import_jsx_runtime22.jsxs)("section", { className: "rounded-[2rem] bg-gradient-to-br from-stone/5 via-white to-cream p-6 shadow-xl shadow-stone/5", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime22.jsxs)("div", { className: "mb-6 flex flex-col gap-4 md:flex-row md:items-end md:justify-between", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime22.jsxs)("div", { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("h2", { className: "font-serif text-3xl text-stone", children: "Meniu produse" }),
+        /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("p", { className: "mt-2 max-w-2xl text-stone-light", children: "W\xE4hlen Sie Ihre Gerichte nach Kategorien aus und legen Sie sie in den Warenkorb." })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("div", { className: "text-sm text-stone-light", children: "Nicht verf\xFCgbare Produkte bleiben sichtbar, k\xF6nnen aber nicht hinzugef\xFCgt werden." })
+      /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("div", { className: "text-sm text-stone-light", children: "Nicht verf\xFCgbare Produkte bleiben sichtbar, k\xF6nnen aber nicht hinzugef\xFCgt werden." })
     ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
+    /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(
       MenuCategoryTabs,
       {
-        categories,
+        categories: categories2,
         activeCategory,
         onSelectCategory
       }
     ),
-    /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("div", { className: "mt-6 grid gap-6 lg:grid-cols-2", children: menuItems.map((item) => /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
+    /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("div", { className: "mt-6 grid gap-6 lg:grid-cols-2", children: menuItems.map((item) => /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(
       MenuItemCard,
       {
         item,
@@ -35343,7 +35878,7 @@ function MenuSection({
 }
 
 // src/components/reservation/OrderSummary.jsx
-var import_jsx_runtime16 = __toESM(require_jsx_runtime(), 1);
+var import_jsx_runtime23 = __toESM(require_jsx_runtime(), 1);
 function formatPrice2(price) {
   return new Intl.NumberFormat("ro-RO", {
     style: "currency",
@@ -35362,29 +35897,29 @@ function OrderSummary({
   submitError
 }) {
   const isOrderWithoutItems = items.length === 0;
-  return /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("aside", { className: "rounded-[2rem] border border-stone/10 bg-stone px-5 py-6 text-cream shadow-2xl shadow-stone/20 lg:sticky lg:top-28", children: [
-    /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "mb-6", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("h2", { className: "font-serif text-3xl", children: "Warenkorb" }),
-      /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("p", { className: "mt-2 text-sm text-cream/70", children: "Produkte pr\xFCfen, Mengen \xE4ndern und Hinweise pro Produkt erg\xE4nzen." })
+  return /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("aside", { className: "rounded-[2rem] border border-stone/10 bg-stone px-5 py-6 text-cream shadow-2xl shadow-stone/20 lg:sticky lg:top-28", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: "mb-6", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("h2", { className: "font-serif text-3xl", children: "Warenkorb" }),
+      /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("p", { className: "mt-2 text-sm text-cream/70", children: "Produkte pr\xFCfen, Mengen \xE4ndern und Hinweise pro Produkt erg\xE4nzen." })
     ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("div", { className: "space-y-4", children: items.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("div", { className: "rounded-3xl border border-white/10 bg-white/5 p-4 text-sm text-cream/70", children: "Aktuell sind keine Produkte ausgew\xE4hlt." }) : items.map((item) => /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)(
+    /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("div", { className: "space-y-4", children: items.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("div", { className: "rounded-3xl border border-white/10 bg-white/5 p-4 text-sm text-cream/70", children: "Aktuell sind keine Produkte ausgew\xE4hlt." }) : items.map((item) => /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)(
       "div",
       {
         className: "rounded-3xl border border-white/10 bg-white/5 p-4",
         children: [
-          /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "flex items-start justify-between gap-3", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("h3", { className: "font-medium text-cream", children: item.name }),
-              /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("p", { className: "mt-1 text-sm text-cream/70", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: "flex items-start justify-between gap-3", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("h3", { className: "font-medium text-cream", children: item.name }),
+              /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("p", { className: "mt-1 text-sm text-cream/70", children: [
                 item.quantity,
                 " x ",
                 formatPrice2(item.unitPrice)
               ] })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "text-right", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("div", { className: "font-semibold text-cream", children: formatPrice2(item.totalPrice) }),
-              /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "mt-3 flex items-center justify-end gap-2", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: "text-right", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("div", { className: "font-semibold text-cream", children: formatPrice2(item.totalPrice) }),
+              /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: "mt-3 flex items-center justify-end gap-2", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(
                   "button",
                   {
                     type: "button",
@@ -35394,8 +35929,8 @@ function OrderSummary({
                     children: "-"
                   }
                 ),
-                /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("span", { className: "w-6 text-center text-sm", children: item.quantity }),
-                /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
+                /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("span", { className: "w-6 text-center text-sm", children: item.quantity }),
+                /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(
                   "button",
                   {
                     type: "button",
@@ -35406,7 +35941,7 @@ function OrderSummary({
                   }
                 )
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
+              /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(
                 "button",
                 {
                   type: "button",
@@ -35417,9 +35952,9 @@ function OrderSummary({
               )
             ] })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("label", { className: "mt-4 block text-sm text-cream/80", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("label", { className: "mt-4 block text-sm text-cream/80", children: [
             "Beobachtungen",
-            /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(
               "input",
               {
                 className: "mt-2 w-full rounded-2xl border border-white/10 bg-white/10 px-3 py-2 text-sm text-cream outline-none placeholder:text-cream/40 focus:border-terracotta",
@@ -35433,19 +35968,19 @@ function OrderSummary({
       },
       item.menuItemId
     )) }),
-    /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "mt-6 rounded-3xl bg-white/10 p-4", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "flex items-center justify-between text-sm text-cream/70", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("span", { children: "Subtotal" }),
-        /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("span", { children: formatPrice2(totalPrice) })
+    /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: "mt-6 rounded-3xl bg-white/10 p-4", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: "flex items-center justify-between text-sm text-cream/70", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("span", { children: "Subtotal" }),
+        /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("span", { children: formatPrice2(totalPrice) })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "mt-3 flex items-center justify-between text-xl font-semibold", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("span", { children: "Total" }),
-        /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("span", { children: formatPrice2(totalPrice) })
+      /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: "mt-3 flex items-center justify-between text-xl font-semibold", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("span", { children: "Total" }),
+        /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("span", { children: formatPrice2(totalPrice) })
       ] })
     ] }),
-    submitError ? /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("p", { className: "mt-4 rounded-2xl border border-red-300/20 bg-red-500/10 p-3 text-sm text-red-100", children: submitError }) : null,
-    isOrderWithoutItems ? /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("p", { className: "mt-4 text-sm text-cream/70", children: "Bitte Produkte hinzuf\xFCgen, um die Bestellung senden zu k\xF6nnen." }) : null,
-    /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
+    submitError ? /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("p", { className: "mt-4 rounded-2xl border border-red-300/20 bg-red-500/10 p-3 text-sm text-red-100", children: submitError }) : null,
+    isOrderWithoutItems ? /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("p", { className: "mt-4 text-sm text-cream/70", children: "Bitte Produkte hinzuf\xFCgen, um die Bestellung senden zu k\xF6nnen." }) : null,
+    /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(
       "button",
       {
         type: "button",
@@ -35459,7 +35994,7 @@ function OrderSummary({
 }
 
 // src/components/reservation/ReservationTypeSelector.jsx
-var import_jsx_runtime17 = __toESM(require_jsx_runtime(), 1);
+var import_jsx_runtime24 = __toESM(require_jsx_runtime(), 1);
 var options = [
   {
     type: "takeaway",
@@ -35476,17 +36011,17 @@ function ReservationTypeSelector({
   selectedType,
   onSelect
 }) {
-  return /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("div", { className: "grid gap-4 md:grid-cols-2", children: options.map((option) => {
+  return /* @__PURE__ */ (0, import_jsx_runtime24.jsx)("div", { className: "grid gap-4 md:grid-cols-2", children: options.map((option) => {
     const isActive = option.type === selectedType;
-    return /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)(
+    return /* @__PURE__ */ (0, import_jsx_runtime24.jsxs)(
       "button",
       {
         type: "button",
         onClick: () => onSelect(option.type),
         className: `rounded-3xl border p-5 text-left transition-all duration-300 ${isActive ? "border-terracotta bg-terracotta text-cream shadow-lg shadow-terracotta/20" : "border-stone/20 bg-white/80 text-stone hover:-translate-y-1 hover:border-terracotta-light hover:shadow-md"}`,
         children: [
-          /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("div", { className: "mb-2 font-serif text-2xl", children: option.title }),
-          /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("p", { className: `${isActive ? "text-cream/85" : "text-stone-light"}`, children: option.description })
+          /* @__PURE__ */ (0, import_jsx_runtime24.jsx)("div", { className: "mb-2 font-serif text-2xl", children: option.title }),
+          /* @__PURE__ */ (0, import_jsx_runtime24.jsx)("p", { className: `${isActive ? "text-cream/85" : "text-stone-light"}`, children: option.description })
         ]
       },
       option.type
@@ -35655,7 +36190,7 @@ async function submitReservationOrder(payload) {
     "/api/public/booking-request",
     centerPayload,
     "submitReservationOrder payload",
-    getBusinessSlug(payload)
+    getBusinessSlug2(payload)
   );
 }
 async function submitSimpleReservation(payload) {
@@ -35664,14 +36199,14 @@ async function submitSimpleReservation(payload) {
     "/api/public/booking-request",
     centerPayload,
     "submitSimpleReservation payload",
-    getBusinessSlug(payload)
+    getBusinessSlug2(payload)
   );
 }
-function getApiUrl(endpoint) {
+function getApiUrl2(endpoint) {
   const baseUrl = process.env.REACT_APP_API_URL || "";
   return `${baseUrl.replace(/\/$/u, "")}${endpoint}`;
 }
-function getBusinessSlug(payload) {
+function getBusinessSlug2(payload) {
   return payload.businessSlug || DEFAULT_BUSINESS_SLUG;
 }
 function toIsoDateTime(date, time) {
@@ -35684,7 +36219,7 @@ async function getBusinessBootstrap(businessSlug) {
   if (bootstrapCache.has(businessSlug)) {
     return bootstrapCache.get(businessSlug);
   }
-  const response = await fetch(getApiUrl(`/api/public/bootstrap/${businessSlug}`), {
+  const response = await fetch(getApiUrl2(`/api/public/bootstrap/${businessSlug}`), {
     headers: {
       "x-business-slug": businessSlug
     }
@@ -35700,7 +36235,7 @@ async function getBusinessBootstrap(businessSlug) {
 async function resolveLocationId(payload) {
   if (payload.locationId) return payload.locationId;
   if (DEFAULT_LOCATION_ID) return DEFAULT_LOCATION_ID;
-  const bootstrap = await getBusinessBootstrap(getBusinessSlug(payload));
+  const bootstrap = await getBusinessBootstrap(getBusinessSlug2(payload));
   const locationId = bootstrap.locations?.[0]?._id;
   if (!locationId) {
     throw new Error("Keine aktive Restaurant-Location im Backend gefunden.");
@@ -35786,7 +36321,7 @@ async function readApiError(response, fallbackMessage) {
 }
 async function postToApi(endpoint, payload, logLabel, businessSlug) {
   try {
-    const response = await fetch(getApiUrl(endpoint), {
+    const response = await fetch(getApiUrl2(endpoint), {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -35806,7 +36341,7 @@ async function postToApi(endpoint, payload, logLabel, businessSlug) {
 }
 
 // src/components/reservation/ReservationOrderPage.jsx
-var import_jsx_runtime18 = __toESM(require_jsx_runtime(), 1);
+var import_jsx_runtime25 = __toESM(require_jsx_runtime(), 1);
 var defaultFormValues = {
   name: "",
   phone: "",
@@ -35829,31 +36364,36 @@ function getDefaultDate() {
   const local = new Date(now.getTime() - now.getTimezoneOffset() * 6e4);
   return local.toISOString().slice(0, 10);
 }
+function normalizePersons(value) {
+  if (value === "") return "";
+  const nextValue = Number.parseInt(value, 10);
+  return Number.isNaN(nextValue) ? "" : Math.max(1, nextValue);
+}
 function ReservationOrderPage({
   businessSlug = process.env.REACT_APP_BUSINESS_SLUG || "sapore-mediterraneo",
   businessName = "Sapore Mediterraneo",
   menuItems = mockMenu
 }) {
-  const [reservationType, setReservationType] = (0, import_react29.useState)("takeaway");
-  const [formValues, setFormValues] = (0, import_react29.useState)({
+  const [reservationType, setReservationType] = (0, import_react32.useState)("takeaway");
+  const [formValues, setFormValues] = (0, import_react32.useState)({
     ...defaultFormValues,
     pickupDate: getDefaultDate(),
     pickupTime: getDefaultTime(),
     reservationDate: getDefaultDate(),
     reservationTime: getDefaultTime()
   });
-  const [quantities, setQuantities] = (0, import_react29.useState)({});
-  const [itemNotes, setItemNotes] = (0, import_react29.useState)({});
-  const [activeCategory, setActiveCategory] = (0, import_react29.useState)(menuCategories[0]);
-  const [errors, setErrors] = (0, import_react29.useState)({});
-  const [isSubmitting, setIsSubmitting] = (0, import_react29.useState)(false);
-  const [submitError, setSubmitError] = (0, import_react29.useState)(null);
-  const [successMessage, setSuccessMessage] = (0, import_react29.useState)(null);
-  const filteredMenuItems = (0, import_react29.useMemo)(
+  const [quantities, setQuantities] = (0, import_react32.useState)({});
+  const [itemNotes, setItemNotes] = (0, import_react32.useState)({});
+  const [activeCategory, setActiveCategory] = (0, import_react32.useState)(menuCategories[0]);
+  const [errors, setErrors] = (0, import_react32.useState)({});
+  const [isSubmitting, setIsSubmitting] = (0, import_react32.useState)(false);
+  const [submitError, setSubmitError] = (0, import_react32.useState)(null);
+  const [successMessage, setSuccessMessage] = (0, import_react32.useState)(null);
+  const filteredMenuItems = (0, import_react32.useMemo)(
     () => menuItems.filter((item) => item.category === activeCategory),
     [activeCategory, menuItems]
   );
-  const selectedItems = (0, import_react29.useMemo)(() => {
+  const selectedItems = (0, import_react32.useMemo)(() => {
     return menuItems.filter((item) => (quantities[item.id] ?? 0) > 0).map((item) => {
       const quantity = quantities[item.id];
       return {
@@ -35866,7 +36406,7 @@ function ReservationOrderPage({
       };
     });
   }, [itemNotes, menuItems, quantities]);
-  const totalPrice = (0, import_react29.useMemo)(
+  const totalPrice = (0, import_react32.useMemo)(
     () => selectedItems.reduce((sum, item) => sum + item.totalPrice, 0),
     [selectedItems]
   );
@@ -35931,7 +36471,7 @@ function ReservationOrderPage({
       }
       if (!formValues.reservationDate) nextErrors.reservationDate = "Bitte ein Datum ausw\xE4hlen.";
       if (!formValues.reservationTime) nextErrors.reservationTime = "Bitte eine Uhrzeit ausw\xE4hlen.";
-      if (formValues.persons < 1) nextErrors.persons = "Die Personenzahl muss mindestens 1 sein.";
+      if (Number(formValues.persons) < 1) nextErrors.persons = "Die Personenzahl muss mindestens 1 sein.";
     }
     setErrors(nextErrors);
     setSubmitError(Object.keys(nextErrors).length ? "Bitte pr\xFCfen Sie die markierten Felder." : null);
@@ -35944,7 +36484,7 @@ function ReservationOrderPage({
     pickupTime: reservationType === "takeaway" ? formValues.pickupTime : null,
     reservationDate: reservationType === "reservation" ? formValues.reservationDate : null,
     reservationTime: reservationType === "reservation" ? formValues.reservationTime : null,
-    persons: reservationType === "reservation" ? formValues.persons : null,
+    persons: reservationType === "reservation" ? Number(formValues.persons) : null,
     customerName: formValues.name.trim(),
     phone: formValues.phone.trim(),
     email: formValues.email.trim(),
@@ -35983,11 +36523,11 @@ function ReservationOrderPage({
       setIsSubmitting(false);
     }
   };
-  return /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: "bg-cream", children: [
-    /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("section", { className: "relative overflow-hidden bg-gradient-to-br from-cream via-white to-terracotta-light/40", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("div", { className: "reservation-orb absolute left-0 top-12 h-52 w-52 rounded-full bg-olive-light" }),
-      /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("div", { className: "reservation-orb absolute right-0 top-0 h-72 w-72 rounded-full bg-terracotta-light" }),
-      /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("div", { className: "container-max relative px-4 pb-12 pt-8 md:px-8 md:pb-20 md:pt-16", children: /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)(
+  return /* @__PURE__ */ (0, import_jsx_runtime25.jsxs)("div", { className: "bg-cream", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime25.jsxs)("section", { className: "relative overflow-hidden bg-gradient-to-br from-cream via-white to-terracotta-light/40", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime25.jsx)("div", { className: "reservation-orb absolute left-0 top-12 h-52 w-52 rounded-full bg-olive-light" }),
+      /* @__PURE__ */ (0, import_jsx_runtime25.jsx)("div", { className: "reservation-orb absolute right-0 top-0 h-72 w-72 rounded-full bg-terracotta-light" }),
+      /* @__PURE__ */ (0, import_jsx_runtime25.jsx)("div", { className: "container-max relative px-4 pb-12 pt-8 md:px-8 md:pb-20 md:pt-16", children: /* @__PURE__ */ (0, import_jsx_runtime25.jsxs)(
         motion.div,
         {
           initial: { opacity: 0, y: 24 },
@@ -35995,25 +36535,25 @@ function ReservationOrderPage({
           transition: { duration: 0.6 },
           className: "max-w-3xl",
           children: [
-            /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("div", { className: "mb-4 inline-flex rounded-full border border-terracotta/20 bg-white/80 px-4 py-2 text-sm font-medium uppercase tracking-[0.25em] text-terracotta", children: "Bestellung" }),
-            /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("h1", { className: "font-serif text-5xl leading-tight text-stone md:text-6xl", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime25.jsx)("div", { className: "mb-4 inline-flex rounded-full border border-terracotta/20 bg-white/80 px-4 py-2 text-sm font-medium uppercase tracking-[0.25em] text-terracotta", children: "Bestellung" }),
+            /* @__PURE__ */ (0, import_jsx_runtime25.jsxs)("h1", { className: "font-serif text-5xl leading-tight text-stone md:text-6xl", children: [
               "Essen vorbestellen bei ",
               businessName,
               "."
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("p", { className: "mt-6 max-w-2xl text-lg leading-8 text-stone-light", children: "Meniu produse \u2192 Warenkorb \u2192 Tip comand\u0103 \u2192 Date client \u2192 Confirmare" })
+            /* @__PURE__ */ (0, import_jsx_runtime25.jsx)("p", { className: "mt-6 max-w-2xl text-lg leading-8 text-stone-light", children: "Meniu produse \u2192 Warenkorb \u2192 Tip comand\u0103 \u2192 Date client \u2192 Confirmare" })
           ]
         }
       ) })
     ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("section", { className: "section-padding", children: /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: "container-max space-y-8", children: [
-      successMessage ? /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: "rounded-[1.75rem] border border-olive/30 bg-olive-light/20 p-5 text-stone shadow-lg shadow-olive/10", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("div", { className: "font-serif text-2xl text-olive-dark", children: "Confirmare" }),
-        /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("p", { className: "mt-2 text-stone", children: successMessage })
+    /* @__PURE__ */ (0, import_jsx_runtime25.jsx)("section", { className: "section-padding", children: /* @__PURE__ */ (0, import_jsx_runtime25.jsxs)("div", { className: "container-max space-y-8", children: [
+      successMessage ? /* @__PURE__ */ (0, import_jsx_runtime25.jsxs)("div", { className: "rounded-[1.75rem] border border-olive/30 bg-olive-light/20 p-5 text-stone shadow-lg shadow-olive/10", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime25.jsx)("div", { className: "font-serif text-2xl text-olive-dark", children: "Confirmare" }),
+        /* @__PURE__ */ (0, import_jsx_runtime25.jsx)("p", { className: "mt-2 text-stone", children: successMessage })
       ] }) : null,
-      /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: "reservation-grid grid gap-8", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: "space-y-8", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime25.jsxs)("div", { className: "reservation-grid grid gap-8", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime25.jsxs)("div", { className: "space-y-8", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime25.jsx)(
             MenuSection,
             {
               categories: menuCategories,
@@ -36025,16 +36565,16 @@ function ReservationOrderPage({
               onIncreaseItem: (itemId) => changeItemQuantity(itemId, (quantities[itemId] ?? 0) + 1)
             }
           ),
-          /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("section", { className: "rounded-[2rem] border border-stone/10 bg-white/90 p-6 shadow-xl shadow-stone/5", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: "mb-6", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("h2", { className: "font-serif text-3xl text-stone", children: "Tip comand\u0103" }),
-              /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("p", { className: "mt-2 text-stone-light", children: "W\xE4hlen Sie Take Away oder eine Vorbestellung mit Tischreservierung." })
+          /* @__PURE__ */ (0, import_jsx_runtime25.jsxs)("section", { className: "rounded-[2rem] border border-stone/10 bg-white/90 p-6 shadow-xl shadow-stone/5", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime25.jsxs)("div", { className: "mb-6", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime25.jsx)("h2", { className: "font-serif text-3xl text-stone", children: "Tip comand\u0103" }),
+              /* @__PURE__ */ (0, import_jsx_runtime25.jsx)("p", { className: "mt-2 text-stone-light", children: "W\xE4hlen Sie Take Away oder eine Vorbestellung mit Tischreservierung." })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(ReservationTypeSelector, { selectedType: reservationType, onSelect: handleChangeType }),
-            /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("div", { className: "mt-6 grid gap-5 md:grid-cols-2", children: reservationType === "takeaway" ? /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)(import_jsx_runtime18.Fragment, { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("label", { className: "flex flex-col gap-2", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("span", { className: "text-sm font-medium text-stone", children: "Datum *" }),
-                /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime25.jsx)(ReservationTypeSelector, { selectedType: reservationType, onSelect: handleChangeType }),
+            /* @__PURE__ */ (0, import_jsx_runtime25.jsx)("div", { className: "mt-6 grid gap-5 md:grid-cols-2", children: reservationType === "takeaway" ? /* @__PURE__ */ (0, import_jsx_runtime25.jsxs)(import_jsx_runtime25.Fragment, { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime25.jsxs)("label", { className: "flex flex-col gap-2", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime25.jsx)("span", { className: "text-sm font-medium text-stone", children: "Datum *" }),
+                /* @__PURE__ */ (0, import_jsx_runtime25.jsx)(
                   "input",
                   {
                     className: inputClassName,
@@ -36043,11 +36583,11 @@ function ReservationOrderPage({
                     onChange: (event) => updateFormValue("pickupDate", event.target.value)
                   }
                 ),
-                errors.pickupDate ? /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("span", { className: "text-sm text-red-600", children: errors.pickupDate }) : null
+                errors.pickupDate ? /* @__PURE__ */ (0, import_jsx_runtime25.jsx)("span", { className: "text-sm text-red-600", children: errors.pickupDate }) : null
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("label", { className: "flex flex-col gap-2", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("span", { className: "text-sm font-medium text-stone", children: "Abholzeit *" }),
-                /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(
+              /* @__PURE__ */ (0, import_jsx_runtime25.jsxs)("label", { className: "flex flex-col gap-2", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime25.jsx)("span", { className: "text-sm font-medium text-stone", children: "Abholzeit *" }),
+                /* @__PURE__ */ (0, import_jsx_runtime25.jsx)(
                   "input",
                   {
                     className: inputClassName,
@@ -36056,11 +36596,11 @@ function ReservationOrderPage({
                     onChange: (event) => updateFormValue("pickupTime", event.target.value)
                   }
                 ),
-                errors.pickupTime ? /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("span", { className: "text-sm text-red-600", children: errors.pickupTime }) : null
+                errors.pickupTime ? /* @__PURE__ */ (0, import_jsx_runtime25.jsx)("span", { className: "text-sm text-red-600", children: errors.pickupTime }) : null
               ] })
-            ] }) : /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)(import_jsx_runtime18.Fragment, { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("label", { className: "flex items-start gap-3 rounded-2xl border border-stone/10 bg-cream/60 p-4 md:col-span-2", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(
+            ] }) : /* @__PURE__ */ (0, import_jsx_runtime25.jsxs)(import_jsx_runtime25.Fragment, { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime25.jsxs)("label", { className: "flex items-start gap-3 rounded-2xl border border-stone/10 bg-cream/60 p-4 md:col-span-2", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime25.jsx)(
                   "input",
                   {
                     className: "mt-1 h-4 w-4 accent-terracotta",
@@ -36069,11 +36609,11 @@ function ReservationOrderPage({
                     onChange: (event) => updateFormValue("wantsReservation", event.target.checked)
                   }
                 ),
-                /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("span", { className: "text-stone", children: "Ich m\xF6chte auch einen Tisch reservieren" })
+                /* @__PURE__ */ (0, import_jsx_runtime25.jsx)("span", { className: "text-stone", children: "Ich m\xF6chte auch einen Tisch reservieren" })
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("label", { className: "flex flex-col gap-2", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("span", { className: "text-sm font-medium text-stone", children: "Datum *" }),
-                /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(
+              /* @__PURE__ */ (0, import_jsx_runtime25.jsxs)("label", { className: "flex flex-col gap-2", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime25.jsx)("span", { className: "text-sm font-medium text-stone", children: "Datum *" }),
+                /* @__PURE__ */ (0, import_jsx_runtime25.jsx)(
                   "input",
                   {
                     className: inputClassName,
@@ -36082,11 +36622,11 @@ function ReservationOrderPage({
                     onChange: (event) => updateFormValue("reservationDate", event.target.value)
                   }
                 ),
-                errors.reservationDate ? /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("span", { className: "text-sm text-red-600", children: errors.reservationDate }) : null
+                errors.reservationDate ? /* @__PURE__ */ (0, import_jsx_runtime25.jsx)("span", { className: "text-sm text-red-600", children: errors.reservationDate }) : null
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("label", { className: "flex flex-col gap-2", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("span", { className: "text-sm font-medium text-stone", children: "Uhrzeit der Ankunft *" }),
-                /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(
+              /* @__PURE__ */ (0, import_jsx_runtime25.jsxs)("label", { className: "flex flex-col gap-2", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime25.jsx)("span", { className: "text-sm font-medium text-stone", children: "Uhrzeit der Ankunft *" }),
+                /* @__PURE__ */ (0, import_jsx_runtime25.jsx)(
                   "input",
                   {
                     className: inputClassName,
@@ -36095,25 +36635,25 @@ function ReservationOrderPage({
                     onChange: (event) => updateFormValue("reservationTime", event.target.value)
                   }
                 ),
-                errors.reservationTime ? /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("span", { className: "text-sm text-red-600", children: errors.reservationTime }) : null
+                errors.reservationTime ? /* @__PURE__ */ (0, import_jsx_runtime25.jsx)("span", { className: "text-sm text-red-600", children: errors.reservationTime }) : null
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("label", { className: "flex flex-col gap-2", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("span", { className: "text-sm font-medium text-stone", children: "Personen *" }),
-                /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(
+              /* @__PURE__ */ (0, import_jsx_runtime25.jsxs)("label", { className: "flex flex-col gap-2", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime25.jsx)("span", { className: "text-sm font-medium text-stone", children: "Personen *" }),
+                /* @__PURE__ */ (0, import_jsx_runtime25.jsx)(
                   "input",
                   {
                     className: inputClassName,
                     type: "number",
                     min: 1,
                     value: formValues.persons,
-                    onChange: (event) => updateFormValue("persons", Number(event.target.value || 0))
+                    onChange: (event) => updateFormValue("persons", normalizePersons(event.target.value))
                   }
                 ),
-                errors.persons ? /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("span", { className: "text-sm text-red-600", children: errors.persons }) : null
+                errors.persons ? /* @__PURE__ */ (0, import_jsx_runtime25.jsx)("span", { className: "text-sm text-red-600", children: errors.persons }) : null
               ] })
             ] }) })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(
+          /* @__PURE__ */ (0, import_jsx_runtime25.jsx)(
             CustomerForm,
             {
               formValues,
@@ -36122,7 +36662,7 @@ function ReservationOrderPage({
             }
           )
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(
+        /* @__PURE__ */ (0, import_jsx_runtime25.jsx)(
           OrderSummary,
           {
             items: selectedItems,
@@ -36142,14 +36682,14 @@ function ReservationOrderPage({
 }
 
 // src/pages/ReservationOrder.jsx
-var import_jsx_runtime19 = __toESM(require_jsx_runtime(), 1);
+var import_jsx_runtime26 = __toESM(require_jsx_runtime(), 1);
 function ReservationOrder() {
-  return /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(ReservationOrderPage, {});
+  return /* @__PURE__ */ (0, import_jsx_runtime26.jsx)(ReservationOrderPage, {});
 }
 
 // src/pages/Reservierung.jsx
-var import_react30 = __toESM(require_react(), 1);
-var import_jsx_runtime20 = __toESM(require_jsx_runtime(), 1);
+var import_react33 = __toESM(require_react(), 1);
+var import_jsx_runtime27 = __toESM(require_jsx_runtime(), 1);
 var defaultValues = {
   customerName: "",
   phone: "",
@@ -36169,22 +36709,27 @@ function getDefaultTime2() {
   now.setMinutes(Math.ceil(now.getMinutes() / 15) * 15);
   return now.toTimeString().slice(0, 5);
 }
+function normalizePersons2(value) {
+  if (value === "") return "";
+  const nextValue = Number.parseInt(value, 10);
+  return Number.isNaN(nextValue) ? "" : Math.max(1, nextValue);
+}
 function Reservierung() {
-  const [values, setValues] = (0, import_react30.useState)({
+  const [values, setValues] = (0, import_react33.useState)({
     ...defaultValues,
     reservationDate: getDefaultDate2(),
     reservationTime: getDefaultTime2()
   });
-  const [error, setError] = (0, import_react30.useState)(null);
-  const [success, setSuccess] = (0, import_react30.useState)(null);
-  const [isSubmitting, setIsSubmitting] = (0, import_react30.useState)(false);
+  const [error, setError] = (0, import_react33.useState)(null);
+  const [success, setSuccess] = (0, import_react33.useState)(null);
+  const [isSubmitting, setIsSubmitting] = (0, import_react33.useState)(false);
   const updateValue = (field, value) => {
     setValues((current) => ({ ...current, [field]: value }));
     setError(null);
   };
   const handleSubmit = async (event) => {
     event.preventDefault();
-    if (!values.customerName.trim() || !values.phone.trim() || !values.reservationDate || !values.reservationTime || values.persons < 1) {
+    if (!values.customerName.trim() || !values.phone.trim() || !values.reservationDate || !values.reservationTime || Number(values.persons) < 1) {
       setError("Bitte f\xFCllen Sie alle Pflichtfelder aus.");
       return;
     }
@@ -36199,7 +36744,7 @@ function Reservierung() {
       email: values.email.trim(),
       reservationDate: values.reservationDate,
       reservationTime: values.reservationTime,
-      persons: values.persons,
+      persons: Number(values.persons),
       notes: values.notes.trim(),
       status: "pending",
       source: "website"
@@ -36224,8 +36769,8 @@ function Reservierung() {
       setIsSubmitting(false);
     }
   };
-  return /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: "bg-cream", children: [
-    /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("section", { className: "relative overflow-hidden bg-gradient-to-br from-cream via-white to-terracotta-light/40", children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("div", { className: "container-max relative px-4 pb-12 pt-8 md:px-8 md:pb-20 md:pt-16", children: /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)(
+  return /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("div", { className: "bg-cream", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("section", { className: "relative overflow-hidden bg-gradient-to-br from-cream via-white to-terracotta-light/40", children: /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("div", { className: "container-max relative px-4 pb-12 pt-8 md:px-8 md:pb-20 md:pt-16", children: /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)(
       motion.div,
       {
         initial: { opacity: 0, y: 24 },
@@ -36233,61 +36778,61 @@ function Reservierung() {
         transition: { duration: 0.6 },
         className: "max-w-3xl",
         children: [
-          /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("div", { className: "mb-4 inline-flex rounded-full border border-terracotta/20 bg-white/80 px-4 py-2 text-sm font-medium uppercase tracking-[0.25em] text-terracotta", children: "Reservierung" }),
-          /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("h1", { className: "font-serif text-5xl leading-tight text-stone md:text-6xl", children: "Tisch reservieren" }),
-          /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("p", { className: "mt-6 max-w-2xl text-lg leading-8 text-stone-light", children: "Senden Sie uns Ihre Anfrage. Das Restaurant best\xE4tigt die Reservierung direkt." })
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("div", { className: "mb-4 inline-flex rounded-full border border-terracotta/20 bg-white/80 px-4 py-2 text-sm font-medium uppercase tracking-[0.25em] text-terracotta", children: "Reservierung" }),
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("h1", { className: "font-serif text-5xl leading-tight text-stone md:text-6xl", children: "Tisch reservieren" }),
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("p", { className: "mt-6 max-w-2xl text-lg leading-8 text-stone-light", children: "Senden Sie uns Ihre Anfrage. Das Restaurant best\xE4tigt die Reservierung direkt." })
         ]
       }
     ) }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("section", { className: "section-padding", children: /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: "container-max max-w-4xl", children: [
-      success ? /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: "mb-8 rounded-[1.75rem] border border-olive/30 bg-olive-light/20 p-5 text-stone shadow-lg shadow-olive/10", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("div", { className: "font-serif text-2xl text-olive-dark", children: "Anfrage gesendet" }),
-        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("p", { className: "mt-2 text-stone", children: success })
+    /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("section", { className: "section-padding", children: /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("div", { className: "container-max max-w-4xl", children: [
+      success ? /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("div", { className: "mb-8 rounded-[1.75rem] border border-olive/30 bg-olive-light/20 p-5 text-stone shadow-lg shadow-olive/10", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("div", { className: "font-serif text-2xl text-olive-dark", children: "Anfrage gesendet" }),
+        /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("p", { className: "mt-2 text-stone", children: success })
       ] }) : null,
-      /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)(
+      /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)(
         "form",
         {
           onSubmit: handleSubmit,
           className: "rounded-[2rem] border border-stone/10 bg-white/90 p-6 shadow-xl shadow-stone/5",
           children: [
-            /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: "grid gap-5 md:grid-cols-2", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("label", { className: "flex flex-col gap-2", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("span", { className: "text-sm font-medium text-stone", children: "Name *" }),
-                /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("input", { className: inputClassName, value: values.customerName, onChange: (event) => updateValue("customerName", event.target.value) })
+            /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("div", { className: "grid gap-5 md:grid-cols-2", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("label", { className: "flex flex-col gap-2", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("span", { className: "text-sm font-medium text-stone", children: "Name *" }),
+                /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("input", { className: inputClassName, value: values.customerName, onChange: (event) => updateValue("customerName", event.target.value) })
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("label", { className: "flex flex-col gap-2", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("span", { className: "text-sm font-medium text-stone", children: "Telefon *" }),
-                /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("input", { className: inputClassName, value: values.phone, onChange: (event) => updateValue("phone", event.target.value) })
+              /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("label", { className: "flex flex-col gap-2", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("span", { className: "text-sm font-medium text-stone", children: "Telefon *" }),
+                /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("input", { className: inputClassName, value: values.phone, onChange: (event) => updateValue("phone", event.target.value) })
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("label", { className: "flex flex-col gap-2", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("span", { className: "text-sm font-medium text-stone", children: "Email" }),
-                /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("input", { className: inputClassName, type: "email", value: values.email, onChange: (event) => updateValue("email", event.target.value) })
+              /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("label", { className: "flex flex-col gap-2", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("span", { className: "text-sm font-medium text-stone", children: "Email" }),
+                /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("input", { className: inputClassName, type: "email", value: values.email, onChange: (event) => updateValue("email", event.target.value) })
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("label", { className: "flex flex-col gap-2", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("span", { className: "text-sm font-medium text-stone", children: "Datum *" }),
-                /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("input", { className: inputClassName, type: "date", value: values.reservationDate, onChange: (event) => updateValue("reservationDate", event.target.value) })
+              /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("label", { className: "flex flex-col gap-2", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("span", { className: "text-sm font-medium text-stone", children: "Datum *" }),
+                /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("input", { className: inputClassName, type: "date", value: values.reservationDate, onChange: (event) => updateValue("reservationDate", event.target.value) })
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("label", { className: "flex flex-col gap-2", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("span", { className: "text-sm font-medium text-stone", children: "Uhrzeit *" }),
-                /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("input", { className: inputClassName, type: "time", value: values.reservationTime, onChange: (event) => updateValue("reservationTime", event.target.value) })
+              /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("label", { className: "flex flex-col gap-2", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("span", { className: "text-sm font-medium text-stone", children: "Uhrzeit *" }),
+                /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("input", { className: inputClassName, type: "time", value: values.reservationTime, onChange: (event) => updateValue("reservationTime", event.target.value) })
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("label", { className: "flex flex-col gap-2", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("span", { className: "text-sm font-medium text-stone", children: "Personen *" }),
-                /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("input", { className: inputClassName, type: "number", min: 1, value: values.persons, onChange: (event) => updateValue("persons", Number(event.target.value || 0)) })
+              /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("label", { className: "flex flex-col gap-2", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("span", { className: "text-sm font-medium text-stone", children: "Personen *" }),
+                /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("input", { className: inputClassName, type: "number", min: 1, value: values.persons, onChange: (event) => updateValue("persons", normalizePersons2(event.target.value)) })
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("label", { className: "flex flex-col gap-2 md:col-span-2", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("span", { className: "text-sm font-medium text-stone", children: "Notizen" }),
-                /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("textarea", { className: `${inputClassName} min-h-[120px] resize-y`, value: values.notes, onChange: (event) => updateValue("notes", event.target.value) })
+              /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("label", { className: "flex flex-col gap-2 md:col-span-2", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("span", { className: "text-sm font-medium text-stone", children: "Notizen" }),
+                /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("textarea", { className: `${inputClassName} min-h-[120px] resize-y`, value: values.notes, onChange: (event) => updateValue("notes", event.target.value) })
               ] })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("p", { className: "mt-5 text-sm leading-6 text-stone-light", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("p", { className: "mt-5 text-sm leading-6 text-stone-light", children: [
               "Mit dem Absenden dieses Formulars stimmen Sie zu, dass Ihre Angaben zur Bearbeitung Ihrer Anfrage verarbeitet werden. Weitere Informationen finden Sie in unserer",
               " ",
-              /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Link, { to: "/datenschutz", className: "font-medium text-terracotta hover:text-terracotta-light", children: "Datenschutzerkl\xE4rung" }),
+              /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(Link, { to: "/datenschutz", className: "font-medium text-terracotta hover:text-terracotta-light", children: "Datenschutzerkl\xE4rung" }),
               "."
             ] }),
-            error ? /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("p", { className: "mt-4 rounded-2xl border border-red-200 bg-red-50 p-3 text-sm text-red-700", children: error }) : null,
-            /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("button", { type: "submit", disabled: isSubmitting, className: "btn-primary mt-6 disabled:cursor-not-allowed disabled:opacity-60", children: isSubmitting ? "Wird gesendet..." : "Reservierung absenden" })
+            error ? /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("p", { className: "mt-4 rounded-2xl border border-red-200 bg-red-50 p-3 text-sm text-red-700", children: error }) : null,
+            /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("button", { type: "submit", disabled: isSubmitting, className: "btn-primary mt-6 disabled:cursor-not-allowed disabled:opacity-60", children: isSubmitting ? "Wird gesendet..." : "Reservierung absenden" })
           ]
         }
       )
@@ -36295,34 +36840,930 @@ function Reservierung() {
   ] });
 }
 
+// src/pages/auth/LoginPage.jsx
+var import_react34 = __toESM(require_react(), 1);
+
+// src/components/admin/AlertMessage.jsx
+var import_jsx_runtime28 = __toESM(require_jsx_runtime(), 1);
+function AlertMessage({ type = "info", children }) {
+  if (!children) return null;
+  const tone = type === "error" ? "border-red-200 bg-red-50 text-red-700" : type === "success" ? "border-olive/30 bg-olive-light/20 text-olive-dark" : "border-stone/10 bg-white text-stone";
+  return /* @__PURE__ */ (0, import_jsx_runtime28.jsx)("div", { className: `rounded-2xl border px-4 py-3 text-sm ${tone}`, children });
+}
+var AlertMessage_default = AlertMessage;
+
+// src/pages/auth/LoginPage.jsx
+var import_jsx_runtime29 = __toESM(require_jsx_runtime(), 1);
+var defaultBusinessSlug = process.env.REACT_APP_BUSINESS_SLUG || "sapore-mediterraneo";
+function LoginPage() {
+  const location = useLocation();
+  const { login, loading, isAuthenticated, currentUser, getAuthError } = useAuth();
+  const [formValues, setFormValues] = (0, import_react34.useState)({
+    email: "",
+    password: "",
+    businessSlug: getStoredBusinessSlug() || defaultBusinessSlug
+  });
+  const [submitting, setSubmitting] = (0, import_react34.useState)(false);
+  const [error, setError] = (0, import_react34.useState)("");
+  if (!loading && isAuthenticated) {
+    const redirectPath = currentUser?.role === "superadmin" ? "/superadmin" : "/admin";
+    return /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(Navigate, { to: location.state?.from?.pathname || redirectPath, replace: true });
+  }
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormValues((current) => ({ ...current, [name]: value }));
+  };
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setSubmitting(true);
+    setError("");
+    try {
+      await login(formValues);
+    } catch (caughtError) {
+      setError(getAuthError(caughtError));
+    } finally {
+      setSubmitting(false);
+    }
+  };
+  return /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("div", { className: "w-full max-w-md rounded-[2rem] border border-stone/10 bg-white p-6 shadow-2xl shadow-stone/10", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)(Link, { to: "/", className: "font-serif text-2xl text-stone", children: [
+      "Sapore",
+      /* @__PURE__ */ (0, import_jsx_runtime29.jsx)("span", { className: "text-terracotta", children: " Center" })
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("div", { className: "mt-6", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime29.jsx)("span", { className: "text-sm font-semibold uppercase tracking-[0.24em] text-terracotta", children: "Secure Login" }),
+      /* @__PURE__ */ (0, import_jsx_runtime29.jsx)("h1", { className: "mt-3 font-serif text-4xl text-stone", children: "Admin anmelden" }),
+      /* @__PURE__ */ (0, import_jsx_runtime29.jsx)("p", { className: "mt-3 text-stone-light", children: "Un singur login pentru business admin \u0219i superadmin." })
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("form", { className: "mt-8 space-y-5", onSubmit: handleSubmit, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(AlertMessage_default, { type: "error", children: error }),
+      /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("label", { className: "block", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime29.jsx)("span", { className: "text-sm font-medium text-stone", children: "Email / Username" }),
+        /* @__PURE__ */ (0, import_jsx_runtime29.jsx)("input", { className: "mt-2 w-full rounded-2xl border border-stone/20 px-4 py-3 outline-none transition focus:border-terracotta focus:ring-2 focus:ring-terracotta/10", type: "email", name: "email", value: formValues.email, onChange: handleChange, required: true })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("label", { className: "block", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime29.jsx)("span", { className: "text-sm font-medium text-stone", children: "Passwort" }),
+        /* @__PURE__ */ (0, import_jsx_runtime29.jsx)("input", { className: "mt-2 w-full rounded-2xl border border-stone/20 px-4 py-3 outline-none transition focus:border-terracotta focus:ring-2 focus:ring-terracotta/10", type: "password", name: "password", value: formValues.password, onChange: handleChange, required: true })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime29.jsx)("input", { type: "hidden", name: "businessSlug", value: formValues.businessSlug, readOnly: true }),
+      /* @__PURE__ */ (0, import_jsx_runtime29.jsx)("button", { type: "submit", className: "btn-primary w-full disabled:cursor-not-allowed disabled:opacity-60", disabled: submitting, children: submitting ? "Anmeldung..." : "Login" })
+    ] })
+  ] });
+}
+var LoginPage_default = LoginPage;
+
+// src/pages/admin/AdminDashboardPage.jsx
+var import_react35 = __toESM(require_react(), 1);
+
+// src/components/admin/PageIntro.jsx
+var import_jsx_runtime30 = __toESM(require_jsx_runtime(), 1);
+function PageIntro({ eyebrow, title, description, action }) {
+  return /* @__PURE__ */ (0, import_jsx_runtime30.jsxs)("div", { className: "flex flex-col gap-4 md:flex-row md:items-end md:justify-between", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime30.jsxs)("div", { children: [
+      eyebrow ? /* @__PURE__ */ (0, import_jsx_runtime30.jsx)("span", { className: "text-sm font-semibold uppercase tracking-[0.25em] text-terracotta", children: eyebrow }) : null,
+      /* @__PURE__ */ (0, import_jsx_runtime30.jsx)("h2", { className: "mt-2 font-serif text-4xl text-stone", children: title }),
+      description ? /* @__PURE__ */ (0, import_jsx_runtime30.jsx)("p", { className: "mt-2 max-w-2xl text-stone-light", children: description }) : null
+    ] }),
+    action ? /* @__PURE__ */ (0, import_jsx_runtime30.jsx)("div", { children: action }) : null
+  ] });
+}
+var PageIntro_default = PageIntro;
+
+// src/components/admin/StatCard.jsx
+var import_jsx_runtime31 = __toESM(require_jsx_runtime(), 1);
+function StatCard({ label, value }) {
+  return /* @__PURE__ */ (0, import_jsx_runtime31.jsxs)("article", { className: "rounded-[1.5rem] border border-stone/10 bg-white p-5 shadow-lg shadow-stone/5", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime31.jsx)("span", { className: "text-sm font-medium text-stone-light", children: label }),
+    /* @__PURE__ */ (0, import_jsx_runtime31.jsx)("strong", { className: "mt-3 block font-serif text-4xl text-stone", children: value })
+  ] });
+}
+var StatCard_default = StatCard;
+
+// src/components/admin/StatusBadge.jsx
+var import_jsx_runtime32 = __toESM(require_jsx_runtime(), 1);
+var statusClassNames = {
+  pending: "bg-amber-100 text-amber-800",
+  confirmed: "bg-olive-light/40 text-olive-dark",
+  completed: "bg-stone/10 text-stone",
+  cancelled: "bg-red-100 text-red-700",
+  product: "bg-terracotta-light/30 text-terracotta",
+  service: "bg-stone/10 text-stone",
+  active: "bg-olive-light/40 text-olive-dark",
+  inactive: "bg-red-100 text-red-700"
+};
+function StatusBadge({ status }) {
+  const value = status || "pending";
+  return /* @__PURE__ */ (0, import_jsx_runtime32.jsx)("span", { className: `inline-flex rounded-full px-3 py-1 text-xs font-semibold ${statusClassNames[value] || "bg-stone/10 text-stone"}`, children: value });
+}
+var StatusBadge_default = StatusBadge;
+
+// src/api/adminApi.js
+var getSuperAdminDashboard = () => apiRequest("/api/dashboard/superadmin");
+var getAppointments = (businessSlug) => apiRequest("/api/appointments", { businessSlug });
+var updateAppointmentStatus = (appointmentId, payload, businessSlug) => apiRequest(`/api/appointments/${appointmentId}/status`, {
+  method: "PATCH",
+  body: payload,
+  businessSlug
+});
+var getListings = (businessSlug) => apiRequest("/api/listings", { businessSlug });
+var createListing = (payload, businessSlug) => apiRequest("/api/listings", {
+  method: "POST",
+  body: payload,
+  businessSlug
+});
+var updateListing = (listingId, payload, businessSlug) => apiRequest(`/api/listings/${listingId}`, {
+  method: "PATCH",
+  body: payload,
+  businessSlug
+});
+var getBusinesses = () => apiRequest("/api/businesses");
+var createBusiness = (payload) => apiRequest("/api/businesses", {
+  method: "POST",
+  body: payload
+});
+var updateBusiness = (businessId, payload) => apiRequest(`/api/businesses/${businessId}`, {
+  method: "PATCH",
+  body: payload
+});
+var deleteBusiness = (businessId) => apiRequest(`/api/businesses/${businessId}`, {
+  method: "DELETE"
+});
+var permanentDeleteBusiness = (businessId) => apiRequest(`/api/businesses/${businessId}/permanent`, {
+  method: "DELETE"
+});
+var registerBusinessAdmin = (payload) => apiRequest("/api/auth/register-business-admin", {
+  method: "POST",
+  body: payload
+});
+var getBusinessUsers = (businessId) => apiRequest(`/api/businesses/${businessId}/users`);
+
+// src/utils/apiData.js
+function extractApiData(body) {
+  return body?.data ?? body ?? null;
+}
+function extractApiList(body) {
+  const data = extractApiData(body);
+  return Array.isArray(data) ? data : [];
+}
+function extractApiItem(body) {
+  const data = extractApiData(body);
+  return Array.isArray(data) ? data[0] || null : data;
+}
+
+// src/utils/date.js
+function formatDateTime(value) {
+  if (!value) return "-";
+  return new Intl.DateTimeFormat("de-DE", {
+    dateStyle: "medium",
+    timeStyle: "short"
+  }).format(new Date(value));
+}
+function formatPrice3(value, currency = "EUR") {
+  if (value == null || Number.isNaN(Number(value))) return "-";
+  return new Intl.NumberFormat("de-DE", {
+    style: "currency",
+    currency
+  }).format(Number(value));
+}
+
+// src/pages/admin/AdminDashboardPage.jsx
+var import_jsx_runtime33 = __toESM(require_jsx_runtime(), 1);
+function getOrderTotal(appointment) {
+  return (appointment.items || []).reduce((sum, item) => sum + Number(item.unitPrice || 0) * Number(item.quantity || 1), 0);
+}
+function AdminDashboardPage() {
+  const { currentUser } = useAuth();
+  const businessSlug = getBusinessSlug(currentUser);
+  const [appointments, setAppointments] = (0, import_react35.useState)([]);
+  const [listings, setListings] = (0, import_react35.useState)([]);
+  const [loading, setLoading] = (0, import_react35.useState)(true);
+  const [error, setError] = (0, import_react35.useState)("");
+  (0, import_react35.useEffect)(() => {
+    let isMounted = true;
+    async function loadData() {
+      setLoading(true);
+      setError("");
+      try {
+        const [appointmentsBody, listingsBody] = await Promise.all([
+          getAppointments(businessSlug),
+          getListings(businessSlug)
+        ]);
+        if (isMounted) {
+          setAppointments(extractApiList(appointmentsBody));
+          setListings(extractApiList(listingsBody));
+        }
+      } catch (caughtError) {
+        if (isMounted) setError(getApiErrorMessage(caughtError));
+      } finally {
+        if (isMounted) setLoading(false);
+      }
+    }
+    loadData();
+    return () => {
+      isMounted = false;
+    };
+  }, [businessSlug]);
+  const recentAppointments = (0, import_react35.useMemo)(() => appointments.slice(0, 5), [appointments]);
+  const pendingCount = appointments.filter((item) => item.status === "pending").length;
+  const productCount = listings.filter((item) => item.type === "product").length;
+  const totalRevenue = appointments.reduce((sum, item) => sum + getOrderTotal(item), 0);
+  return /* @__PURE__ */ (0, import_jsx_runtime33.jsxs)("div", { className: "space-y-8", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(PageIntro_default, { eyebrow: "Admin Dashboard", title: "Restaurant \xDCberblick", description: "Neue Bestellungen, Reservierungen und Speisekarte zentral im Center verwalten." }),
+    error ? /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(AlertMessage_default, { type: "error", children: error }) : null,
+    loading ? /* @__PURE__ */ (0, import_jsx_runtime33.jsx)("div", { className: "rounded-[1.5rem] bg-white p-6 text-stone-light", children: "Daten werden geladen..." }) : /* @__PURE__ */ (0, import_jsx_runtime33.jsxs)(import_jsx_runtime33.Fragment, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime33.jsxs)("div", { className: "grid gap-4 md:grid-cols-4", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(StatCard_default, { label: "Anfragen", value: appointments.length }),
+        /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(StatCard_default, { label: "Offen", value: pendingCount }),
+        /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(StatCard_default, { label: "Men\xFCprodukte", value: productCount || listings.length }),
+        /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(StatCard_default, { label: "Bestellwert", value: formatPrice3(totalRevenue) })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime33.jsxs)("section", { className: "rounded-[1.5rem] border border-stone/10 bg-white p-5 shadow-lg shadow-stone/5", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime33.jsx)("div", { className: "mb-4 flex items-center justify-between", children: /* @__PURE__ */ (0, import_jsx_runtime33.jsx)("h3", { className: "font-serif text-2xl text-stone", children: "Letzte Anfragen" }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime33.jsx)("div", { className: "space-y-3", children: recentAppointments.length ? recentAppointments.map((item) => /* @__PURE__ */ (0, import_jsx_runtime33.jsxs)("article", { className: "flex flex-col gap-3 rounded-2xl bg-cream/70 p-4 md:flex-row md:items-center md:justify-between", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime33.jsxs)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime33.jsx)("strong", { className: "text-stone", children: item.customerName || "Gast" }),
+            /* @__PURE__ */ (0, import_jsx_runtime33.jsxs)("div", { className: "mt-1 text-sm text-stone-light", children: [
+              formatDateTime(item.startsAt),
+              " \xB7 ",
+              (item.items || []).map((entry) => entry.title).join(", ") || "Reservierung"
+            ] })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime33.jsxs)("div", { className: "flex items-center gap-3", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime33.jsx)("span", { className: "font-semibold text-stone", children: formatPrice3(getOrderTotal(item)) }),
+            /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(StatusBadge_default, { status: item.status })
+          ] })
+        ] }, item._id || item.id)) : /* @__PURE__ */ (0, import_jsx_runtime33.jsx)("p", { className: "text-stone-light", children: "Noch keine Anfragen." }) })
+      ] })
+    ] })
+  ] });
+}
+var AdminDashboardPage_default = AdminDashboardPage;
+
+// src/pages/admin/AdminOrdersPage.jsx
+var import_react36 = __toESM(require_react(), 1);
+
+// src/components/admin/DataTable.jsx
+var import_jsx_runtime34 = __toESM(require_jsx_runtime(), 1);
+function DataTable({ columns, rows, loading, emptyTitle, emptyDescription }) {
+  if (loading) {
+    return /* @__PURE__ */ (0, import_jsx_runtime34.jsx)("div", { className: "rounded-[1.5rem] border border-stone/10 bg-white p-6 text-stone-light", children: "Daten werden geladen..." });
+  }
+  if (!rows.length) {
+    return /* @__PURE__ */ (0, import_jsx_runtime34.jsxs)("div", { className: "rounded-[1.5rem] border border-stone/10 bg-white p-6", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime34.jsx)("h3", { className: "text-xl text-stone", children: emptyTitle }),
+      /* @__PURE__ */ (0, import_jsx_runtime34.jsx)("p", { className: "mt-2 text-stone-light", children: emptyDescription })
+    ] });
+  }
+  return /* @__PURE__ */ (0, import_jsx_runtime34.jsx)("div", { className: "overflow-hidden rounded-[1.5rem] border border-stone/10 bg-white shadow-lg shadow-stone/5", children: /* @__PURE__ */ (0, import_jsx_runtime34.jsx)("div", { className: "overflow-x-auto", children: /* @__PURE__ */ (0, import_jsx_runtime34.jsxs)("table", { className: "min-w-full text-left text-sm", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime34.jsx)("thead", { className: "bg-cream text-xs uppercase tracking-[0.18em] text-stone-light", children: /* @__PURE__ */ (0, import_jsx_runtime34.jsx)("tr", { children: columns.map((column) => /* @__PURE__ */ (0, import_jsx_runtime34.jsx)("th", { className: "px-4 py-4 font-semibold", children: column.label }, column.key)) }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime34.jsx)("tbody", { className: "divide-y divide-stone/10", children: rows.map((row, index) => /* @__PURE__ */ (0, import_jsx_runtime34.jsx)("tr", { className: "align-top", children: columns.map((column) => /* @__PURE__ */ (0, import_jsx_runtime34.jsx)("td", { className: "px-4 py-4 text-stone", children: column.render ? column.render(row) : row[column.key] }, column.key)) }, row._id || row.id || index)) })
+  ] }) }) });
+}
+var DataTable_default = DataTable;
+
+// src/pages/admin/AdminOrdersPage.jsx
+var import_jsx_runtime35 = __toESM(require_jsx_runtime(), 1);
+var statuses = ["all", "pending", "confirmed", "completed", "cancelled"];
+function getOrderTotal2(row) {
+  return (row.items || []).reduce((sum, item) => sum + Number(item.unitPrice || 0) * Number(item.quantity || 1), 0);
+}
+function AdminOrdersPage() {
+  const { currentUser } = useAuth();
+  const businessSlug = getBusinessSlug(currentUser);
+  const [appointments, setAppointments] = (0, import_react36.useState)([]);
+  const [loading, setLoading] = (0, import_react36.useState)(true);
+  const [filter2, setFilter] = (0, import_react36.useState)("all");
+  const [feedback, setFeedback] = (0, import_react36.useState)("");
+  const [error, setError] = (0, import_react36.useState)("");
+  (0, import_react36.useEffect)(() => {
+    async function loadAppointments() {
+      setLoading(true);
+      setError("");
+      try {
+        const body = await getAppointments(businessSlug);
+        setAppointments(extractApiList(body));
+      } catch (caughtError) {
+        setError(getApiErrorMessage(caughtError));
+      } finally {
+        setLoading(false);
+      }
+    }
+    loadAppointments();
+  }, [businessSlug]);
+  const handleStatusUpdate = async (appointmentId, status) => {
+    setFeedback("");
+    setError("");
+    try {
+      await updateAppointmentStatus(appointmentId, { status }, businessSlug);
+      setAppointments((current) => current.map((item) => (item._id || item.id) === appointmentId ? { ...item, status } : item));
+      setFeedback("Status wurde aktualisiert.");
+    } catch (caughtError) {
+      setError(getApiErrorMessage(caughtError));
+    }
+  };
+  const filteredAppointments = (0, import_react36.useMemo)(() => {
+    if (filter2 === "all") return appointments;
+    return appointments.filter((item) => item.status === filter2);
+  }, [appointments, filter2]);
+  const columns = [
+    { key: "customer", label: "Gast", render: (row) => /* @__PURE__ */ (0, import_jsx_runtime35.jsxs)("div", { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime35.jsx)("strong", { children: row.customerName || "Gast" }),
+      /* @__PURE__ */ (0, import_jsx_runtime35.jsx)("div", { className: "mt-1 text-xs text-stone-light", children: row.customerEmail || row.customerPhone || "Keine Kontaktdaten" })
+    ] }) },
+    { key: "date", label: "Zeit", render: (row) => formatDateTime(row.startsAt) },
+    { key: "items", label: "Inhalt", render: (row) => /* @__PURE__ */ (0, import_jsx_runtime35.jsx)("div", { className: "max-w-sm space-y-1", children: (row.items || []).map((item) => /* @__PURE__ */ (0, import_jsx_runtime35.jsxs)("div", { className: "text-sm", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime35.jsxs)("strong", { children: [
+        item.quantity || 1,
+        "x ",
+        item.title
+      ] }),
+      item.notes ? /* @__PURE__ */ (0, import_jsx_runtime35.jsx)("span", { className: "block text-xs text-stone-light", children: item.notes }) : null
+    ] }, item._id || item.title)) }) },
+    { key: "total", label: "Total", render: (row) => formatPrice3(getOrderTotal2(row)) },
+    { key: "status", label: "Status", render: (row) => /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(StatusBadge_default, { status: row.status || "pending" }) },
+    { key: "actions", label: "Aktionen", render: (row) => /* @__PURE__ */ (0, import_jsx_runtime35.jsx)("div", { className: "flex flex-wrap gap-2", children: statuses.filter((status) => status !== "all").map((status) => /* @__PURE__ */ (0, import_jsx_runtime35.jsx)("button", { type: "button", className: "rounded-full border border-stone/10 px-3 py-1 text-xs font-semibold transition hover:border-terracotta hover:text-terracotta", onClick: () => handleStatusUpdate(row._id || row.id, status), children: status }, status)) }) }
+  ];
+  return /* @__PURE__ */ (0, import_jsx_runtime35.jsxs)("div", { className: "space-y-6", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(PageIntro_default, { eyebrow: "Bestellungen", title: "Reservierungen & Vorbestellungen", description: "Alle eingehenden Restaurant-Anfragen aus dem Center verwalten und Status aktualisieren." }),
+    " ",
+    /* @__PURE__ */ (0, import_jsx_runtime35.jsx)("div", { className: "flex flex-wrap gap-2", children: statuses.map((status) => /* @__PURE__ */ (0, import_jsx_runtime35.jsx)("button", { type: "button", className: `rounded-full px-4 py-2 text-sm font-semibold transition ${filter2 === status ? "bg-terracotta text-cream" : "bg-white text-stone hover:text-terracotta"}`, onClick: () => setFilter(status), children: status }, status)) }),
+    /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(AlertMessage_default, { type: "success", children: feedback }),
+    /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(AlertMessage_default, { type: "error", children: error }),
+    /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(DataTable_default, { columns, rows: filteredAppointments, loading, emptyTitle: "Keine Anfragen", emptyDescription: "F\xFCr diesen Filter gibt es noch keine Eintr\xE4ge." })
+  ] });
+}
+var AdminOrdersPage_default = AdminOrdersPage;
+
+// src/pages/admin/AdminMenuPage.jsx
+var import_react37 = __toESM(require_react(), 1);
+var import_jsx_runtime36 = __toESM(require_jsx_runtime(), 1);
+var initialForm = {
+  type: "product",
+  name: "",
+  description: "",
+  price: "",
+  currency: "EUR",
+  category: "Pizza",
+  order: 0,
+  isActive: true
+};
+var categories = ["Pizza", "Pasta", "Salate", "Dessert", "Getr\xE4nke"];
+function AdminMenuPage() {
+  const { currentUser } = useAuth();
+  const businessSlug = getBusinessSlug(currentUser);
+  const [items, setItems] = (0, import_react37.useState)([]);
+  const [formValues, setFormValues] = (0, import_react37.useState)(initialForm);
+  const [editingItem, setEditingItem] = (0, import_react37.useState)(null);
+  const [loading, setLoading] = (0, import_react37.useState)(true);
+  const [submitting, setSubmitting] = (0, import_react37.useState)(false);
+  const [feedback, setFeedback] = (0, import_react37.useState)("");
+  const [error, setError] = (0, import_react37.useState)("");
+  (0, import_react37.useEffect)(() => {
+    async function loadItems() {
+      setLoading(true);
+      setError("");
+      try {
+        const body = await getListings(businessSlug);
+        setItems(extractApiList(body).filter((item) => item.type === "product"));
+      } catch (caughtError) {
+        setError(getApiErrorMessage(caughtError));
+      } finally {
+        setLoading(false);
+      }
+    }
+    loadItems();
+  }, [businessSlug]);
+  const handleChange = (event) => {
+    const { name, value, type, checked } = event.target;
+    setFormValues((current) => ({ ...current, [name]: type === "checkbox" ? checked : value }));
+  };
+  const resetForm = () => {
+    setEditingItem(null);
+    setFormValues(initialForm);
+  };
+  const toPayload = (values) => ({
+    type: "product",
+    name: values.name.trim(),
+    description: values.description.trim() || void 0,
+    price: values.price !== "" ? Number(values.price) : void 0,
+    currency: values.currency || "EUR",
+    category: values.category || void 0,
+    order: values.order !== "" ? Number(values.order) : 0,
+    isActive: values.isActive
+  });
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setSubmitting(true);
+    setFeedback("");
+    setError("");
+    try {
+      const payload = toPayload(formValues);
+      if (editingItem) {
+        const body = await updateListing(editingItem._id || editingItem.id, payload, businessSlug);
+        const updated = extractApiItem(body);
+        setItems((current) => current.map((item) => (item._id || item.id) === (updated._id || updated.id) ? updated : item));
+        setFeedback("Produkt wurde aktualisiert.");
+      } else {
+        const body = await createListing(payload, businessSlug);
+        const created = extractApiItem(body);
+        setItems((current) => created ? [created, ...current] : current);
+        setFeedback("Produkt wurde erstellt.");
+      }
+      resetForm();
+    } catch (caughtError) {
+      setError(getApiErrorMessage(caughtError));
+    } finally {
+      setSubmitting(false);
+    }
+  };
+  const handleEdit = (item) => {
+    setEditingItem(item);
+    setFormValues({
+      type: "product",
+      name: item.name || "",
+      description: item.description || "",
+      price: item.price ?? "",
+      currency: item.currency || "EUR",
+      category: item.category || "Pizza",
+      order: item.order ?? 0,
+      isActive: item.isActive !== false
+    });
+  };
+  const handleDeactivate = async (item) => {
+    setError("");
+    setFeedback("");
+    try {
+      const body = await updateListing(item._id || item.id, { isActive: false }, businessSlug);
+      const updated = extractApiItem(body) || { ...item, isActive: false };
+      setItems((current) => current.map((entry) => (entry._id || entry.id) === (item._id || item.id) ? updated : entry));
+      setFeedback("Produkt wurde deaktiviert.");
+    } catch (caughtError) {
+      setError(getApiErrorMessage(caughtError));
+    }
+  };
+  const columns = [
+    { key: "name", label: "Produkt", render: (row) => /* @__PURE__ */ (0, import_jsx_runtime36.jsxs)("div", { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime36.jsx)("strong", { children: row.name }),
+      /* @__PURE__ */ (0, import_jsx_runtime36.jsx)("div", { className: "mt-1 max-w-sm text-xs text-stone-light", children: row.description || "-" })
+    ] }) },
+    { key: "category", label: "Kategorie" },
+    { key: "price", label: "Preis", render: (row) => formatPrice3(row.price, row.currency || "EUR") },
+    { key: "state", label: "Status", render: (row) => /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(StatusBadge_default, { status: row.isActive === false ? "inactive" : "active" }) },
+    { key: "actions", label: "Aktionen", render: (row) => /* @__PURE__ */ (0, import_jsx_runtime36.jsxs)("div", { className: "flex flex-wrap gap-2", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime36.jsx)("button", { type: "button", className: "rounded-full border border-stone/10 px-3 py-1 text-xs font-semibold hover:border-terracotta hover:text-terracotta", onClick: () => handleEdit(row), children: "Edit" }),
+      /* @__PURE__ */ (0, import_jsx_runtime36.jsx)("button", { type: "button", className: "rounded-full border border-red-200 px-3 py-1 text-xs font-semibold text-red-700 hover:bg-red-50", onClick: () => handleDeactivate(row), children: "Deaktivieren" })
+    ] }) }
+  ];
+  return /* @__PURE__ */ (0, import_jsx_runtime36.jsxs)("div", { className: "space-y-6", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(PageIntro_default, { eyebrow: "Speisekarte", title: "Men\xFCprodukte verwalten", description: "Produkte, Kategorien und Preise f\xFCr die Restaurant-Speisekarte im Center pflegen." }),
+    /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(AlertMessage_default, { type: "success", children: feedback }),
+    /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(AlertMessage_default, { type: "error", children: error }),
+    /* @__PURE__ */ (0, import_jsx_runtime36.jsxs)("div", { className: "grid gap-6 xl:grid-cols-[420px_1fr]", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime36.jsxs)("form", { onSubmit: handleSubmit, className: "rounded-[1.5rem] border border-stone/10 bg-white p-5 shadow-lg shadow-stone/5", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime36.jsx)("h3", { className: "font-serif text-2xl text-stone", children: editingItem ? "Produkt bearbeiten" : "Produkt hinzuf\xFCgen" }),
+        /* @__PURE__ */ (0, import_jsx_runtime36.jsxs)("div", { className: "mt-5 space-y-4", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime36.jsxs)("label", { className: "block", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime36.jsx)("span", { className: "text-sm font-medium", children: "Name" }),
+            /* @__PURE__ */ (0, import_jsx_runtime36.jsx)("input", { className: "mt-2 w-full rounded-2xl border border-stone/20 px-4 py-3 outline-none focus:border-terracotta", name: "name", value: formValues.name, onChange: handleChange, required: true })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime36.jsxs)("label", { className: "block", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime36.jsx)("span", { className: "text-sm font-medium", children: "Beschreibung" }),
+            /* @__PURE__ */ (0, import_jsx_runtime36.jsx)("textarea", { className: "mt-2 min-h-[110px] w-full rounded-2xl border border-stone/20 px-4 py-3 outline-none focus:border-terracotta", name: "description", value: formValues.description, onChange: handleChange })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime36.jsxs)("div", { className: "grid grid-cols-2 gap-4", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime36.jsxs)("label", { className: "block", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime36.jsx)("span", { className: "text-sm font-medium", children: "Preis" }),
+              /* @__PURE__ */ (0, import_jsx_runtime36.jsx)("input", { className: "mt-2 w-full rounded-2xl border border-stone/20 px-4 py-3 outline-none focus:border-terracotta", type: "number", step: "0.01", name: "price", value: formValues.price, onChange: handleChange, required: true })
+            ] }),
+            /* @__PURE__ */ (0, import_jsx_runtime36.jsxs)("label", { className: "block", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime36.jsx)("span", { className: "text-sm font-medium", children: "Kategorie" }),
+              /* @__PURE__ */ (0, import_jsx_runtime36.jsx)("select", { className: "mt-2 w-full rounded-2xl border border-stone/20 px-4 py-3 outline-none focus:border-terracotta", name: "category", value: formValues.category, onChange: handleChange, children: categories.map((category) => /* @__PURE__ */ (0, import_jsx_runtime36.jsx)("option", { value: category, children: category }, category)) })
+            ] })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime36.jsxs)("label", { className: "flex items-center gap-3 rounded-2xl bg-cream/70 p-4", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime36.jsx)("input", { type: "checkbox", name: "isActive", checked: formValues.isActive, onChange: handleChange, className: "accent-terracotta" }),
+            "Aktiv"
+          ] })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime36.jsxs)("div", { className: "mt-6 flex gap-3", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime36.jsx)("button", { type: "submit", className: "btn-primary disabled:opacity-60", disabled: submitting, children: submitting ? "Speichern..." : editingItem ? "Aktualisieren" : "Erstellen" }),
+          editingItem ? /* @__PURE__ */ (0, import_jsx_runtime36.jsx)("button", { type: "button", className: "btn-secondary", onClick: resetForm, children: "Abbrechen" }) : null
+        ] })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(DataTable_default, { columns, rows: items, loading, emptyTitle: "Keine Produkte", emptyDescription: "Noch keine Men\xFCprodukte im Center vorhanden." })
+    ] })
+  ] });
+}
+var AdminMenuPage_default = AdminMenuPage;
+
+// src/pages/admin/AdminRestaurantPage.jsx
+var import_jsx_runtime37 = __toESM(require_jsx_runtime(), 1);
+function AdminRestaurantPage() {
+  return /* @__PURE__ */ (0, import_jsx_runtime37.jsxs)("div", { className: "space-y-6", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime37.jsx)(PageIntro_default, { eyebrow: "Restaurant", title: "Restaurant Profil", description: "Diese Seite ist vorbereitet f\xFCr Stammdaten, \xD6ffnungszeiten und Standortdaten aus dem Center." }),
+    /* @__PURE__ */ (0, import_jsx_runtime37.jsxs)("div", { className: "rounded-[1.5rem] border border-stone/10 bg-white p-6 shadow-lg shadow-stone/5", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime37.jsx)("h3", { className: "font-serif text-2xl text-stone", children: "N\xE4chster sauberer Schritt" }),
+      /* @__PURE__ */ (0, import_jsx_runtime37.jsx)("p", { className: "mt-2 max-w-2xl text-stone-light", children: "Hier k\xF6nnen wir sp\xE4ter die Center-Endpunkte f\xFCr Locations und Business Settings anbinden, ohne das \xF6ffentliche Design zu ver\xE4ndern." })
+    ] })
+  ] });
+}
+var AdminRestaurantPage_default = AdminRestaurantPage;
+
+// src/pages/superadmin/SuperAdminDashboardPage.jsx
+var import_react38 = __toESM(require_react(), 1);
+var import_jsx_runtime38 = __toESM(require_jsx_runtime(), 1);
+function SuperAdminDashboardPage() {
+  const [loading, setLoading] = (0, import_react38.useState)(true);
+  const [error, setError] = (0, import_react38.useState)("");
+  const [dashboardData, setDashboardData] = (0, import_react38.useState)({
+    businesses: [],
+    appointments: [],
+    contacts: [],
+    totals: {}
+  });
+  (0, import_react38.useEffect)(() => {
+    async function loadDashboard() {
+      setLoading(true);
+      setError("");
+      try {
+        const body = await getSuperAdminDashboard();
+        const payload = body?.data || body || {};
+        setDashboardData({
+          businesses: payload.recentBusinesses || payload.businesses || [],
+          appointments: payload.appointments || [],
+          contacts: payload.contactRequests || payload.contacts || [],
+          totals: payload.totals || {}
+        });
+      } catch (caughtError) {
+        setError(getApiErrorMessage(caughtError));
+      } finally {
+        setLoading(false);
+      }
+    }
+    loadDashboard();
+  }, []);
+  const recentBusinesses = (0, import_react38.useMemo)(() => dashboardData.businesses.slice(0, 6), [dashboardData.businesses]);
+  const activeBusinesses = dashboardData.totals.activeBusinesses || dashboardData.businesses.filter((item) => item.isActive !== false).length;
+  return /* @__PURE__ */ (0, import_jsx_runtime38.jsxs)("div", { className: "space-y-8", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime38.jsx)(PageIntro_default, { eyebrow: "Superadmin", title: "Platform \xDCberblick", description: "Alle Businesses, Termine und Aktivit\xE4ten zentral im Center sehen." }),
+    error ? /* @__PURE__ */ (0, import_jsx_runtime38.jsx)(AlertMessage_default, { type: "error", children: error }) : null,
+    loading ? /* @__PURE__ */ (0, import_jsx_runtime38.jsx)("div", { className: "rounded-[1.5rem] bg-white p-6 text-stone-light", children: "Daten werden geladen..." }) : /* @__PURE__ */ (0, import_jsx_runtime38.jsxs)(import_jsx_runtime38.Fragment, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime38.jsxs)("div", { className: "grid gap-4 md:grid-cols-4", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime38.jsx)(StatCard_default, { label: "Businesses", value: dashboardData.totals.businesses || dashboardData.businesses.length }),
+        /* @__PURE__ */ (0, import_jsx_runtime38.jsx)(StatCard_default, { label: "Aktiv", value: activeBusinesses }),
+        /* @__PURE__ */ (0, import_jsx_runtime38.jsx)(StatCard_default, { label: "Appointments", value: dashboardData.totals.appointments || dashboardData.appointments.length }),
+        /* @__PURE__ */ (0, import_jsx_runtime38.jsx)(StatCard_default, { label: "Contacts", value: dashboardData.totals.contactRequests || dashboardData.contacts.length })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime38.jsxs)("section", { className: "rounded-[1.5rem] border border-stone/10 bg-white p-5 shadow-lg shadow-stone/5", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime38.jsx)("h3", { className: "font-serif text-2xl text-stone", children: "Neue Businesses" }),
+        /* @__PURE__ */ (0, import_jsx_runtime38.jsx)("div", { className: "mt-4 space-y-3", children: recentBusinesses.length ? recentBusinesses.map((item) => /* @__PURE__ */ (0, import_jsx_runtime38.jsxs)("article", { className: "flex flex-col gap-3 rounded-2xl bg-cream/70 p-4 md:flex-row md:items-center md:justify-between", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime38.jsxs)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime38.jsx)("strong", { children: item.name || "Business" }),
+            /* @__PURE__ */ (0, import_jsx_runtime38.jsxs)("div", { className: "mt-1 text-sm text-stone-light", children: [
+              item.slug || "no-slug",
+              " \xB7 ",
+              item.email || "no email"
+            ] })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime38.jsxs)("div", { className: "flex items-center gap-3 text-sm text-stone-light", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime38.jsx)("span", { children: formatDateTime(item.createdAt) }),
+            /* @__PURE__ */ (0, import_jsx_runtime38.jsx)(StatusBadge_default, { status: item.isActive === false ? "inactive" : "active" })
+          ] })
+        ] }, item._id || item.id)) : /* @__PURE__ */ (0, import_jsx_runtime38.jsx)("p", { className: "text-stone-light", children: "Noch keine Businesses." }) })
+      ] })
+    ] })
+  ] });
+}
+var SuperAdminDashboardPage_default = SuperAdminDashboardPage;
+
+// src/pages/superadmin/SuperAdminBusinessesPage.jsx
+var import_react39 = __toESM(require_react(), 1);
+var import_jsx_runtime39 = __toESM(require_jsx_runtime(), 1);
+function SuperAdminBusinessesPage() {
+  const [businesses, setBusinesses] = (0, import_react39.useState)([]);
+  const [loading, setLoading] = (0, import_react39.useState)(true);
+  const [searchTerm, setSearchTerm] = (0, import_react39.useState)("");
+  const [filter2, setFilter] = (0, import_react39.useState)("all");
+  const [feedback, setFeedback] = (0, import_react39.useState)("");
+  const [error, setError] = (0, import_react39.useState)("");
+  (0, import_react39.useEffect)(() => {
+    async function loadBusinesses() {
+      setLoading(true);
+      setError("");
+      try {
+        const body = await getBusinesses();
+        setBusinesses(extractApiList(body));
+      } catch (caughtError) {
+        setError(getApiErrorMessage(caughtError));
+      } finally {
+        setLoading(false);
+      }
+    }
+    loadBusinesses();
+  }, []);
+  const handleDeactivate = async (row) => {
+    const id3 = row._id || row.id;
+    setFeedback("");
+    setError("");
+    try {
+      await deleteBusiness(id3);
+      setBusinesses((current) => current.map((item) => (item._id || item.id) === id3 ? { ...item, isActive: false, status: "inactive" } : item));
+      setFeedback("Business wurde deaktiviert.");
+    } catch (caughtError) {
+      setError(getApiErrorMessage(caughtError));
+    }
+  };
+  const handleReactivate = async (row) => {
+    const id3 = row._id || row.id;
+    setFeedback("");
+    setError("");
+    try {
+      await updateBusiness(id3, { isActive: true, status: "active" });
+      setBusinesses((current) => current.map((item) => (item._id || item.id) === id3 ? { ...item, isActive: true, status: "active" } : item));
+      setFeedback("Business wurde aktiviert.");
+    } catch (caughtError) {
+      setError(getApiErrorMessage(caughtError));
+    }
+  };
+  const handlePermanentDelete = async (row) => {
+    const id3 = row._id || row.id;
+    if (!window.confirm(`Business "${row.name}" endg\xFCltig l\xF6schen?`)) return;
+    setFeedback("");
+    setError("");
+    try {
+      await permanentDeleteBusiness(id3);
+      setBusinesses((current) => current.filter((item) => (item._id || item.id) !== id3));
+      setFeedback("Business wurde gel\xF6scht.");
+    } catch (caughtError) {
+      setError(getApiErrorMessage(caughtError));
+    }
+  };
+  const filteredBusinesses = (0, import_react39.useMemo)(() => businesses.filter((item) => {
+    const term = searchTerm.toLowerCase();
+    const matchesSearch = !term || item.name?.toLowerCase().includes(term) || item.slug?.toLowerCase().includes(term) || item.email?.toLowerCase().includes(term);
+    const matchesFilter = filter2 === "all" || filter2 === "active" && item.isActive !== false || filter2 === "inactive" && item.isActive === false;
+    return matchesSearch && matchesFilter;
+  }), [businesses, filter2, searchTerm]);
+  const columns = [
+    { key: "name", label: "Business", render: (row) => /* @__PURE__ */ (0, import_jsx_runtime39.jsxs)("div", { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime39.jsx)("strong", { children: row.name }),
+      /* @__PURE__ */ (0, import_jsx_runtime39.jsx)("div", { className: "mt-1 text-xs text-stone-light", children: row.businessType || "business" })
+    ] }) },
+    { key: "slug", label: "Slug" },
+    { key: "email", label: "Email" },
+    { key: "state", label: "Status", render: (row) => /* @__PURE__ */ (0, import_jsx_runtime39.jsx)(StatusBadge_default, { status: row.isActive === false ? "inactive" : "active" }) },
+    { key: "actions", label: "Aktionen", render: (row) => /* @__PURE__ */ (0, import_jsx_runtime39.jsxs)("div", { className: "flex flex-wrap gap-2", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime39.jsx)(Link, { className: "rounded-full border border-stone/10 px-3 py-1 text-xs font-semibold hover:border-terracotta hover:text-terracotta", to: `/superadmin/businesses/${row._id || row.id}/users`, children: "Users" }),
+      row.isActive === false ? /* @__PURE__ */ (0, import_jsx_runtime39.jsxs)(import_jsx_runtime39.Fragment, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime39.jsx)("button", { type: "button", className: "rounded-full border border-stone/10 px-3 py-1 text-xs font-semibold hover:border-terracotta hover:text-terracotta", onClick: () => handleReactivate(row), children: "Aktivieren" }),
+        /* @__PURE__ */ (0, import_jsx_runtime39.jsx)("button", { type: "button", className: "rounded-full border border-red-200 px-3 py-1 text-xs font-semibold text-red-700 hover:bg-red-50", onClick: () => handlePermanentDelete(row), children: "L\xF6schen" })
+      ] }) : /* @__PURE__ */ (0, import_jsx_runtime39.jsx)("button", { type: "button", className: "rounded-full border border-red-200 px-3 py-1 text-xs font-semibold text-red-700 hover:bg-red-50", onClick: () => handleDeactivate(row), children: "Deaktivieren" })
+    ] }) }
+  ];
+  return /* @__PURE__ */ (0, import_jsx_runtime39.jsxs)("div", { className: "space-y-6", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime39.jsx)(PageIntro_default, { eyebrow: "Businesses", title: "Alle Businesses", description: "Tenants suchen, aktivieren, deaktivieren und Admin-Accounts verwalten.", action: /* @__PURE__ */ (0, import_jsx_runtime39.jsx)(Link, { className: "btn-primary", to: "/superadmin/businesses/create", children: "Business erstellen" }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime39.jsxs)("div", { className: "flex flex-col gap-3 md:flex-row md:items-center md:justify-between", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime39.jsx)("input", { className: "rounded-2xl border border-stone/20 bg-white px-4 py-3 outline-none focus:border-terracotta md:w-96", type: "search", placeholder: "Suche nach Name, Slug oder Email", value: searchTerm, onChange: (event) => setSearchTerm(event.target.value) }),
+      /* @__PURE__ */ (0, import_jsx_runtime39.jsx)("div", { className: "flex gap-2", children: ["all", "active", "inactive"].map((status) => /* @__PURE__ */ (0, import_jsx_runtime39.jsx)("button", { type: "button", className: `rounded-full px-4 py-2 text-sm font-semibold ${filter2 === status ? "bg-terracotta text-cream" : "bg-white text-stone hover:text-terracotta"}`, onClick: () => setFilter(status), children: status }, status)) })
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime39.jsx)(AlertMessage_default, { type: "success", children: feedback }),
+    /* @__PURE__ */ (0, import_jsx_runtime39.jsx)(AlertMessage_default, { type: "error", children: error }),
+    /* @__PURE__ */ (0, import_jsx_runtime39.jsx)(DataTable_default, { columns, rows: filteredBusinesses, loading, emptyTitle: "Keine Businesses", emptyDescription: "Keine Eintr\xE4ge f\xFCr den aktuellen Filter." })
+  ] });
+}
+var SuperAdminBusinessesPage_default = SuperAdminBusinessesPage;
+
+// src/pages/superadmin/SuperAdminCreateBusinessPage.jsx
+var import_react40 = __toESM(require_react(), 1);
+var import_jsx_runtime40 = __toESM(require_jsx_runtime(), 1);
+var businessTypes = [
+  { value: "restaurant", label: "Restaurant / Cafe" },
+  { value: "salon", label: "Salon / Beauty" },
+  { value: "clinic", label: "Clinic / Health" },
+  { value: "shop", label: "Shop / Retail" },
+  { value: "other", label: "Other" }
+];
+var initialBusiness = {
+  name: "",
+  slug: "",
+  businessType: "restaurant",
+  email: "",
+  phone: "",
+  domain: ""
+};
+var initialAdmin = {
+  name: "",
+  email: "",
+  password: ""
+};
+function slugify(value) {
+  return value.toLowerCase().trim().replace(/[^a-z0-9\s-]/g, "").replace(/\s+/g, "-").replace(/-+/g, "-");
+}
+function SuperAdminCreateBusinessPage() {
+  const navigate = useNavigate();
+  const [business, setBusiness] = (0, import_react40.useState)(initialBusiness);
+  const [admin, setAdmin] = (0, import_react40.useState)(initialAdmin);
+  const [submitting, setSubmitting] = (0, import_react40.useState)(false);
+  const [error, setError] = (0, import_react40.useState)("");
+  const handleBusinessChange = (event) => {
+    const { name, value } = event.target;
+    setBusiness((current) => {
+      const next = { ...current, [name]: value };
+      if (name === "name" && !current.slug) {
+        next.slug = slugify(value);
+      }
+      return next;
+    });
+  };
+  const handleAdminChange = (event) => {
+    const { name, value } = event.target;
+    setAdmin((current) => ({ ...current, [name]: value }));
+  };
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setSubmitting(true);
+    setError("");
+    try {
+      const businessBody = await createBusiness({
+        name: business.name.trim(),
+        slug: business.slug.trim(),
+        businessType: business.businessType,
+        email: business.email.trim(),
+        phone: business.phone.trim() || void 0,
+        domain: business.domain.trim() || void 0,
+        enabledFeatures: ["appointments", "booking", "contact", "locations", "listings", "notifications"],
+        settings: {
+          timezone: "Europe/Berlin",
+          currency: "EUR",
+          locale: "de"
+        }
+      });
+      const createdBusiness = extractApiData(businessBody);
+      const businessId = createdBusiness?._id || createdBusiness?.id;
+      if (businessId && admin.name && admin.email && admin.password) {
+        await registerBusinessAdmin({
+          businessId,
+          name: admin.name.trim(),
+          email: admin.email.trim(),
+          password: admin.password
+        });
+      }
+      navigate("/superadmin/businesses", { replace: true });
+    } catch (caughtError) {
+      setError(getApiErrorMessage(caughtError));
+    } finally {
+      setSubmitting(false);
+    }
+  };
+  return /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)("div", { className: "space-y-6", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(PageIntro_default, { eyebrow: "Create Business", title: "Neuen Tenant anlegen", description: "Business erstellen und optional direkt den ersten Business Admin mit Passwort anlegen.", action: /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(Link, { className: "btn-secondary", to: "/superadmin/businesses", children: "Zur\xFCck" }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(AlertMessage_default, { type: "error", children: error }),
+    /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)("form", { onSubmit: handleSubmit, className: "grid gap-6 xl:grid-cols-2", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)("section", { className: "rounded-[1.5rem] border border-stone/10 bg-white p-5 shadow-lg shadow-stone/5", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime40.jsx)("h3", { className: "font-serif text-2xl text-stone", children: "Business Daten" }),
+        /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)("div", { className: "mt-5 space-y-4", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)("label", { className: "block", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime40.jsx)("span", { className: "text-sm font-medium", children: "Name *" }),
+            /* @__PURE__ */ (0, import_jsx_runtime40.jsx)("input", { className: "mt-2 w-full rounded-2xl border border-stone/20 px-4 py-3 outline-none focus:border-terracotta", name: "name", value: business.name, onChange: handleBusinessChange, required: true })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)("label", { className: "block", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime40.jsx)("span", { className: "text-sm font-medium", children: "Slug *" }),
+            /* @__PURE__ */ (0, import_jsx_runtime40.jsx)("input", { className: "mt-2 w-full rounded-2xl border border-stone/20 px-4 py-3 outline-none focus:border-terracotta", name: "slug", value: business.slug, onChange: handleBusinessChange, pattern: "[a-z0-9-]+", required: true })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)("label", { className: "block", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime40.jsx)("span", { className: "text-sm font-medium", children: "Typ" }),
+            /* @__PURE__ */ (0, import_jsx_runtime40.jsx)("select", { className: "mt-2 w-full rounded-2xl border border-stone/20 px-4 py-3 outline-none focus:border-terracotta", name: "businessType", value: business.businessType, onChange: handleBusinessChange, children: businessTypes.map((type) => /* @__PURE__ */ (0, import_jsx_runtime40.jsx)("option", { value: type.value, children: type.label }, type.value)) })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)("label", { className: "block", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime40.jsx)("span", { className: "text-sm font-medium", children: "Email *" }),
+            /* @__PURE__ */ (0, import_jsx_runtime40.jsx)("input", { className: "mt-2 w-full rounded-2xl border border-stone/20 px-4 py-3 outline-none focus:border-terracotta", type: "email", name: "email", value: business.email, onChange: handleBusinessChange, required: true })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)("div", { className: "grid gap-4 md:grid-cols-2", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)("label", { className: "block", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime40.jsx)("span", { className: "text-sm font-medium", children: "Telefon" }),
+              /* @__PURE__ */ (0, import_jsx_runtime40.jsx)("input", { className: "mt-2 w-full rounded-2xl border border-stone/20 px-4 py-3 outline-none focus:border-terracotta", name: "phone", value: business.phone, onChange: handleBusinessChange })
+            ] }),
+            /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)("label", { className: "block", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime40.jsx)("span", { className: "text-sm font-medium", children: "Domain" }),
+              /* @__PURE__ */ (0, import_jsx_runtime40.jsx)("input", { className: "mt-2 w-full rounded-2xl border border-stone/20 px-4 py-3 outline-none focus:border-terracotta", name: "domain", value: business.domain, onChange: handleBusinessChange, placeholder: "restaurant.de" })
+            ] })
+          ] })
+        ] })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)("section", { className: "rounded-[1.5rem] border border-stone/10 bg-white p-5 shadow-lg shadow-stone/5", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime40.jsx)("h3", { className: "font-serif text-2xl text-stone", children: "Business Admin" }),
+        /* @__PURE__ */ (0, import_jsx_runtime40.jsx)("p", { className: "mt-2 text-sm text-stone-light", children: "Optional. Wenn ausgef\xFCllt, wird direkt ein Login f\xFCr diesen Tenant erstellt." }),
+        /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)("div", { className: "mt-5 space-y-4", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)("label", { className: "block", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime40.jsx)("span", { className: "text-sm font-medium", children: "Admin Name" }),
+            /* @__PURE__ */ (0, import_jsx_runtime40.jsx)("input", { className: "mt-2 w-full rounded-2xl border border-stone/20 px-4 py-3 outline-none focus:border-terracotta", name: "name", value: admin.name, onChange: handleAdminChange })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)("label", { className: "block", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime40.jsx)("span", { className: "text-sm font-medium", children: "Admin Email / Username" }),
+            /* @__PURE__ */ (0, import_jsx_runtime40.jsx)("input", { className: "mt-2 w-full rounded-2xl border border-stone/20 px-4 py-3 outline-none focus:border-terracotta", type: "email", name: "email", value: admin.email, onChange: handleAdminChange })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)("label", { className: "block", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime40.jsx)("span", { className: "text-sm font-medium", children: "Passwort" }),
+            /* @__PURE__ */ (0, import_jsx_runtime40.jsx)("input", { className: "mt-2 w-full rounded-2xl border border-stone/20 px-4 py-3 outline-none focus:border-terracotta", type: "password", name: "password", value: admin.password, onChange: handleAdminChange, minLength: 8 })
+          ] })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime40.jsx)("div", { className: "mt-6 rounded-2xl bg-cream/70 p-4 text-sm text-stone-light", children: "F\xFCr Superadmin selbst wird der User im Backend/Seed angelegt. Passw\xF6rter geh\xF6ren nicht in den Frontend-Code." }),
+        /* @__PURE__ */ (0, import_jsx_runtime40.jsx)("button", { type: "submit", className: "btn-primary mt-6 disabled:cursor-not-allowed disabled:opacity-60", disabled: submitting, children: submitting ? "Wird erstellt..." : "Business erstellen" })
+      ] })
+    ] })
+  ] });
+}
+var SuperAdminCreateBusinessPage_default = SuperAdminCreateBusinessPage;
+
+// src/pages/superadmin/SuperAdminUsersPage.jsx
+var import_react41 = __toESM(require_react(), 1);
+var import_jsx_runtime41 = __toESM(require_jsx_runtime(), 1);
+function SuperAdminUsersPage() {
+  const { businessId } = useParams();
+  const [users, setUsers] = (0, import_react41.useState)([]);
+  const [loading, setLoading] = (0, import_react41.useState)(Boolean(businessId));
+  const [error, setError] = (0, import_react41.useState)("");
+  (0, import_react41.useEffect)(() => {
+    if (!businessId) return;
+    async function loadUsers() {
+      setLoading(true);
+      setError("");
+      try {
+        const body = await getBusinessUsers(businessId);
+        setUsers(extractApiList(body));
+      } catch (caughtError) {
+        setError(getApiErrorMessage(caughtError));
+      } finally {
+        setLoading(false);
+      }
+    }
+    loadUsers();
+  }, [businessId]);
+  if (!businessId) {
+    return /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)("div", { className: "space-y-6", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(PageIntro_default, { eyebrow: "Users", title: "Admin Users", description: "Alege un business din lista de Businesses pentru a vedea userii lui.", action: /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(Link, { className: "btn-primary", to: "/superadmin/businesses", children: "Businesses" }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)("div", { className: "rounded-[1.5rem] border border-stone/10 bg-white p-6 text-stone-light", children: [
+        "Userii sunt lista\u021Bi per business prin endpointul Center ",
+        /* @__PURE__ */ (0, import_jsx_runtime41.jsx)("code", { children: "/api/businesses/:businessId/users" }),
+        "."
+      ] })
+    ] });
+  }
+  const columns = [
+    { key: "name", label: "Name" },
+    { key: "email", label: "Email" },
+    { key: "role", label: "Role", render: (row) => /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(StatusBadge_default, { status: row.role || "business_admin" }) },
+    { key: "createdAt", label: "Created", render: (row) => formatDateTime(row.createdAt) }
+  ];
+  return /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)("div", { className: "space-y-6", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(PageIntro_default, { eyebrow: "Business Users", title: "Admin Accounts", description: "Business Admin Accounts f\xFCr diesen Tenant.", action: /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(Link, { className: "btn-secondary", to: "/superadmin/businesses", children: "Zur\xFCck" }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(AlertMessage_default, { type: "error", children: error }),
+    /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(DataTable_default, { columns, rows: users, loading, emptyTitle: "Keine User", emptyDescription: "F\xFCr diesen Business gibt es noch keine Admin Accounts." })
+  ] });
+}
+var SuperAdminUsersPage_default = SuperAdminUsersPage;
+
 // src/App.jsx
-var import_jsx_runtime21 = __toESM(require_jsx_runtime(), 1);
+var import_jsx_runtime42 = __toESM(require_jsx_runtime(), 1);
 function App() {
-  return /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(BrowserRouter, { children: /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("div", { className: "flex flex-col min-h-screen", children: [
-    /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(Navbar, {}),
-    /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("main", { className: "flex-grow", children: /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)(Routes, { children: [
-      /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(Route, { path: "/", element: /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(Home, {}) }),
-      /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(Route, { path: "/speisekarte", element: /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(Speisekarte, {}) }),
-      /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(Route, { path: "/bestellung", element: /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(ReservationOrder, {}) }),
-      /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(Route, { path: "/reservierung", element: /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(Reservierung, {}) }),
-      /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(Route, { path: "/reservation-order", element: /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(ReservationOrder, {}) }),
-      /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(Route, { path: "/uber-uns", element: /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(UberUns, {}) }),
-      /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(Route, { path: "/kontakt", element: /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(Kontakt, {}) }),
-      /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(Route, { path: "/impressum", element: /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(Impressum, {}) }),
-      /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(Route, { path: "/datenschutz", element: /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(Datenschutz, {}) })
-    ] }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(Footer, {}),
-    /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(FloatingButton, {})
-  ] }) });
+  return /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(BrowserRouter, { children: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(AuthProvider, { children: /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)(Routes, { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)(Route, { element: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(PublicLayout_default, {}), children: [
+      /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Route, { path: "/", element: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Home, {}) }),
+      /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Route, { path: "/speisekarte", element: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Speisekarte, {}) }),
+      /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Route, { path: "/bestellung", element: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(ReservationOrder, {}) }),
+      /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Route, { path: "/reservierung", element: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Reservierung, {}) }),
+      /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Route, { path: "/reservation-order", element: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(ReservationOrder, {}) }),
+      /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Route, { path: "/uber-uns", element: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(UberUns, {}) }),
+      /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Route, { path: "/kontakt", element: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Kontakt, {}) }),
+      /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Route, { path: "/impressum", element: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Impressum, {}) }),
+      /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Route, { path: "/datenschutz", element: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Datenschutz, {}) })
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Route, { element: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(AuthLayout_default, {}), children: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Route, { path: "/login", element: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(LoginPage_default, {}) }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)(Route, { element: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(ProtectedRoute_default, {}), children: [
+      /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Route, { element: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(RoleRoute_default, { allowedRoles: ["business_admin"] }), children: /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)(Route, { element: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(AdminLayout_default, {}), children: [
+        /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Route, { path: "/admin", element: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(AdminDashboardPage_default, {}) }),
+        /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Route, { path: "/admin/bestellungen", element: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(AdminOrdersPage_default, {}) }),
+        /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Route, { path: "/admin/speisekarte", element: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(AdminMenuPage_default, {}) }),
+        /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Route, { path: "/admin/restaurant", element: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(AdminRestaurantPage_default, {}) })
+      ] }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Route, { element: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(RoleRoute_default, { allowedRoles: ["superadmin"] }), children: /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)(Route, { element: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(SuperAdminLayout_default, {}), children: [
+        /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Route, { path: "/superadmin", element: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(SuperAdminDashboardPage_default, {}) }),
+        /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Route, { path: "/superadmin/businesses", element: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(SuperAdminBusinessesPage_default, {}) }),
+        /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Route, { path: "/superadmin/businesses/create", element: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(SuperAdminCreateBusinessPage_default, {}) }),
+        /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Route, { path: "/superadmin/users", element: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(SuperAdminUsersPage_default, {}) }),
+        /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Route, { path: "/superadmin/businesses/:businessId/users", element: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(SuperAdminUsersPage_default, {}) })
+      ] }) })
+    ] })
+  ] }) }) });
 }
 var stdin_default = App;
 
 // src/main.jsx
-var import_react31 = __toESM(require_react(), 1);
-var import_client = __toESM(require_client(), 1);
-var import_jsx_runtime22 = __toESM(require_jsx_runtime(), 1);
-import_client.default.createRoot(document.getElementById("root")).render(
-  /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(import_react31.default.StrictMode, { children: /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(stdin_default, {}) })
+var import_react42 = __toESM(require_react(), 1);
+var import_client4 = __toESM(require_client(), 1);
+var import_jsx_runtime43 = __toESM(require_jsx_runtime(), 1);
+import_client4.default.createRoot(document.getElementById("root")).render(
+  /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(import_react42.default.StrictMode, { children: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(stdin_default, {}) })
 );
 /*! Bundled license information:
 

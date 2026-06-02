@@ -22,6 +22,11 @@ function getDefaultTime() {
   now.setMinutes(Math.ceil(now.getMinutes() / 15) * 15);
   return now.toTimeString().slice(0, 5);
 }
+function normalizePersons(value) {
+  if (value === "") return "";
+  const nextValue = Number.parseInt(value, 10);
+  return Number.isNaN(nextValue) ? "" : Math.max(1, nextValue);
+}
 function Reservierung() {
   const [values, setValues] = useState({
     ...defaultValues,
@@ -37,7 +42,7 @@ function Reservierung() {
   };
   const handleSubmit = async (event) => {
     event.preventDefault();
-    if (!values.customerName.trim() || !values.phone.trim() || !values.reservationDate || !values.reservationTime || values.persons < 1) {
+    if (!values.customerName.trim() || !values.phone.trim() || !values.reservationDate || !values.reservationTime || Number(values.persons) < 1) {
       setError("Bitte f\xFCllen Sie alle Pflichtfelder aus.");
       return;
     }
@@ -52,7 +57,7 @@ function Reservierung() {
       email: values.email.trim(),
       reservationDate: values.reservationDate,
       reservationTime: values.reservationTime,
-      persons: values.persons,
+      persons: Number(values.persons),
       notes: values.notes.trim(),
       status: "pending",
       source: "website"
@@ -91,7 +96,7 @@ function Reservierung() {
             </p></motion.div></div></section><section className="section-padding"><div className="container-max max-w-4xl">{success ? <div className="mb-8 rounded-[1.75rem] border border-olive/30 bg-olive-light/20 p-5 text-stone shadow-lg shadow-olive/10"><div className="font-serif text-2xl text-olive-dark">Anfrage gesendet</div><p className="mt-2 text-stone">{success}</p></div> : null}<form
     onSubmit={handleSubmit}
     className="rounded-[2rem] border border-stone/10 bg-white/90 p-6 shadow-xl shadow-stone/5"
-  ><div className="grid gap-5 md:grid-cols-2"><label className="flex flex-col gap-2"><span className="text-sm font-medium text-stone">Name *</span><input className={inputClassName} value={values.customerName} onChange={(event) => updateValue("customerName", event.target.value)} /></label><label className="flex flex-col gap-2"><span className="text-sm font-medium text-stone">Telefon *</span><input className={inputClassName} value={values.phone} onChange={(event) => updateValue("phone", event.target.value)} /></label><label className="flex flex-col gap-2"><span className="text-sm font-medium text-stone">Email</span><input className={inputClassName} type="email" value={values.email} onChange={(event) => updateValue("email", event.target.value)} /></label><label className="flex flex-col gap-2"><span className="text-sm font-medium text-stone">Datum *</span><input className={inputClassName} type="date" value={values.reservationDate} onChange={(event) => updateValue("reservationDate", event.target.value)} /></label><label className="flex flex-col gap-2"><span className="text-sm font-medium text-stone">Uhrzeit *</span><input className={inputClassName} type="time" value={values.reservationTime} onChange={(event) => updateValue("reservationTime", event.target.value)} /></label><label className="flex flex-col gap-2"><span className="text-sm font-medium text-stone">Personen *</span><input className={inputClassName} type="number" min={1} value={values.persons} onChange={(event) => updateValue("persons", Number(event.target.value || 0))} /></label><label className="flex flex-col gap-2 md:col-span-2"><span className="text-sm font-medium text-stone">Notizen</span><textarea className={`${inputClassName} min-h-[120px] resize-y`} value={values.notes} onChange={(event) => updateValue("notes", event.target.value)} /></label></div><p className="mt-5 text-sm leading-6 text-stone-light">
+  ><div className="grid gap-5 md:grid-cols-2"><label className="flex flex-col gap-2"><span className="text-sm font-medium text-stone">Name *</span><input className={inputClassName} value={values.customerName} onChange={(event) => updateValue("customerName", event.target.value)} /></label><label className="flex flex-col gap-2"><span className="text-sm font-medium text-stone">Telefon *</span><input className={inputClassName} value={values.phone} onChange={(event) => updateValue("phone", event.target.value)} /></label><label className="flex flex-col gap-2"><span className="text-sm font-medium text-stone">Email</span><input className={inputClassName} type="email" value={values.email} onChange={(event) => updateValue("email", event.target.value)} /></label><label className="flex flex-col gap-2"><span className="text-sm font-medium text-stone">Datum *</span><input className={inputClassName} type="date" value={values.reservationDate} onChange={(event) => updateValue("reservationDate", event.target.value)} /></label><label className="flex flex-col gap-2"><span className="text-sm font-medium text-stone">Uhrzeit *</span><input className={inputClassName} type="time" value={values.reservationTime} onChange={(event) => updateValue("reservationTime", event.target.value)} /></label><label className="flex flex-col gap-2"><span className="text-sm font-medium text-stone">Personen *</span><input className={inputClassName} type="number" min={1} value={values.persons} onChange={(event) => updateValue("persons", normalizePersons(event.target.value))} /></label><label className="flex flex-col gap-2 md:col-span-2"><span className="text-sm font-medium text-stone">Notizen</span><textarea className={`${inputClassName} min-h-[120px] resize-y`} value={values.notes} onChange={(event) => updateValue("notes", event.target.value)} /></label></div><p className="mt-5 text-sm leading-6 text-stone-light">
               Mit dem Absenden dieses Formulars stimmen Sie zu, dass Ihre Angaben zur Bearbeitung Ihrer Anfrage verarbeitet werden. Weitere Informationen finden Sie in unserer{" "}<Link to="/datenschutz" className="font-medium text-terracotta hover:text-terracotta-light">
                 Datenschutzerklärung
               </Link>
