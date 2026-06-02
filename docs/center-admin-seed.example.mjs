@@ -5,12 +5,12 @@ import mongoose from "mongoose";
 import { User } from "../src/models/User.js";
 
 const MONGODB_URI = process.env.MONGODB_URI;
-const SUPERADMIN_NAME = process.env.SUPERADMIN_NAME || "Super Admin";
-const SUPERADMIN_EMAIL = process.env.SUPERADMIN_EMAIL || "admin@example.com";
-const SUPERADMIN_PASSWORD = process.env.SUPERADMIN_PASSWORD;
+const SUPERADMIN_NAME = process.env.SUPERADMIN1_NAME || "Super Admin";
+const SUPERADMIN_EMAIL = process.env.SUPERADMIN1_EMAIL || "admin@example.com";
+const SUPERADMIN_PASSWORD = process.env.SUPERADMIN1_PASSWORD;
 
 if (!MONGODB_URI || !SUPERADMIN_PASSWORD) {
-  throw new Error("Set MONGODB_URI and SUPERADMIN_PASSWORD before running this seed.");
+  throw new Error("Set MONGODB_URI and SUPERADMIN1_PASSWORD before running this seed.");
 }
 
 await mongoose.connect(MONGODB_URI);
