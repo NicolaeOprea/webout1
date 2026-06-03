@@ -62,7 +62,7 @@ function Footer() {
                 AGB
               </a></div></motion.div></div>{
     /* Bottom Bar */
-  }<div className="border-t border-gray-600 pt-6 text-center text-sm text-gray-400"><p>&copy; {currentYear} Sapore Mediterraneo. Alle Rechte vorbehalten.</p></div></div></footer>;
+  }<div className="flex flex-col items-center justify-between gap-4 border-t border-gray-600 pt-6 text-center text-sm text-gray-400 md:flex-row md:text-left"><p>&copy; {currentYear} Sapore Mediterraneo. Alle Rechte vorbehalten.</p><div className="flex flex-wrap items-center justify-center gap-4"><Link to="/impressum" className="hover:text-terracotta-light transition">Impressum</Link><Link to="/datenschutz" className="hover:text-terracotta-light transition">Datenschutz</Link></div></div></div></footer>;
 }
 export {
   Footer as default

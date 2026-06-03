@@ -1095,7 +1095,7 @@ var require_react_development = __commonJS({
           var dispatcher = resolveDispatcher();
           return dispatcher.useRef(initialValue);
         }
-        function useEffect16(create, deps) {
+        function useEffect17(create, deps) {
           var dispatcher = resolveDispatcher();
           return dispatcher.useEffect(create, deps);
         }
@@ -1878,7 +1878,7 @@ var require_react_development = __commonJS({
         exports.useContext = useContext11;
         exports.useDebugValue = useDebugValue;
         exports.useDeferredValue = useDeferredValue;
-        exports.useEffect = useEffect16;
+        exports.useEffect = useEffect17;
         exports.useId = useId4;
         exports.useImperativeHandle = useImperativeHandle;
         exports.useInsertionEffect = useInsertionEffect3;
@@ -26684,11 +26684,22 @@ function useAuth() {
   return context;
 }
 
+// src/components/ScrollToTop.jsx
+var import_react2 = __toESM(require_react(), 1);
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  (0, import_react2.useEffect)(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, [pathname]);
+  return null;
+}
+var ScrollToTop_default = ScrollToTop;
+
 // src/components/Navbar.jsx
-var import_react3 = __toESM(require_react(), 1);
+var import_react4 = __toESM(require_react(), 1);
 
 // node_modules/lucide-react/dist/esm/createLucideIcon.js
-var import_react2 = __toESM(require_react());
+var import_react3 = __toESM(require_react());
 
 // node_modules/lucide-react/dist/esm/defaultAttributes.js
 var defaultAttributes = {
@@ -26706,8 +26717,8 @@ var defaultAttributes = {
 // node_modules/lucide-react/dist/esm/createLucideIcon.js
 var toKebabCase = (string) => string.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();
 var createLucideIcon = (iconName, iconNode) => {
-  const Component3 = (0, import_react2.forwardRef)(
-    ({ color: color2 = "currentColor", size = 24, strokeWidth = 2, absoluteStrokeWidth, children, ...rest }, ref) => (0, import_react2.createElement)(
+  const Component3 = (0, import_react3.forwardRef)(
+    ({ color: color2 = "currentColor", size = 24, strokeWidth = 2, absoluteStrokeWidth, children, ...rest }, ref) => (0, import_react3.createElement)(
       "svg",
       {
         ref,
@@ -26720,7 +26731,7 @@ var createLucideIcon = (iconName, iconNode) => {
         ...rest
       },
       [
-        ...iconNode.map(([tag, attrs]) => (0, import_react2.createElement)(tag, attrs)),
+        ...iconNode.map(([tag, attrs]) => (0, import_react3.createElement)(tag, attrs)),
         ...(Array.isArray(children) ? children : [children]) || []
       ]
     )
@@ -26986,10 +26997,10 @@ var BrandLogo_default = BrandLogo;
 // src/components/Navbar.jsx
 var import_jsx_runtime3 = __toESM(require_jsx_runtime(), 1);
 function Navbar() {
-  const [isOpen, setIsOpen] = (0, import_react3.useState)(false);
-  const [scrolled, setScrolled] = (0, import_react3.useState)(false);
+  const [isOpen, setIsOpen] = (0, import_react4.useState)(false);
+  const [scrolled, setScrolled] = (0, import_react4.useState)(false);
   const location = useLocation();
-  (0, import_react3.useEffect)(() => {
+  (0, import_react4.useEffect)(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -27049,39 +27060,39 @@ var Navbar_default = Navbar;
 
 // node_modules/framer-motion/dist/es/motion/index.mjs
 var React3 = __toESM(require_react(), 1);
-var import_react14 = __toESM(require_react(), 1);
+var import_react15 = __toESM(require_react(), 1);
 
 // node_modules/framer-motion/dist/es/context/MotionConfigContext.mjs
-var import_react4 = __toESM(require_react(), 1);
-var MotionConfigContext = (0, import_react4.createContext)({
+var import_react5 = __toESM(require_react(), 1);
+var MotionConfigContext = (0, import_react5.createContext)({
   transformPagePoint: (p) => p,
   isStatic: false,
   reducedMotion: "never"
 });
 
 // node_modules/framer-motion/dist/es/context/MotionContext/index.mjs
-var import_react5 = __toESM(require_react(), 1);
-var MotionContext = (0, import_react5.createContext)({});
+var import_react6 = __toESM(require_react(), 1);
+var MotionContext = (0, import_react6.createContext)({});
 
 // node_modules/framer-motion/dist/es/motion/utils/use-visual-element.mjs
-var import_react9 = __toESM(require_react(), 1);
+var import_react10 = __toESM(require_react(), 1);
 
 // node_modules/framer-motion/dist/es/context/PresenceContext.mjs
-var import_react6 = __toESM(require_react(), 1);
-var PresenceContext = (0, import_react6.createContext)(null);
+var import_react7 = __toESM(require_react(), 1);
+var PresenceContext = (0, import_react7.createContext)(null);
 
 // node_modules/framer-motion/dist/es/utils/use-isomorphic-effect.mjs
-var import_react7 = __toESM(require_react(), 1);
+var import_react8 = __toESM(require_react(), 1);
 
 // node_modules/framer-motion/dist/es/utils/is-browser.mjs
 var isBrowser2 = typeof document !== "undefined";
 
 // node_modules/framer-motion/dist/es/utils/use-isomorphic-effect.mjs
-var useIsomorphicLayoutEffect2 = isBrowser2 ? import_react7.useLayoutEffect : import_react7.useEffect;
+var useIsomorphicLayoutEffect2 = isBrowser2 ? import_react8.useLayoutEffect : import_react8.useEffect;
 
 // node_modules/framer-motion/dist/es/context/LazyContext.mjs
-var import_react8 = __toESM(require_react(), 1);
-var LazyContext = (0, import_react8.createContext)({ strict: false });
+var import_react9 = __toESM(require_react(), 1);
+var LazyContext = (0, import_react9.createContext)({ strict: false });
 
 // node_modules/framer-motion/dist/es/render/dom/utils/camel-to-dash.mjs
 var camelToDash = (str) => str.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
@@ -27092,11 +27103,11 @@ var optimizedAppearDataAttribute = "data-" + camelToDash(optimizedAppearDataId);
 
 // node_modules/framer-motion/dist/es/motion/utils/use-visual-element.mjs
 function useVisualElement(Component3, visualState, props, createVisualElement) {
-  const { visualElement: parent } = (0, import_react9.useContext)(MotionContext);
-  const lazyContext = (0, import_react9.useContext)(LazyContext);
-  const presenceContext = (0, import_react9.useContext)(PresenceContext);
-  const reducedMotionConfig = (0, import_react9.useContext)(MotionConfigContext).reducedMotion;
-  const visualElementRef = (0, import_react9.useRef)();
+  const { visualElement: parent } = (0, import_react10.useContext)(MotionContext);
+  const lazyContext = (0, import_react10.useContext)(LazyContext);
+  const presenceContext = (0, import_react10.useContext)(PresenceContext);
+  const reducedMotionConfig = (0, import_react10.useContext)(MotionConfigContext).reducedMotion;
+  const visualElementRef = (0, import_react10.useRef)();
   createVisualElement = createVisualElement || lazyContext.renderer;
   if (!visualElementRef.current && createVisualElement) {
     visualElementRef.current = createVisualElement(Component3, {
@@ -27109,10 +27120,10 @@ function useVisualElement(Component3, visualState, props, createVisualElement) {
     });
   }
   const visualElement = visualElementRef.current;
-  (0, import_react9.useInsertionEffect)(() => {
+  (0, import_react10.useInsertionEffect)(() => {
     visualElement && visualElement.update(props, presenceContext);
   });
-  const wantsHandoff = (0, import_react9.useRef)(Boolean(props[optimizedAppearDataAttribute] && !window.HandoffComplete));
+  const wantsHandoff = (0, import_react10.useRef)(Boolean(props[optimizedAppearDataAttribute] && !window.HandoffComplete));
   useIsomorphicLayoutEffect2(() => {
     if (!visualElement)
       return;
@@ -27121,7 +27132,7 @@ function useVisualElement(Component3, visualState, props, createVisualElement) {
       visualElement.animationState.animateChanges();
     }
   });
-  (0, import_react9.useEffect)(() => {
+  (0, import_react10.useEffect)(() => {
     if (!visualElement)
       return;
     visualElement.updateFeatures();
@@ -27137,7 +27148,7 @@ function useVisualElement(Component3, visualState, props, createVisualElement) {
 }
 
 // node_modules/framer-motion/dist/es/motion/utils/use-motion-ref.mjs
-var import_react10 = __toESM(require_react(), 1);
+var import_react11 = __toESM(require_react(), 1);
 
 // node_modules/framer-motion/dist/es/utils/is-ref-object.mjs
 function isRefObject(ref) {
@@ -27146,7 +27157,7 @@ function isRefObject(ref) {
 
 // node_modules/framer-motion/dist/es/motion/utils/use-motion-ref.mjs
 function useMotionRef(visualState, visualElement, externalRef) {
-  return (0, import_react10.useCallback)(
+  return (0, import_react11.useCallback)(
     (instance) => {
       instance && visualState.mount && visualState.mount(instance);
       if (visualElement) {
@@ -27170,7 +27181,7 @@ function useMotionRef(visualState, visualElement, externalRef) {
 }
 
 // node_modules/framer-motion/dist/es/context/MotionContext/create.mjs
-var import_react11 = __toESM(require_react(), 1);
+var import_react12 = __toESM(require_react(), 1);
 
 // node_modules/framer-motion/dist/es/render/utils/is-variant-label.mjs
 function isVariantLabel(v) {
@@ -27216,8 +27227,8 @@ function getCurrentTreeVariants(props, context) {
 
 // node_modules/framer-motion/dist/es/context/MotionContext/create.mjs
 function useCreateMotionContext(props) {
-  const { initial, animate } = getCurrentTreeVariants(props, (0, import_react11.useContext)(MotionContext));
-  return (0, import_react11.useMemo)(() => ({ initial, animate }), [variantLabelsAsDependency(initial), variantLabelsAsDependency(animate)]);
+  const { initial, animate } = getCurrentTreeVariants(props, (0, import_react12.useContext)(MotionContext));
+  return (0, import_react12.useMemo)(() => ({ initial, animate }), [variantLabelsAsDependency(initial), variantLabelsAsDependency(animate)]);
 }
 function variantLabelsAsDependency(prop) {
   return Array.isArray(prop) ? prop.join(" ") : prop;
@@ -27262,12 +27273,12 @@ function loadFeatures(features) {
 }
 
 // node_modules/framer-motion/dist/es/context/LayoutGroupContext.mjs
-var import_react12 = __toESM(require_react(), 1);
-var LayoutGroupContext = (0, import_react12.createContext)({});
+var import_react13 = __toESM(require_react(), 1);
+var LayoutGroupContext = (0, import_react13.createContext)({});
 
 // node_modules/framer-motion/dist/es/context/SwitchLayoutGroupContext.mjs
-var import_react13 = __toESM(require_react(), 1);
-var SwitchLayoutGroupContext = (0, import_react13.createContext)({});
+var import_react14 = __toESM(require_react(), 1);
+var SwitchLayoutGroupContext = (0, import_react14.createContext)({});
 
 // node_modules/framer-motion/dist/es/motion/utils/symbol.mjs
 var motionComponentSymbol = Symbol.for("motionComponentSymbol");
@@ -27278,7 +27289,7 @@ function createMotionComponent({ preloadedFeatures: preloadedFeatures2, createVi
   function MotionComponent(props, externalRef) {
     let MeasureLayout2;
     const configAndProps = {
-      ...(0, import_react14.useContext)(MotionConfigContext),
+      ...(0, import_react15.useContext)(MotionConfigContext),
       ...props,
       layoutId: useLayoutId(props)
     };
@@ -27287,8 +27298,8 @@ function createMotionComponent({ preloadedFeatures: preloadedFeatures2, createVi
     const visualState = useVisualState(props, isStatic);
     if (!isStatic && isBrowser2) {
       context.visualElement = useVisualElement(Component3, visualState, configAndProps, createVisualElement);
-      const initialLayoutGroupConfig = (0, import_react14.useContext)(SwitchLayoutGroupContext);
-      const isStrict = (0, import_react14.useContext)(LazyContext).strict;
+      const initialLayoutGroupConfig = (0, import_react15.useContext)(SwitchLayoutGroupContext);
+      const isStrict = (0, import_react15.useContext)(LazyContext).strict;
       if (context.visualElement) {
         MeasureLayout2 = context.visualElement.loadFeatures(
           // Note: Pass the full new combined props to correctly re-render dynamic feature components.
@@ -27306,12 +27317,12 @@ function createMotionComponent({ preloadedFeatures: preloadedFeatures2, createVi
       useRender(Component3, props, useMotionRef(visualState, context.visualElement, externalRef), visualState, isStatic, context.visualElement)
     );
   }
-  const ForwardRefComponent = (0, import_react14.forwardRef)(MotionComponent);
+  const ForwardRefComponent = (0, import_react15.forwardRef)(MotionComponent);
   ForwardRefComponent[motionComponentSymbol] = Component3;
   return ForwardRefComponent;
 }
 function useLayoutId({ layoutId }) {
-  const layoutGroupId = (0, import_react14.useContext)(LayoutGroupContext).id;
+  const layoutGroupId = (0, import_react15.useContext)(LayoutGroupContext).id;
   return layoutGroupId && layoutId !== void 0 ? layoutGroupId + "-" + layoutId : layoutId;
 }
 
@@ -27396,10 +27407,10 @@ function isSVGComponent(Component3) {
 }
 
 // node_modules/framer-motion/dist/es/render/dom/use-render.mjs
-var import_react17 = __toESM(require_react(), 1);
+var import_react18 = __toESM(require_react(), 1);
 
 // node_modules/framer-motion/dist/es/render/html/use-props.mjs
-var import_react15 = __toESM(require_react(), 1);
+var import_react16 = __toESM(require_react(), 1);
 
 // node_modules/framer-motion/dist/es/projection/styles/scale-correction.mjs
 var scaleCorrectors = {};
@@ -27653,7 +27664,7 @@ function copyRawValuesOnly(target, source, props) {
   }
 }
 function useInitialMotionValues({ transformTemplate }, visualState, isStatic) {
-  return (0, import_react15.useMemo)(() => {
+  return (0, import_react16.useMemo)(() => {
     const state = createHtmlRenderState();
     buildHTMLStyles(state, visualState, { enableHardwareAcceleration: !isStatic }, transformTemplate);
     return Object.assign({}, state.vars, state.style);
@@ -27744,7 +27755,7 @@ function filterProps(props, isDom, forwardMotionProps) {
 }
 
 // node_modules/framer-motion/dist/es/render/svg/use-props.mjs
-var import_react16 = __toESM(require_react(), 1);
+var import_react17 = __toESM(require_react(), 1);
 
 // node_modules/framer-motion/dist/es/render/svg/utils/transform-origin.mjs
 function calcOrigin(origin, offset, size) {
@@ -27827,7 +27838,7 @@ var isSVGTag = (tag) => typeof tag === "string" && tag.toLowerCase() === "svg";
 
 // node_modules/framer-motion/dist/es/render/svg/use-props.mjs
 function useSVGProps(props, visualState, _isStatic, Component3) {
-  const visualProps = (0, import_react16.useMemo)(() => {
+  const visualProps = (0, import_react17.useMemo)(() => {
     const state = createSvgRenderState();
     buildSVGAttrs(state, visualState, { enableHardwareAcceleration: false }, isSVGTag(Component3), props.transformTemplate);
     return {
@@ -27855,8 +27866,8 @@ function createUseRender(forwardMotionProps = false) {
       ref
     };
     const { children } = props;
-    const renderedChildren = (0, import_react17.useMemo)(() => isMotionValue(children) ? children.get() : children, [children]);
-    return (0, import_react17.createElement)(Component3, {
+    const renderedChildren = (0, import_react18.useMemo)(() => isMotionValue(children) ? children.get() : children, [children]);
+    return (0, import_react18.createElement)(Component3, {
       ...elementProps,
       children: renderedChildren
     });
@@ -27932,7 +27943,7 @@ function scrapeMotionValuesFromProps2(props, prevProps) {
 }
 
 // node_modules/framer-motion/dist/es/motion/utils/use-visual-state.mjs
-var import_react19 = __toESM(require_react(), 1);
+var import_react20 = __toESM(require_react(), 1);
 
 // node_modules/framer-motion/dist/es/render/utils/resolve-variants.mjs
 function resolveVariantFromProps(props, definition, custom, currentValues = {}, currentVelocity = {}) {
@@ -27949,9 +27960,9 @@ function resolveVariantFromProps(props, definition, custom, currentValues = {}, 
 }
 
 // node_modules/framer-motion/dist/es/utils/use-constant.mjs
-var import_react18 = __toESM(require_react(), 1);
+var import_react19 = __toESM(require_react(), 1);
 function useConstant(init) {
-  const ref = (0, import_react18.useRef)(null);
+  const ref = (0, import_react19.useRef)(null);
   if (ref.current === null) {
     ref.current = init();
   }
@@ -27989,8 +28000,8 @@ function makeState({ scrapeMotionValuesFromProps: scrapeMotionValuesFromProps3, 
   return state;
 }
 var makeUseVisualState = (config) => (props, isStatic) => {
-  const context = (0, import_react19.useContext)(MotionContext);
-  const presenceContext = (0, import_react19.useContext)(PresenceContext);
+  const context = (0, import_react20.useContext)(MotionContext);
+  const presenceContext = (0, import_react20.useContext)(PresenceContext);
   const make = () => makeState(config, props, context, presenceContext);
   return isStatic ? make() : useConstant(make);
 };
@@ -31652,17 +31663,17 @@ var PanGesture = class extends Feature {
 };
 
 // node_modules/framer-motion/dist/es/motion/features/layout/MeasureLayout.mjs
-var import_react21 = __toESM(require_react(), 1);
+var import_react22 = __toESM(require_react(), 1);
 
 // node_modules/framer-motion/dist/es/components/AnimatePresence/use-presence.mjs
-var import_react20 = __toESM(require_react(), 1);
+var import_react21 = __toESM(require_react(), 1);
 function usePresence() {
-  const context = (0, import_react20.useContext)(PresenceContext);
+  const context = (0, import_react21.useContext)(PresenceContext);
   if (context === null)
     return [true, null];
   const { isPresent, onExitComplete, register } = context;
-  const id3 = (0, import_react20.useId)();
-  (0, import_react20.useEffect)(() => register(id3), []);
+  const id3 = (0, import_react21.useId)();
+  (0, import_react21.useEffect)(() => register(id3), []);
   const safeToRemove = () => onExitComplete && onExitComplete(id3);
   return !isPresent && onExitComplete ? [false, safeToRemove] : [true];
 }
@@ -31727,7 +31738,7 @@ var correctBoxShadow = {
 };
 
 // node_modules/framer-motion/dist/es/motion/features/layout/MeasureLayout.mjs
-var MeasureLayoutWithContext = class extends import_react21.default.Component {
+var MeasureLayoutWithContext = class extends import_react22.default.Component {
   /**
    * This only mounts projection nodes for components that
    * need measuring, we might want to do it for all components
@@ -31811,8 +31822,8 @@ var MeasureLayoutWithContext = class extends import_react21.default.Component {
 };
 function MeasureLayout(props) {
   const [isPresent, safeToRemove] = usePresence();
-  const layoutGroup = (0, import_react21.useContext)(LayoutGroupContext);
-  return import_react21.default.createElement(MeasureLayoutWithContext, { ...props, layoutGroup, switchLayoutGroup: (0, import_react21.useContext)(SwitchLayoutGroupContext), isPresent, safeToRemove });
+  const layoutGroup = (0, import_react22.useContext)(LayoutGroupContext);
+  return import_react22.default.createElement(MeasureLayoutWithContext, { ...props, layoutGroup, switchLayoutGroup: (0, import_react22.useContext)(SwitchLayoutGroupContext), isPresent, safeToRemove });
 }
 var defaultScaleCorrectors = {
   borderRadius: {
@@ -33969,15 +33980,15 @@ var motion = /* @__PURE__ */ createMotionProxy((Component3, config) => createDom
 
 // node_modules/framer-motion/dist/es/components/AnimatePresence/index.mjs
 var React6 = __toESM(require_react(), 1);
-var import_react27 = __toESM(require_react(), 1);
+var import_react28 = __toESM(require_react(), 1);
 
 // node_modules/framer-motion/dist/es/utils/use-force-update.mjs
-var import_react23 = __toESM(require_react(), 1);
+var import_react24 = __toESM(require_react(), 1);
 
 // node_modules/framer-motion/dist/es/utils/use-is-mounted.mjs
-var import_react22 = __toESM(require_react(), 1);
+var import_react23 = __toESM(require_react(), 1);
 function useIsMounted() {
-  const isMounted = (0, import_react22.useRef)(false);
+  const isMounted = (0, import_react23.useRef)(false);
   useIsomorphicLayoutEffect2(() => {
     isMounted.current = true;
     return () => {
@@ -33990,21 +34001,21 @@ function useIsMounted() {
 // node_modules/framer-motion/dist/es/utils/use-force-update.mjs
 function useForceUpdate() {
   const isMounted = useIsMounted();
-  const [forcedRenderCount, setForcedRenderCount] = (0, import_react23.useState)(0);
-  const forceRender = (0, import_react23.useCallback)(() => {
+  const [forcedRenderCount, setForcedRenderCount] = (0, import_react24.useState)(0);
+  const forceRender = (0, import_react24.useCallback)(() => {
     isMounted.current && setForcedRenderCount(forcedRenderCount + 1);
   }, [forcedRenderCount]);
-  const deferredForceRender = (0, import_react23.useCallback)(() => frame.postRender(forceRender), [forceRender]);
+  const deferredForceRender = (0, import_react24.useCallback)(() => frame.postRender(forceRender), [forceRender]);
   return [deferredForceRender, forcedRenderCount];
 }
 
 // node_modules/framer-motion/dist/es/components/AnimatePresence/PresenceChild.mjs
 var React5 = __toESM(require_react(), 1);
-var import_react25 = __toESM(require_react(), 1);
+var import_react26 = __toESM(require_react(), 1);
 
 // node_modules/framer-motion/dist/es/components/AnimatePresence/PopChild.mjs
 var React4 = __toESM(require_react(), 1);
-var import_react24 = __toESM(require_react(), 1);
+var import_react25 = __toESM(require_react(), 1);
 var PopChildMeasure = class extends React4.Component {
   getSnapshotBeforeUpdate(prevProps) {
     const element = this.props.childRef.current;
@@ -34027,15 +34038,15 @@ var PopChildMeasure = class extends React4.Component {
   }
 };
 function PopChild({ children, isPresent }) {
-  const id3 = (0, import_react24.useId)();
-  const ref = (0, import_react24.useRef)(null);
-  const size = (0, import_react24.useRef)({
+  const id3 = (0, import_react25.useId)();
+  const ref = (0, import_react25.useRef)(null);
+  const size = (0, import_react25.useRef)({
     width: 0,
     height: 0,
     top: 0,
     left: 0
   });
-  (0, import_react24.useInsertionEffect)(() => {
+  (0, import_react25.useInsertionEffect)(() => {
     const { width, height, top, left } = size.current;
     if (isPresent || !ref.current || !width || !height)
       return;
@@ -34063,8 +34074,8 @@ function PopChild({ children, isPresent }) {
 // node_modules/framer-motion/dist/es/components/AnimatePresence/PresenceChild.mjs
 var PresenceChild = ({ children, initial, isPresent, onExitComplete, custom, presenceAffectsLayout, mode }) => {
   const presenceChildren = useConstant(newChildrenMap);
-  const id3 = (0, import_react25.useId)();
-  const context = (0, import_react25.useMemo)(
+  const id3 = (0, import_react26.useId)();
+  const context = (0, import_react26.useMemo)(
     () => ({
       id: id3,
       initial,
@@ -34090,7 +34101,7 @@ var PresenceChild = ({ children, initial, isPresent, onExitComplete, custom, pre
      */
     presenceAffectsLayout ? void 0 : [isPresent]
   );
-  (0, import_react25.useMemo)(() => {
+  (0, import_react26.useMemo)(() => {
     presenceChildren.forEach((_, key) => presenceChildren.set(key, false));
   }, [isPresent]);
   React5.useEffect(() => {
@@ -34106,9 +34117,9 @@ function newChildrenMap() {
 }
 
 // node_modules/framer-motion/dist/es/utils/use-unmount-effect.mjs
-var import_react26 = __toESM(require_react(), 1);
+var import_react27 = __toESM(require_react(), 1);
 function useUnmountEffect(callback) {
-  return (0, import_react26.useEffect)(() => () => callback(), []);
+  return (0, import_react27.useEffect)(() => () => callback(), []);
 }
 
 // node_modules/framer-motion/dist/es/components/AnimatePresence/index.mjs
@@ -34121,22 +34132,22 @@ function updateChildLookup(children, allChildren) {
 }
 function onlyElements(children) {
   const filtered = [];
-  import_react27.Children.forEach(children, (child) => {
-    if ((0, import_react27.isValidElement)(child))
+  import_react28.Children.forEach(children, (child) => {
+    if ((0, import_react28.isValidElement)(child))
       filtered.push(child);
   });
   return filtered;
 }
 var AnimatePresence = ({ children, custom, initial = true, onExitComplete, exitBeforeEnter, presenceAffectsLayout = true, mode = "sync" }) => {
   invariant2(!exitBeforeEnter, "Replace exitBeforeEnter with mode='wait'");
-  const forceRender = (0, import_react27.useContext)(LayoutGroupContext).forceRender || useForceUpdate()[0];
+  const forceRender = (0, import_react28.useContext)(LayoutGroupContext).forceRender || useForceUpdate()[0];
   const isMounted = useIsMounted();
   const filteredChildren = onlyElements(children);
   let childrenToRender = filteredChildren;
-  const exitingChildren = (0, import_react27.useRef)(/* @__PURE__ */ new Map()).current;
-  const presentChildren = (0, import_react27.useRef)(childrenToRender);
-  const allChildren = (0, import_react27.useRef)(/* @__PURE__ */ new Map()).current;
-  const isInitialRender = (0, import_react27.useRef)(true);
+  const exitingChildren = (0, import_react28.useRef)(/* @__PURE__ */ new Map()).current;
+  const presentChildren = (0, import_react28.useRef)(childrenToRender);
+  const allChildren = (0, import_react28.useRef)(/* @__PURE__ */ new Map()).current;
+  const isInitialRender = (0, import_react28.useRef)(true);
   useIsomorphicLayoutEffect2(() => {
     isInitialRender.current = false;
     updateChildLookup(filteredChildren, allChildren);
@@ -34203,7 +34214,7 @@ var AnimatePresence = ({ children, custom, initial = true, onExitComplete, exitB
   if (mode === "wait" && childrenToRender.length > 1) {
     console.warn(`You're attempting to animate multiple children within AnimatePresence, but its mode is set to "wait". This will lead to odd visual behaviour.`);
   }
-  return React6.createElement(React6.Fragment, null, exitingChildren.size ? childrenToRender : childrenToRender.map((child) => (0, import_react27.cloneElement)(child)));
+  return React6.createElement(React6.Fragment, null, exitingChildren.size ? childrenToRender : childrenToRender.map((child) => (0, import_react28.cloneElement)(child)));
 };
 
 // src/components/Footer.jsx
@@ -34320,19 +34331,25 @@ function Footer() {
         }
       )
     ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("div", { className: "border-t border-gray-600 pt-6 text-center text-sm text-gray-400", children: /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("p", { children: [
-      "\xA9 ",
-      currentYear,
-      " Sapore Mediterraneo. Alle Rechte vorbehalten."
-    ] }) })
+    /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "flex flex-col items-center justify-between gap-4 border-t border-gray-600 pt-6 text-center text-sm text-gray-400 md:flex-row md:text-left", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("p", { children: [
+        "\xA9 ",
+        currentYear,
+        " Sapore Mediterraneo. Alle Rechte vorbehalten."
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "flex flex-wrap items-center justify-center gap-4", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Link, { to: "/impressum", className: "hover:text-terracotta-light transition", children: "Impressum" }),
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Link, { to: "/datenschutz", className: "hover:text-terracotta-light transition", children: "Datenschutz" })
+      ] })
+    ] })
   ] }) });
 }
 
 // src/components/FloatingButton.jsx
-var import_react28 = __toESM(require_react(), 1);
+var import_react29 = __toESM(require_react(), 1);
 var import_jsx_runtime5 = __toESM(require_jsx_runtime(), 1);
 function FloatingButton() {
-  const [isOpen, setIsOpen] = (0, import_react28.useState)(false);
+  const [isOpen, setIsOpen] = (0, import_react29.useState)(false);
   return /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(import_jsx_runtime5.Fragment, { children: [
     /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(AnimatePresence, { children: isOpen && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(
       motion.div,
@@ -34419,7 +34436,7 @@ function AuthLayout() {
 var AuthLayout_default = AuthLayout;
 
 // src/layouts/AdminLayout.jsx
-var import_react29 = __toESM(require_react(), 1);
+var import_react30 = __toESM(require_react(), 1);
 var import_jsx_runtime8 = __toESM(require_jsx_runtime(), 1);
 var adminNavigation = [
   { to: "/admin", label: "Dashboard", caption: "\xDCberblick", icon: LayoutDashboard, end: true },
@@ -34428,9 +34445,9 @@ var adminNavigation = [
   { to: "/admin/restaurant", label: "Restaurant", caption: "Profil", icon: Store }
 ];
 function AdminLayout() {
-  const [isSidebarOpen, setIsSidebarOpen] = (0, import_react29.useState)(false);
+  const [isSidebarOpen, setIsSidebarOpen] = (0, import_react30.useState)(false);
   const { currentUser, logout } = useAuth();
-  const initials = (0, import_react29.useMemo)(() => {
+  const initials = (0, import_react30.useMemo)(() => {
     const name = currentUser?.name || currentUser?.email || "SM";
     return name.split(" ").map((part) => part.charAt(0)).join("").slice(0, 2).toUpperCase();
   }, [currentUser]);
@@ -34479,7 +34496,7 @@ function AdminLayout() {
 var AdminLayout_default = AdminLayout;
 
 // src/layouts/SuperAdminLayout.jsx
-var import_react30 = __toESM(require_react(), 1);
+var import_react31 = __toESM(require_react(), 1);
 var import_jsx_runtime9 = __toESM(require_jsx_runtime(), 1);
 var superAdminNavigation = [
   { to: "/superadmin", label: "Dashboard", caption: "Platform overview", icon: LayoutDashboard, end: true },
@@ -34488,9 +34505,9 @@ var superAdminNavigation = [
   { to: "/superadmin/users", label: "Users", caption: "Admin Accounts", icon: Users }
 ];
 function SuperAdminLayout() {
-  const [isSidebarOpen, setIsSidebarOpen] = (0, import_react30.useState)(false);
+  const [isSidebarOpen, setIsSidebarOpen] = (0, import_react31.useState)(false);
   const { currentUser, logout } = useAuth();
-  const initials = (0, import_react30.useMemo)(() => {
+  const initials = (0, import_react31.useMemo)(() => {
     const name = currentUser?.name || currentUser?.email || "SA";
     return name.split(" ").map((part) => part.charAt(0)).join("").slice(0, 2).toUpperCase();
   }, [currentUser]);
@@ -35232,17 +35249,17 @@ function UberUns() {
 }
 
 // src/pages/Kontakt.jsx
-var import_react31 = __toESM(require_react(), 1);
+var import_react32 = __toESM(require_react(), 1);
 var import_jsx_runtime17 = __toESM(require_jsx_runtime(), 1);
 function Kontakt() {
-  const [formData, setFormData] = (0, import_react31.useState)({
+  const [formData, setFormData] = (0, import_react32.useState)({
     name: "",
     email: "",
     phone: "",
     subject: "",
     message: ""
   });
-  const [submitted, setSubmitted] = (0, import_react31.useState)(false);
+  const [submitted, setSubmitted] = (0, import_react32.useState)(false);
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -35647,7 +35664,7 @@ function Datenschutz() {
 }
 
 // src/components/reservation/ReservationOrderPage.jsx
-var import_react32 = __toESM(require_react(), 1);
+var import_react33 = __toESM(require_react(), 1);
 
 // src/components/reservation/CustomerForm.jsx
 var import_jsx_runtime20 = __toESM(require_jsx_runtime(), 1);
@@ -36352,26 +36369,26 @@ function ReservationOrderPage({
   businessName = "Sapore Mediterraneo",
   menuItems = mockMenu
 }) {
-  const [reservationType, setReservationType] = (0, import_react32.useState)("takeaway");
-  const [formValues, setFormValues] = (0, import_react32.useState)({
+  const [reservationType, setReservationType] = (0, import_react33.useState)("takeaway");
+  const [formValues, setFormValues] = (0, import_react33.useState)({
     ...defaultFormValues,
     pickupDate: getDefaultDate(),
     pickupTime: getDefaultTime(),
     reservationDate: getDefaultDate(),
     reservationTime: getDefaultTime()
   });
-  const [quantities, setQuantities] = (0, import_react32.useState)({});
-  const [itemNotes, setItemNotes] = (0, import_react32.useState)({});
-  const [activeCategory, setActiveCategory] = (0, import_react32.useState)(menuCategories[0]);
-  const [errors, setErrors] = (0, import_react32.useState)({});
-  const [isSubmitting, setIsSubmitting] = (0, import_react32.useState)(false);
-  const [submitError, setSubmitError] = (0, import_react32.useState)(null);
-  const [successMessage, setSuccessMessage] = (0, import_react32.useState)(null);
-  const filteredMenuItems = (0, import_react32.useMemo)(
+  const [quantities, setQuantities] = (0, import_react33.useState)({});
+  const [itemNotes, setItemNotes] = (0, import_react33.useState)({});
+  const [activeCategory, setActiveCategory] = (0, import_react33.useState)(menuCategories[0]);
+  const [errors, setErrors] = (0, import_react33.useState)({});
+  const [isSubmitting, setIsSubmitting] = (0, import_react33.useState)(false);
+  const [submitError, setSubmitError] = (0, import_react33.useState)(null);
+  const [successMessage, setSuccessMessage] = (0, import_react33.useState)(null);
+  const filteredMenuItems = (0, import_react33.useMemo)(
     () => menuItems.filter((item) => item.category === activeCategory),
     [activeCategory, menuItems]
   );
-  const selectedItems = (0, import_react32.useMemo)(() => {
+  const selectedItems = (0, import_react33.useMemo)(() => {
     return menuItems.filter((item) => (quantities[item.id] ?? 0) > 0).map((item) => {
       const quantity = quantities[item.id];
       return {
@@ -36384,7 +36401,7 @@ function ReservationOrderPage({
       };
     });
   }, [itemNotes, menuItems, quantities]);
-  const totalPrice = (0, import_react32.useMemo)(
+  const totalPrice = (0, import_react33.useMemo)(
     () => selectedItems.reduce((sum, item) => sum + item.totalPrice, 0),
     [selectedItems]
   );
@@ -36666,7 +36683,7 @@ function ReservationOrder() {
 }
 
 // src/pages/Reservierung.jsx
-var import_react33 = __toESM(require_react(), 1);
+var import_react34 = __toESM(require_react(), 1);
 var import_jsx_runtime28 = __toESM(require_jsx_runtime(), 1);
 var defaultValues = {
   customerName: "",
@@ -36693,14 +36710,14 @@ function normalizePersons2(value) {
   return Number.isNaN(nextValue) ? "" : Math.max(1, nextValue);
 }
 function Reservierung() {
-  const [values, setValues] = (0, import_react33.useState)({
+  const [values, setValues] = (0, import_react34.useState)({
     ...defaultValues,
     reservationDate: getDefaultDate2(),
     reservationTime: getDefaultTime2()
   });
-  const [error, setError] = (0, import_react33.useState)(null);
-  const [success, setSuccess] = (0, import_react33.useState)(null);
-  const [isSubmitting, setIsSubmitting] = (0, import_react33.useState)(false);
+  const [error, setError] = (0, import_react34.useState)(null);
+  const [success, setSuccess] = (0, import_react34.useState)(null);
+  const [isSubmitting, setIsSubmitting] = (0, import_react34.useState)(false);
   const updateValue = (field, value) => {
     setValues((current) => ({ ...current, [field]: value }));
     setError(null);
@@ -36819,7 +36836,7 @@ function Reservierung() {
 }
 
 // src/pages/auth/LoginPage.jsx
-var import_react34 = __toESM(require_react(), 1);
+var import_react35 = __toESM(require_react(), 1);
 
 // src/components/admin/AlertMessage.jsx
 var import_jsx_runtime29 = __toESM(require_jsx_runtime(), 1);
@@ -36836,13 +36853,13 @@ var defaultBusinessSlug = process.env.REACT_APP_BUSINESS_SLUG || "sapore-mediter
 function LoginPage() {
   const location = useLocation();
   const { login, loading, isAuthenticated, currentUser, getAuthError } = useAuth();
-  const [formValues, setFormValues] = (0, import_react34.useState)({
+  const [formValues, setFormValues] = (0, import_react35.useState)({
     email: "",
     password: "",
     businessSlug: getStoredBusinessSlug() || defaultBusinessSlug
   });
-  const [submitting, setSubmitting] = (0, import_react34.useState)(false);
-  const [error, setError] = (0, import_react34.useState)("");
+  const [submitting, setSubmitting] = (0, import_react35.useState)(false);
+  const [error, setError] = (0, import_react35.useState)("");
   if (!loading && isAuthenticated) {
     const redirectPath = currentUser?.role === "superadmin" ? "/superadmin" : "/admin";
     return /* @__PURE__ */ (0, import_jsx_runtime30.jsx)(Navigate, { to: location.state?.from?.pathname || redirectPath, replace: true });
@@ -36888,7 +36905,7 @@ function LoginPage() {
 var LoginPage_default = LoginPage;
 
 // src/pages/admin/AdminDashboardPage.jsx
-var import_react35 = __toESM(require_react(), 1);
+var import_react36 = __toESM(require_react(), 1);
 
 // src/components/admin/PageIntro.jsx
 var import_jsx_runtime31 = __toESM(require_jsx_runtime(), 1);
@@ -37009,11 +37026,11 @@ function getOrderTotal(appointment) {
 function AdminDashboardPage() {
   const { currentUser } = useAuth();
   const businessSlug = getBusinessSlug(currentUser);
-  const [appointments, setAppointments] = (0, import_react35.useState)([]);
-  const [listings, setListings] = (0, import_react35.useState)([]);
-  const [loading, setLoading] = (0, import_react35.useState)(true);
-  const [error, setError] = (0, import_react35.useState)("");
-  (0, import_react35.useEffect)(() => {
+  const [appointments, setAppointments] = (0, import_react36.useState)([]);
+  const [listings, setListings] = (0, import_react36.useState)([]);
+  const [loading, setLoading] = (0, import_react36.useState)(true);
+  const [error, setError] = (0, import_react36.useState)("");
+  (0, import_react36.useEffect)(() => {
     let isMounted = true;
     async function loadData() {
       setLoading(true);
@@ -37038,7 +37055,7 @@ function AdminDashboardPage() {
       isMounted = false;
     };
   }, [businessSlug]);
-  const recentAppointments = (0, import_react35.useMemo)(() => appointments.slice(0, 5), [appointments]);
+  const recentAppointments = (0, import_react36.useMemo)(() => appointments.slice(0, 5), [appointments]);
   const pendingCount = appointments.filter((item) => item.status === "pending").length;
   const productCount = listings.filter((item) => item.type === "product").length;
   const totalRevenue = appointments.reduce((sum, item) => sum + getOrderTotal(item), 0);
@@ -37075,7 +37092,7 @@ function AdminDashboardPage() {
 var AdminDashboardPage_default = AdminDashboardPage;
 
 // src/pages/admin/AdminOrdersPage.jsx
-var import_react36 = __toESM(require_react(), 1);
+var import_react37 = __toESM(require_react(), 1);
 
 // src/components/admin/DataTable.jsx
 var import_jsx_runtime35 = __toESM(require_jsx_runtime(), 1);
@@ -37105,12 +37122,12 @@ function getOrderTotal2(row) {
 function AdminOrdersPage() {
   const { currentUser } = useAuth();
   const businessSlug = getBusinessSlug(currentUser);
-  const [appointments, setAppointments] = (0, import_react36.useState)([]);
-  const [loading, setLoading] = (0, import_react36.useState)(true);
-  const [filter2, setFilter] = (0, import_react36.useState)("all");
-  const [feedback, setFeedback] = (0, import_react36.useState)("");
-  const [error, setError] = (0, import_react36.useState)("");
-  (0, import_react36.useEffect)(() => {
+  const [appointments, setAppointments] = (0, import_react37.useState)([]);
+  const [loading, setLoading] = (0, import_react37.useState)(true);
+  const [filter2, setFilter] = (0, import_react37.useState)("all");
+  const [feedback, setFeedback] = (0, import_react37.useState)("");
+  const [error, setError] = (0, import_react37.useState)("");
+  (0, import_react37.useEffect)(() => {
     async function loadAppointments() {
       setLoading(true);
       setError("");
@@ -37136,7 +37153,7 @@ function AdminOrdersPage() {
       setError(getApiErrorMessage(caughtError));
     }
   };
-  const filteredAppointments = (0, import_react36.useMemo)(() => {
+  const filteredAppointments = (0, import_react37.useMemo)(() => {
     if (filter2 === "all") return appointments;
     return appointments.filter((item) => item.status === filter2);
   }, [appointments, filter2]);
@@ -37170,7 +37187,7 @@ function AdminOrdersPage() {
 var AdminOrdersPage_default = AdminOrdersPage;
 
 // src/pages/admin/AdminMenuPage.jsx
-var import_react37 = __toESM(require_react(), 1);
+var import_react38 = __toESM(require_react(), 1);
 var import_jsx_runtime37 = __toESM(require_jsx_runtime(), 1);
 var initialForm = {
   type: "product",
@@ -37186,14 +37203,14 @@ var categories = ["Pizza", "Pasta", "Salate", "Dessert", "Getr\xE4nke"];
 function AdminMenuPage() {
   const { currentUser } = useAuth();
   const businessSlug = getBusinessSlug(currentUser);
-  const [items, setItems] = (0, import_react37.useState)([]);
-  const [formValues, setFormValues] = (0, import_react37.useState)(initialForm);
-  const [editingItem, setEditingItem] = (0, import_react37.useState)(null);
-  const [loading, setLoading] = (0, import_react37.useState)(true);
-  const [submitting, setSubmitting] = (0, import_react37.useState)(false);
-  const [feedback, setFeedback] = (0, import_react37.useState)("");
-  const [error, setError] = (0, import_react37.useState)("");
-  (0, import_react37.useEffect)(() => {
+  const [items, setItems] = (0, import_react38.useState)([]);
+  const [formValues, setFormValues] = (0, import_react38.useState)(initialForm);
+  const [editingItem, setEditingItem] = (0, import_react38.useState)(null);
+  const [loading, setLoading] = (0, import_react38.useState)(true);
+  const [submitting, setSubmitting] = (0, import_react38.useState)(false);
+  const [feedback, setFeedback] = (0, import_react38.useState)("");
+  const [error, setError] = (0, import_react38.useState)("");
+  (0, import_react38.useEffect)(() => {
     async function loadItems() {
       setLoading(true);
       setError("");
@@ -37345,18 +37362,18 @@ function AdminRestaurantPage() {
 var AdminRestaurantPage_default = AdminRestaurantPage;
 
 // src/pages/superadmin/SuperAdminDashboardPage.jsx
-var import_react38 = __toESM(require_react(), 1);
+var import_react39 = __toESM(require_react(), 1);
 var import_jsx_runtime39 = __toESM(require_jsx_runtime(), 1);
 function SuperAdminDashboardPage() {
-  const [loading, setLoading] = (0, import_react38.useState)(true);
-  const [error, setError] = (0, import_react38.useState)("");
-  const [dashboardData, setDashboardData] = (0, import_react38.useState)({
+  const [loading, setLoading] = (0, import_react39.useState)(true);
+  const [error, setError] = (0, import_react39.useState)("");
+  const [dashboardData, setDashboardData] = (0, import_react39.useState)({
     businesses: [],
     appointments: [],
     contacts: [],
     totals: {}
   });
-  (0, import_react38.useEffect)(() => {
+  (0, import_react39.useEffect)(() => {
     async function loadDashboard() {
       setLoading(true);
       setError("");
@@ -37377,7 +37394,7 @@ function SuperAdminDashboardPage() {
     }
     loadDashboard();
   }, []);
-  const recentBusinesses = (0, import_react38.useMemo)(() => dashboardData.businesses.slice(0, 6), [dashboardData.businesses]);
+  const recentBusinesses = (0, import_react39.useMemo)(() => dashboardData.businesses.slice(0, 6), [dashboardData.businesses]);
   const activeBusinesses = dashboardData.totals.activeBusinesses || dashboardData.businesses.filter((item) => item.isActive !== false).length;
   return /* @__PURE__ */ (0, import_jsx_runtime39.jsxs)("div", { className: "space-y-8", children: [
     /* @__PURE__ */ (0, import_jsx_runtime39.jsx)(PageIntro_default, { eyebrow: "Superadmin", title: "Platform \xDCberblick", description: "Alle Businesses, Termine und Aktivit\xE4ten zentral im Center sehen." }),
@@ -37412,16 +37429,16 @@ function SuperAdminDashboardPage() {
 var SuperAdminDashboardPage_default = SuperAdminDashboardPage;
 
 // src/pages/superadmin/SuperAdminBusinessesPage.jsx
-var import_react39 = __toESM(require_react(), 1);
+var import_react40 = __toESM(require_react(), 1);
 var import_jsx_runtime40 = __toESM(require_jsx_runtime(), 1);
 function SuperAdminBusinessesPage() {
-  const [businesses, setBusinesses] = (0, import_react39.useState)([]);
-  const [loading, setLoading] = (0, import_react39.useState)(true);
-  const [searchTerm, setSearchTerm] = (0, import_react39.useState)("");
-  const [filter2, setFilter] = (0, import_react39.useState)("all");
-  const [feedback, setFeedback] = (0, import_react39.useState)("");
-  const [error, setError] = (0, import_react39.useState)("");
-  (0, import_react39.useEffect)(() => {
+  const [businesses, setBusinesses] = (0, import_react40.useState)([]);
+  const [loading, setLoading] = (0, import_react40.useState)(true);
+  const [searchTerm, setSearchTerm] = (0, import_react40.useState)("");
+  const [filter2, setFilter] = (0, import_react40.useState)("all");
+  const [feedback, setFeedback] = (0, import_react40.useState)("");
+  const [error, setError] = (0, import_react40.useState)("");
+  (0, import_react40.useEffect)(() => {
     async function loadBusinesses() {
       setLoading(true);
       setError("");
@@ -37473,7 +37490,7 @@ function SuperAdminBusinessesPage() {
       setError(getApiErrorMessage(caughtError));
     }
   };
-  const filteredBusinesses = (0, import_react39.useMemo)(() => businesses.filter((item) => {
+  const filteredBusinesses = (0, import_react40.useMemo)(() => businesses.filter((item) => {
     const term = searchTerm.toLowerCase();
     const matchesSearch = !term || item.name?.toLowerCase().includes(term) || item.slug?.toLowerCase().includes(term) || item.email?.toLowerCase().includes(term);
     const matchesFilter = filter2 === "all" || filter2 === "active" && item.isActive !== false || filter2 === "inactive" && item.isActive === false;
@@ -37509,7 +37526,7 @@ function SuperAdminBusinessesPage() {
 var SuperAdminBusinessesPage_default = SuperAdminBusinessesPage;
 
 // src/pages/superadmin/SuperAdminCreateBusinessPage.jsx
-var import_react40 = __toESM(require_react(), 1);
+var import_react41 = __toESM(require_react(), 1);
 var import_jsx_runtime41 = __toESM(require_jsx_runtime(), 1);
 var businessTypes = [
   { value: "restaurant", label: "Restaurant / Cafe" },
@@ -37536,10 +37553,10 @@ function slugify(value) {
 }
 function SuperAdminCreateBusinessPage() {
   const navigate = useNavigate();
-  const [business, setBusiness] = (0, import_react40.useState)(initialBusiness);
-  const [admin, setAdmin] = (0, import_react40.useState)(initialAdmin);
-  const [submitting, setSubmitting] = (0, import_react40.useState)(false);
-  const [error, setError] = (0, import_react40.useState)("");
+  const [business, setBusiness] = (0, import_react41.useState)(initialBusiness);
+  const [admin, setAdmin] = (0, import_react41.useState)(initialAdmin);
+  const [submitting, setSubmitting] = (0, import_react41.useState)(false);
+  const [error, setError] = (0, import_react41.useState)("");
   const handleBusinessChange = (event) => {
     const { name, value } = event.target;
     setBusiness((current) => {
@@ -37651,14 +37668,14 @@ function SuperAdminCreateBusinessPage() {
 var SuperAdminCreateBusinessPage_default = SuperAdminCreateBusinessPage;
 
 // src/pages/superadmin/SuperAdminUsersPage.jsx
-var import_react41 = __toESM(require_react(), 1);
+var import_react42 = __toESM(require_react(), 1);
 var import_jsx_runtime42 = __toESM(require_jsx_runtime(), 1);
 function SuperAdminUsersPage() {
   const { businessId } = useParams();
-  const [users, setUsers] = (0, import_react41.useState)([]);
-  const [loading, setLoading] = (0, import_react41.useState)(Boolean(businessId));
-  const [error, setError] = (0, import_react41.useState)("");
-  (0, import_react41.useEffect)(() => {
+  const [users, setUsers] = (0, import_react42.useState)([]);
+  const [loading, setLoading] = (0, import_react42.useState)(Boolean(businessId));
+  const [error, setError] = (0, import_react42.useState)("");
+  (0, import_react42.useEffect)(() => {
     if (!businessId) return;
     async function loadUsers() {
       setLoading(true);
@@ -37701,44 +37718,47 @@ var SuperAdminUsersPage_default = SuperAdminUsersPage;
 // src/App.jsx
 var import_jsx_runtime43 = __toESM(require_jsx_runtime(), 1);
 function App() {
-  return /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(BrowserRouter, { children: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(AuthProvider, { children: /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)(Routes, { children: [
-    /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)(Route, { element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(PublicLayout_default, {}), children: [
-      /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Route, { path: "/", element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Home, {}) }),
-      /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Route, { path: "/speisekarte", element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Speisekarte, {}) }),
-      /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Route, { path: "/bestellung", element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(ReservationOrder, {}) }),
-      /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Route, { path: "/reservierung", element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Reservierung, {}) }),
-      /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Route, { path: "/reservation-order", element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(ReservationOrder, {}) }),
-      /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Route, { path: "/uber-uns", element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(UberUns, {}) }),
-      /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Route, { path: "/kontakt", element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Kontakt, {}) }),
-      /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Route, { path: "/impressum", element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Impressum, {}) }),
-      /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Route, { path: "/datenschutz", element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Datenschutz, {}) })
-    ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Route, { element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(AuthLayout_default, {}), children: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Route, { path: "/login", element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(LoginPage_default, {}) }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)(Route, { element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(ProtectedRoute_default, {}), children: [
-      /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Route, { element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(RoleRoute_default, { allowedRoles: ["business_admin"] }), children: /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)(Route, { element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(AdminLayout_default, {}), children: [
-        /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Route, { path: "/admin", element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(AdminDashboardPage_default, {}) }),
-        /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Route, { path: "/admin/bestellungen", element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(AdminOrdersPage_default, {}) }),
-        /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Route, { path: "/admin/speisekarte", element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(AdminMenuPage_default, {}) }),
-        /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Route, { path: "/admin/restaurant", element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(AdminRestaurantPage_default, {}) })
-      ] }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Route, { element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(RoleRoute_default, { allowedRoles: ["superadmin"] }), children: /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)(Route, { element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(SuperAdminLayout_default, {}), children: [
-        /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Route, { path: "/superadmin", element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(SuperAdminDashboardPage_default, {}) }),
-        /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Route, { path: "/superadmin/businesses", element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(SuperAdminBusinessesPage_default, {}) }),
-        /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Route, { path: "/superadmin/businesses/create", element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(SuperAdminCreateBusinessPage_default, {}) }),
-        /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Route, { path: "/superadmin/users", element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(SuperAdminUsersPage_default, {}) }),
-        /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Route, { path: "/superadmin/businesses/:businessId/users", element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(SuperAdminUsersPage_default, {}) })
-      ] }) })
+  return /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(BrowserRouter, { children: /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)(AuthProvider, { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(ScrollToTop_default, {}),
+    /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)(Routes, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)(Route, { element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(PublicLayout_default, {}), children: [
+        /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Route, { path: "/", element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Home, {}) }),
+        /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Route, { path: "/speisekarte", element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Speisekarte, {}) }),
+        /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Route, { path: "/bestellung", element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(ReservationOrder, {}) }),
+        /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Route, { path: "/reservierung", element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Reservierung, {}) }),
+        /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Route, { path: "/reservation-order", element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(ReservationOrder, {}) }),
+        /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Route, { path: "/uber-uns", element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(UberUns, {}) }),
+        /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Route, { path: "/kontakt", element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Kontakt, {}) }),
+        /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Route, { path: "/impressum", element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Impressum, {}) }),
+        /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Route, { path: "/datenschutz", element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Datenschutz, {}) })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Route, { element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(AuthLayout_default, {}), children: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Route, { path: "/login", element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(LoginPage_default, {}) }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)(Route, { element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(ProtectedRoute_default, {}), children: [
+        /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Route, { element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(RoleRoute_default, { allowedRoles: ["business_admin"] }), children: /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)(Route, { element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(AdminLayout_default, {}), children: [
+          /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Route, { path: "/admin", element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(AdminDashboardPage_default, {}) }),
+          /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Route, { path: "/admin/bestellungen", element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(AdminOrdersPage_default, {}) }),
+          /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Route, { path: "/admin/speisekarte", element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(AdminMenuPage_default, {}) }),
+          /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Route, { path: "/admin/restaurant", element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(AdminRestaurantPage_default, {}) })
+        ] }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Route, { element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(RoleRoute_default, { allowedRoles: ["superadmin"] }), children: /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)(Route, { element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(SuperAdminLayout_default, {}), children: [
+          /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Route, { path: "/superadmin", element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(SuperAdminDashboardPage_default, {}) }),
+          /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Route, { path: "/superadmin/businesses", element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(SuperAdminBusinessesPage_default, {}) }),
+          /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Route, { path: "/superadmin/businesses/create", element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(SuperAdminCreateBusinessPage_default, {}) }),
+          /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Route, { path: "/superadmin/users", element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(SuperAdminUsersPage_default, {}) }),
+          /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Route, { path: "/superadmin/businesses/:businessId/users", element: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(SuperAdminUsersPage_default, {}) })
+        ] }) })
+      ] })
     ] })
-  ] }) }) });
+  ] }) });
 }
 var stdin_default = App;
 
 // src/main.jsx
-var import_react42 = __toESM(require_react(), 1);
+var import_react43 = __toESM(require_react(), 1);
 var import_client4 = __toESM(require_client(), 1);
 var import_jsx_runtime44 = __toESM(require_jsx_runtime(), 1);
 import_client4.default.createRoot(document.getElementById("root")).render(
-  /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(import_react42.default.StrictMode, { children: /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(stdin_default, {}) })
+  /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(import_react43.default.StrictMode, { children: /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(stdin_default, {}) })
 );
 /*! Bundled license information:
 
