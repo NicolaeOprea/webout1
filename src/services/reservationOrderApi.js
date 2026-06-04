@@ -1,5 +1,4 @@
 const DEFAULT_BUSINESS_SLUG = process.env.REACT_APP_BUSINESS_SLUG || "sapore-mediterraneo";
-const DEFAULT_LOCATION_ID = process.env.REACT_APP_LOCATION_ID || "";
 const RESERVATION_DURATION_MINUTES = 90;
 const TAKEAWAY_DURATION_MINUTES = 15;
 
@@ -63,9 +62,13 @@ async function getBusinessBootstrap(businessSlug) {
   return data;
 }
 
+async function getBusinessLocations(businessSlug = DEFAULT_BUSINESS_SLUG) {
+  const bootstrap = await getBusinessBootstrap(businessSlug);
+  return bootstrap.locations || [];
+}
+
 async function resolveLocationId(payload) {
   if (payload.locationId) return payload.locationId;
-  if (DEFAULT_LOCATION_ID) return DEFAULT_LOCATION_ID;
 
   const bootstrap = await getBusinessBootstrap(getBusinessSlug(payload));
   const locationId = bootstrap.locations?.[0]?._id;
@@ -184,6 +187,7 @@ async function postToApi(endpoint, payload, logLabel, businessSlug) {
   }
 }
 export {
+  getBusinessLocations,
   submitReservationOrder,
   submitSimpleReservation
 };

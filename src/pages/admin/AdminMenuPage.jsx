@@ -3,7 +3,7 @@ import AlertMessage from "../../components/admin/AlertMessage";
 import DataTable from "../../components/admin/DataTable";
 import PageIntro from "../../components/admin/PageIntro";
 import StatusBadge from "../../components/admin/StatusBadge";
-import { createListing, getListings, updateListing } from "../../api/adminApi";
+import { createListing, getListings, getLocations, updateListing } from "../../api/adminApi";
 import { useAuth } from "../../context/AuthContext";
 import { extractApiItem, extractApiList } from "../../utils/apiData";
 import { getApiErrorMessage } from "../../utils/apiError";
@@ -17,16 +17,22 @@ const initialForm = {
   price: "",
   currency: "EUR",
   category: "Pizza",
+  locationIds: [],
   order: 0,
   isActive: true
 };
 
-const categories = ["Pizza", "Pasta", "Salate", "Dessert", "Getränke"];
+const categories = ["Pizza", "Pasta", "Salate", "Dessert", "Getranke"];
+
+function getEntryId(entry) {
+  return String(entry?._id || entry?.id || entry || "");
+}
 
 function AdminMenuPage() {
   const { currentUser } = useAuth();
   const businessSlug = getBusinessSlug(currentUser);
   const [items, setItems] = useState([]);
+  const [locations, setLocations] = useState([]);
   const [formValues, setFormValues] = useState(initialForm);
   const [editingItem, setEditingItem] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -40,8 +46,12 @@ function AdminMenuPage() {
       setError("");
 
       try {
-        const body = await getListings(businessSlug);
-        setItems(extractApiList(body).filter((item) => item.type === "product"));
+        const [listingsBody, locationsBody] = await Promise.all([
+          getListings(businessSlug),
+          getLocations(businessSlug)
+        ]);
+        setItems(extractApiList(listingsBody).filter((item) => item.type === "product"));
+        setLocations(extractApiList(locationsBody));
       } catch (caughtError) {
         setError(getApiErrorMessage(caughtError));
       } finally {
@@ -53,8 +63,15 @@ function AdminMenuPage() {
   }, [businessSlug]);
 
   const handleChange = (event) => {
-    const { name, value, type, checked } = event.target;
-    setFormValues((current) => ({ ...current, [name]: type === "checkbox" ? checked : value }));
+    const { name, value, type, checked, selectedOptions } = event.target;
+    setFormValues((current) => ({
+      ...current,
+      [name]: type === "select-multiple"
+        ? Array.from(selectedOptions).map((option) => option.value)
+        : type === "checkbox"
+          ? checked
+          : value
+    }));
   };
 
   const resetForm = () => {
@@ -69,6 +86,7 @@ function AdminMenuPage() {
     price: values.price !== "" ? Number(values.price) : undefined,
     currency: values.currency || "EUR",
     category: values.category || undefined,
+    locationIds: values.locationIds || [],
     order: values.order !== "" ? Number(values.order) : 0,
     isActive: values.isActive
   });
@@ -84,7 +102,7 @@ function AdminMenuPage() {
       if (editingItem) {
         const body = await updateListing(editingItem._id || editingItem.id, payload, businessSlug);
         const updated = extractApiItem(body);
-        setItems((current) => current.map((item) => (item._id || item.id) === (updated._id || updated.id) ? updated : item));
+        setItems((current) => current.map((item) => getEntryId(item) === getEntryId(updated) ? updated : item));
         setFeedback("Produkt wurde aktualisiert.");
       } else {
         const body = await createListing(payload, businessSlug);
@@ -109,6 +127,7 @@ function AdminMenuPage() {
       price: item.price ?? "",
       currency: item.currency || "EUR",
       category: item.category || "Pizza",
+      locationIds: (item.locationIds || []).map(getEntryId),
       order: item.order ?? 0,
       isActive: item.isActive !== false
     });
@@ -120,22 +139,120 @@ function AdminMenuPage() {
     try {
       const body = await updateListing(item._id || item.id, { isActive: false }, businessSlug);
       const updated = extractApiItem(body) || { ...item, isActive: false };
-      setItems((current) => current.map((entry) => (entry._id || entry.id) === (item._id || item.id) ? updated : entry));
+      setItems((current) => current.map((entry) => getEntryId(entry) === getEntryId(item) ? updated : entry));
       setFeedback("Produkt wurde deaktiviert.");
     } catch (caughtError) {
       setError(getApiErrorMessage(caughtError));
     }
   };
 
+  const renderLocations = (row) => {
+    const locationIds = (row.locationIds || []).map(getEntryId);
+    if (!locationIds.length) return "Alle";
+    return locations
+      .filter((location) => locationIds.includes(getEntryId(location)))
+      .map((location) => location.name)
+      .join(", ") || locationIds.length;
+  };
+
   const columns = [
-    { key: "name", label: "Produkt", render: (row) => <div><strong>{row.name}</strong><div className="mt-1 max-w-sm text-xs text-stone-light">{row.description || "-"}</div></div> },
+    {
+      key: "name",
+      label: "Produkt",
+      render: (row) => (
+        <div>
+          <strong>{row.name}</strong>
+          <div className="mt-1 max-w-sm text-xs text-stone-light">{row.description || "-"}</div>
+        </div>
+      )
+    },
     { key: "category", label: "Kategorie" },
     { key: "price", label: "Preis", render: (row) => formatPrice(row.price, row.currency || "EUR") },
+    { key: "locations", label: "Standorte", render: renderLocations },
     { key: "state", label: "Status", render: (row) => <StatusBadge status={row.isActive === false ? "inactive" : "active"} /> },
-    { key: "actions", label: "Aktionen", render: (row) => <div className="flex flex-wrap gap-2"><button type="button" className="rounded-full border border-stone/10 px-3 py-1 text-xs font-semibold hover:border-terracotta hover:text-terracotta" onClick={() => handleEdit(row)}>Edit</button><button type="button" className="rounded-full border border-red-200 px-3 py-1 text-xs font-semibold text-red-700 hover:bg-red-50" onClick={() => handleDeactivate(row)}>Deaktivieren</button></div> }
+    {
+      key: "actions",
+      label: "Aktionen",
+      render: (row) => (
+        <div className="flex flex-wrap gap-2">
+          <button type="button" className="rounded-full border border-stone/10 px-3 py-1 text-xs font-semibold hover:border-terracotta hover:text-terracotta" onClick={() => handleEdit(row)}>
+            Edit
+          </button>
+          <button type="button" className="rounded-full border border-red-200 px-3 py-1 text-xs font-semibold text-red-700 hover:bg-red-50" onClick={() => handleDeactivate(row)}>
+            Deaktivieren
+          </button>
+        </div>
+      )
+    }
   ];
 
-  return <div className="space-y-6"><PageIntro eyebrow="Speisekarte" title="Menüprodukte verwalten" description="Produkte, Kategorien und Preise für die Restaurant-Speisekarte im Center pflegen." /><AlertMessage type="success">{feedback}</AlertMessage><AlertMessage type="error">{error}</AlertMessage><div className="grid gap-6 xl:grid-cols-[420px_1fr]"><form onSubmit={handleSubmit} className="rounded-[1.5rem] border border-stone/10 bg-white p-5 shadow-lg shadow-stone/5"><h3 className="font-serif text-2xl text-stone">{editingItem ? "Produkt bearbeiten" : "Produkt hinzufügen"}</h3><div className="mt-5 space-y-4"><label className="block"><span className="text-sm font-medium">Name</span><input className="mt-2 w-full rounded-2xl border border-stone/20 px-4 py-3 outline-none focus:border-terracotta" name="name" value={formValues.name} onChange={handleChange} required /></label><label className="block"><span className="text-sm font-medium">Beschreibung</span><textarea className="mt-2 min-h-[110px] w-full rounded-2xl border border-stone/20 px-4 py-3 outline-none focus:border-terracotta" name="description" value={formValues.description} onChange={handleChange} /></label><div className="grid grid-cols-2 gap-4"><label className="block"><span className="text-sm font-medium">Preis</span><input className="mt-2 w-full rounded-2xl border border-stone/20 px-4 py-3 outline-none focus:border-terracotta" type="number" step="0.01" name="price" value={formValues.price} onChange={handleChange} required /></label><label className="block"><span className="text-sm font-medium">Kategorie</span><select className="mt-2 w-full rounded-2xl border border-stone/20 px-4 py-3 outline-none focus:border-terracotta" name="category" value={formValues.category} onChange={handleChange}>{categories.map((category) => <option key={category} value={category}>{category}</option>)}</select></label></div><label className="flex items-center gap-3 rounded-2xl bg-cream/70 p-4"><input type="checkbox" name="isActive" checked={formValues.isActive} onChange={handleChange} className="accent-terracotta" />Aktiv</label></div><div className="mt-6 flex gap-3"><button type="submit" className="btn-primary disabled:opacity-60" disabled={submitting}>{submitting ? "Speichern..." : editingItem ? "Aktualisieren" : "Erstellen"}</button>{editingItem ? <button type="button" className="btn-secondary" onClick={resetForm}>Abbrechen</button> : null}</div></form><DataTable columns={columns} rows={items} loading={loading} emptyTitle="Keine Produkte" emptyDescription="Noch keine Menüprodukte im Center vorhanden." /></div></div>;
+  return (
+    <div className="space-y-6">
+      <PageIntro eyebrow="Speisekarte" title="Menuprodukte verwalten" description="Produkte, Kategorien und Preise fur die Restaurant-Speisekarte im Center pflegen." />
+      <AlertMessage type="success">{feedback}</AlertMessage>
+      <AlertMessage type="error">{error}</AlertMessage>
+
+      <div className="grid gap-6 xl:grid-cols-[420px_1fr]">
+        <form onSubmit={handleSubmit} className="rounded-[1.5rem] border border-stone/10 bg-white p-5 shadow-lg shadow-stone/5">
+          <h3 className="font-serif text-2xl text-stone">{editingItem ? "Produkt bearbeiten" : "Produkt hinzufugen"}</h3>
+
+          <div className="mt-5 space-y-4">
+            <label className="block">
+              <span className="text-sm font-medium">Name</span>
+              <input className="mt-2 w-full rounded-2xl border border-stone/20 px-4 py-3 outline-none focus:border-terracotta" name="name" value={formValues.name} onChange={handleChange} required />
+            </label>
+
+            <label className="block">
+              <span className="text-sm font-medium">Beschreibung</span>
+              <textarea className="mt-2 min-h-[110px] w-full rounded-2xl border border-stone/20 px-4 py-3 outline-none focus:border-terracotta" name="description" value={formValues.description} onChange={handleChange} />
+            </label>
+
+            <div className="grid grid-cols-2 gap-4">
+              <label className="block">
+                <span className="text-sm font-medium">Preis</span>
+                <input className="mt-2 w-full rounded-2xl border border-stone/20 px-4 py-3 outline-none focus:border-terracotta" type="number" step="0.01" name="price" value={formValues.price} onChange={handleChange} required />
+              </label>
+
+              <label className="block">
+                <span className="text-sm font-medium">Kategorie</span>
+                <select className="mt-2 w-full rounded-2xl border border-stone/20 px-4 py-3 outline-none focus:border-terracotta" name="category" value={formValues.category} onChange={handleChange}>
+                  {categories.map((category) => <option key={category} value={category}>{category}</option>)}
+                </select>
+              </label>
+            </div>
+
+            {locations.length > 1 ? (
+              <label className="block">
+                <span className="text-sm font-medium">Standorte</span>
+                <select className="mt-2 min-h-[120px] w-full rounded-2xl border border-stone/20 px-4 py-3 outline-none focus:border-terracotta" name="locationIds" multiple value={formValues.locationIds} onChange={handleChange}>
+                  {locations.map((location) => (
+                    <option key={getEntryId(location)} value={getEntryId(location)}>
+                      {location.name}
+                    </option>
+                  ))}
+                </select>
+                <span className="mt-2 block text-xs text-stone-light">Leer lassen bedeutet: Produkt ist in allen Standorten verfugbar.</span>
+              </label>
+            ) : null}
+
+            <label className="flex items-center gap-3 rounded-2xl bg-cream/70 p-4">
+              <input type="checkbox" name="isActive" checked={formValues.isActive} onChange={handleChange} className="accent-terracotta" />
+              Aktiv
+            </label>
+          </div>
+
+          <div className="mt-6 flex gap-3">
+            <button type="submit" className="btn-primary disabled:opacity-60" disabled={submitting}>
+              {submitting ? "Speichern..." : editingItem ? "Aktualisieren" : "Erstellen"}
+            </button>
+            {editingItem ? <button type="button" className="btn-secondary" onClick={resetForm}>Abbrechen</button> : null}
+          </div>
+        </form>
+
+        <DataTable columns={columns} rows={items} loading={loading} emptyTitle="Keine Produkte" emptyDescription="Noch keine Menuprodukte im Center vorhanden." />
+      </div>
+    </div>
+  );
 }
 
 export default AdminMenuPage;

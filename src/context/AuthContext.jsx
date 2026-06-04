@@ -97,7 +97,7 @@ export function AuthProvider({ children }) {
       setStoredBusinessSlug(nextBusinessSlug);
     }
 
-    navigate(user?.role === "superadmin" ? "/superadmin" : "/admin", { replace: true });
+    navigate("/admin", { replace: true });
     return user;
   }, [navigate]);
 

@@ -29,7 +29,7 @@ function Navbar() {
         <div className="flex items-center justify-between">
           <BrandLogo to="/" className="text-stone" />
 
-          <div className="hidden items-center gap-8 md:flex">
+          <div className="hidden items-center gap-6 lg:flex xl:gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -52,7 +52,7 @@ function Navbar() {
           </div>
 
           <button
-            className="p-2 md:hidden"
+            className="p-2 lg:hidden"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
             type="button"
@@ -62,7 +62,7 @@ function Navbar() {
         </div>
 
         {isOpen ? (
-          <div className="mt-4 border-t border-stone-light pb-4 md:hidden">
+          <div className="mt-4 border-t border-stone-light pb-4 lg:hidden">
             <div className="mt-4 flex flex-col gap-3">
               {navLinks.map((link) => (
                 <Link

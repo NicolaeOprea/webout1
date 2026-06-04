@@ -5,7 +5,7 @@ function RoleRoute({ allowedRoles }) {
   const { currentUser } = useAuth();
 
   if (allowedRoles?.length && !allowedRoles.includes(currentUser?.role)) {
-    return <Navigate to={currentUser?.role === "superadmin" ? "/superadmin" : "/admin"} replace />;
+    return <Navigate to="/admin" replace />;
   }
 
   return <Outlet />;
