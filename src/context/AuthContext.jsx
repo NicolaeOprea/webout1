@@ -44,6 +44,9 @@ export function AuthProvider({ children }) {
     try {
       const body = await getCurrentUserRequest();
       const user = body?.data || body?.user || body;
+      if (!user?.id && !user?._id && !user?.email) {
+        throw new Error("Invalid current user response.");
+      }
       const nextBusinessSlug = getBusinessSlug(user);
       setCurrentUser(user);
       setStoredUser(user);
@@ -88,6 +91,9 @@ export function AuthProvider({ children }) {
 
     const userBody = await getCurrentUserRequest();
     const user = userBody?.data || userBody?.user || userBody;
+    if (!user?.id && !user?._id && !user?.email) {
+      throw new Error("Invalid current user response.");
+    }
     const nextBusinessSlug = getBusinessSlug(user) || credentials.businessSlug;
     setCurrentUser(user);
     setStoredUser(user);

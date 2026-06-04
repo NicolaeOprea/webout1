@@ -26533,7 +26533,7 @@ async function readResponse(response) {
   try {
     body = text ? JSON.parse(text) : null;
   } catch {
-    body = { message: text };
+    body = null;
   }
   if (!response.ok) {
     if (response.status === 401) {
@@ -26542,7 +26542,10 @@ async function readResponse(response) {
       clearStoredUser();
       unauthorizedHandler?.();
     }
-    throw new Error(body?.message || body?.error || `Request failed with status ${response.status}`);
+    throw new Error(body?.message || body?.error || text || `Request failed with status ${response.status}`);
+  }
+  if (text && !body) {
+    throw new Error("Backend response is not valid JSON.");
   }
   return body;
 }
@@ -26612,6 +26615,9 @@ function AuthProvider({ children }) {
     try {
       const body = await getCurrentUserRequest();
       const user = body?.data || body?.user || body;
+      if (!user?.id && !user?._id && !user?.email) {
+        throw new Error("Invalid current user response.");
+      }
       const nextBusinessSlug = getBusinessSlug(user);
       setCurrentUser(user);
       setStoredUser(user);
@@ -26649,6 +26655,9 @@ function AuthProvider({ children }) {
     }
     const userBody = await getCurrentUserRequest();
     const user = userBody?.data || userBody?.user || userBody;
+    if (!user?.id && !user?._id && !user?.email) {
+      throw new Error("Invalid current user response.");
+    }
     const nextBusinessSlug = getBusinessSlug(user) || credentials.businessSlug;
     setCurrentUser(user);
     setStoredUser(user);
@@ -34397,7 +34406,7 @@ function AuthLayout() {
     /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("section", { className: "relative hidden overflow-hidden bg-stone p-10 text-cream lg:flex lg:flex-col lg:justify-between", children: [
       /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { children: [
         /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(BrandLogo_default, { to: "/", label: "Sapore Mediterraneo", compact: true, className: "text-cream" }),
-        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("p", { className: "mt-4 max-w-lg text-cream/70", children: "Admin- und Superadmin-Zugang f\xFCr Businesses im Center." })
+        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("p", { className: "mt-4 max-w-lg text-cream/70", children: "Admin-Zugang f\xFCr Restaurant-Businesses im Center." })
       ] }),
       /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "rounded-[2rem] border border-white/10 bg-white/10 p-6", children: [
         /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { className: "text-sm uppercase tracking-[0.24em] text-terracotta-light", children: "Restaurant Center" }),

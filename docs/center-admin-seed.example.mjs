@@ -1,34 +1,46 @@
-// Copy this into the Center backend if you need a one-time superadmin seed.
+// Copy this into the Center backend if you need a one-time business admin seed.
 // Do not commit real passwords. Run it only in the backend environment.
 import bcrypt from "bcryptjs";
 import mongoose from "mongoose";
+import { Business } from "../src/models/Business.js";
 import { User } from "../src/models/User.js";
 
 const MONGODB_URI = process.env.MONGODB_URI;
-const SUPERADMIN_NAME = process.env.SUPERADMIN1_NAME || "Super Admin";
-const SUPERADMIN_EMAIL = process.env.SUPERADMIN1_EMAIL || "admin@example.com";
-const SUPERADMIN_PASSWORD = process.env.SUPERADMIN1_PASSWORD;
+const BUSINESS_SLUG = process.env.BUSINESS1_SLUG || "sapore-mediterraneo";
+const ADMIN_NAME = process.env.ADMIN1_NAME || "Restaurant Admin";
+const ADMIN_EMAIL = process.env.ADMIN1_EMAIL || "admin@example.com";
+const ADMIN_PASSWORD = process.env.ADMIN1_PASSWORD;
 
-if (!MONGODB_URI || !SUPERADMIN_PASSWORD) {
-  throw new Error("Set MONGODB_URI and SUPERADMIN1_PASSWORD before running this seed.");
+if (!MONGODB_URI || !ADMIN_PASSWORD) {
+  throw new Error("Set MONGODB_URI and ADMIN1_PASSWORD before running this seed.");
 }
 
 await mongoose.connect(MONGODB_URI);
 
-const passwordHash = await bcrypt.hash(SUPERADMIN_PASSWORD, 10);
+const business = await Business.findOne({
+  slug: BUSINESS_SLUG,
+  status: "active",
+  isActive: { $ne: false }
+});
+
+if (!business) {
+  throw new Error(`Active business not found for slug: ${BUSINESS_SLUG}`);
+}
+
+const passwordHash = await bcrypt.hash(ADMIN_PASSWORD, 10);
 
 await User.findOneAndUpdate(
-  { email: SUPERADMIN_EMAIL.toLowerCase(), businessId: null },
+  { email: ADMIN_EMAIL.toLowerCase(), businessId: business._id },
   {
-    businessId: null,
-    name: SUPERADMIN_NAME,
-    email: SUPERADMIN_EMAIL.toLowerCase(),
+    businessId: business._id,
+    name: ADMIN_NAME,
+    email: ADMIN_EMAIL.toLowerCase(),
     passwordHash,
-    role: "superadmin",
+    role: "business_admin",
     isActive: true
   },
   { upsert: true, new: true, setDefaultsOnInsert: true }
 );
 
 await mongoose.disconnect();
-console.log(`Superadmin ready: ${SUPERADMIN_EMAIL}`);
+console.log(`Business admin ready: ${ADMIN_EMAIL} for ${BUSINESS_SLUG}`);

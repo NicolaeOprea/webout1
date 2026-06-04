@@ -24,7 +24,7 @@ async function readResponse(response) {
   try {
     body = text ? JSON.parse(text) : null;
   } catch {
-    body = { message: text };
+    body = null;
   }
 
   if (!response.ok) {
@@ -35,7 +35,11 @@ async function readResponse(response) {
       unauthorizedHandler?.();
     }
 
-    throw new Error(body?.message || body?.error || `Request failed with status ${response.status}`);
+    throw new Error(body?.message || body?.error || text || `Request failed with status ${response.status}`);
+  }
+
+  if (text && !body) {
+    throw new Error("Backend response is not valid JSON.");
   }
 
   return body;
