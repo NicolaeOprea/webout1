@@ -8,22 +8,26 @@ function Home() {
     {
       title: "Steinofen Pizza",
       description: "Knusprig, authentisch und mit sorgsam ausgew\xE4hlten Zutaten. Unsere Pizzen werden t\xE4glich frisch zubereitet.",
-      icon: <Pizza size={40} />
+      icon: <Pizza size={40} />,
+      image: "/images/sapore-pizza.png"
     },
     {
       title: "Handgemachte Pasta",
       description: "Traditionelle italienische Rezepte mit Liebe zubereitet. Jeder Bissen schmeckt nach Authentizit\xE4t.",
-      icon: <Users size={40} />
+      icon: <Users size={40} />,
+      image: "/images/sapore-pasta.png"
     },
     {
       title: "Frische Salate",
       description: "Saisonale Zutaten, mediterrane Aromen. Perfekt als Vorspeise oder leichte Hauptmahlzeit.",
-      icon: <Leaf size={40} />
+      icon: <Leaf size={40} />,
+      image: "/images/sapore-salad.png"
     },
     {
-      title: "Regionale Weine",
-      description: "Sorgf\xE4ltig ausgew\xE4hlte italienische und deutsche Weine zu jedem Gericht.",
-      icon: <Wine size={40} />
+      title: "Gelato & Dolce",
+      description: "Cremiges Gelato und italienische Desserts als feiner Abschluss f\xFCr jeden Besuch.",
+      icon: <Wine size={40} />,
+      image: "/images/sapore-gelato.png"
     }
   ];
   const reviews = [
@@ -70,8 +74,8 @@ function Home() {
               <span className="flex-1 bg-[#008C45]" />
               <span className="flex-1 bg-white" />
               <span className="flex-1 bg-[#CD212A]" />
-            </Link><p className="text-lg md:text-2xl text-stone-light mb-4">
-              Authentische italienische Küche in Brunnthal
+            </Link><p className="text-lg md:text-2xl text-stone-light mb-4 font-semibold tracking-[0.22em]">
+              CUCINA * PIZZA * GELATO
             </p><p className="text-sm md:text-base text-stone max-w-2xl mx-auto mb-8">
               Entdecken Sie die Geschmäcke Süditaliens mit Familie, Freunden und Liebe zum Detail
             </p></motion.div><motion.div
@@ -144,8 +148,8 @@ function Home() {
     whileInView={{ opacity: 1, x: 0 }}
     transition={{ duration: 0.7 }}
     viewport={{ once: true }}
-    className="bg-gradient-to-br from-terracotta-light to-olive-light rounded-lg p-8 h-96 flex items-center justify-center"
-  ><div className="text-center text-cream"><Pizza size={64} className="mx-auto mb-4 opacity-80" /><p className="text-lg font-serif">
+    className="relative h-96 overflow-hidden rounded-lg shadow-xl shadow-stone/10"
+  ><img src="/images/sapore-table.png" alt="Italienische Spezialitäten auf einem rustikalen Tisch" className="h-full w-full object-cover" loading="lazy" /><div className="absolute inset-0 bg-gradient-to-t from-stone/45 via-transparent to-transparent" /><div className="absolute bottom-6 left-6 right-6 text-cream"><p className="font-serif text-2xl">
                   Leidenschaft für<br />italienische Kulinarik
                 </p></div></motion.div></div></div></section>{
     /* Reviews Section */

@@ -66,8 +66,8 @@ async function buildCss({ watch = false } = {}) {
 
 async function buildJs({ watch = false } = {}) {
   const options = {
-    entryPoints: [join(rootDir, 'src/main.jsx')],
-    outfile: join(buildDir, 'assets/index.js'),
+    entryPoints: ['./src/main.jsx'],
+    outfile: 'build/assets/index.js',
     bundle: true,
     format: 'esm',
     jsx: 'automatic',
